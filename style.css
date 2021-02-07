@@ -1,4 +1,4 @@
-body {
+/*body {
   background-color: #fffff1;
   text-align: center;
   font-family: Tahoma;
@@ -62,16 +62,15 @@ ul {
   border-radius: 4px;
   margin: 20px 0px;
   text-align: center;
+  display: flex;
 }
 
 .img-profile {
   object-fit: cover;
-  border-radius: 500px;
-  height: 200px;
+  border-radius: 50%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+  margin-left: 10px;
+  width: 20%;
 }
 
 .img-display {
@@ -126,3 +125,4 @@ ul {
     width: 300px;
   }
 }
+*/
