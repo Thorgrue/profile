@@ -20,12 +20,12 @@
 <body class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover" style="background-image:url('https://source.unsplash.com/BfrQnKBulYQ');">
 
   <div class="w-screen">
-  <div class="grid w-4/12 float-right">
-    <a class="w-100 bg-white py-3 pr-2 my-1" href="#"><span class="text-2xl bg-blue-900 w-30 p-3 mr-2"><i class="fab fa-spotify"></i></span>how good is your spotify</a>
-    <a class="w-100 bg-white py-3 pr-2 my-1" href="#"><span class="text-2xl bg-blue-900 w-30 p-3 mr-2"><i class="fas fa-home"></i></span>La Colline</a>
-    <a class="w-100 bg-white py-3 pr-2 my-1" href="#"><span class="text-2xl bg-blue-900 w-30 p-3 mr-2"><i class="fas fa-book"></i></span>Vikle</a>
-    <a class="w-100 bg-white py-3 pr-2 my-1" href="#"><span class="text-2xl bg-blue-900 w-30 p-3 mr-2"><i class="fas fa-file-code"></i></span>latruelleduweb</a>
-    <a class="w-100 bg-white py-3 pr-2 my-1" href="#"><span class="text-2xl bg-blue-900 w-30 p-3 mr-2"><i class="fas fa-gem"></i></span>LootHuntr</a>
+  <div class="gros_test grid w-4/12 float-right -mr-80 pl-28 mt-60 z-99">
+    <div class="test w-80 bg-white py-3 pr-2 my-1 rounded-l-full"><span class="text-2xl bg-blue-800 hover:bg-blue-900 p-4 mr-2 rounded-l-full"><i class="fab fa-spotify"></i></span><a href="https://how-good-is-your-spotify.herokuapp.com/" target="_blank"> > how good is your spotify</a></div>
+    <div class="w-80 bg-white py-3 pr-2 my-1 rounded-l-full"><a href="#"><span class="text-2xl bg-blue-800 hover:bg-blue-900 p-4 mr-2 rounded-l-full"><i class="fas fa-home"></i></span> > Gîtes La Colline</a></div>
+    <div class="w-80 bg-white py-3 pr-2 my-1 rounded-l-full"><a href="#"><span class="text-2xl bg-blue-800 hover:bg-blue-900 p-4 px-5 mr-2 rounded-l-full"><i class="fas fa-book"></i></span> > Vikle</a></div>
+    <div class="w-80 bg-white py-3 pr-2 my-1 rounded-l-full"><a href="#"><span class="text-2xl bg-blue-800 hover:bg-blue-900 p-4 px-5 mr-2 rounded-l-full"><i class="fas fa-file-code"></i></span> > latruelleduweb</a></div>
+    <div class="w-80 bg-white py-3 pr-2 my-1 rounded-l-full"><span class="text-2xl bg-blue-800 hover:bg-blue-900 p-4 mr-2 rounded-l-full"><i class="fas fa-gem"></i></span><a href="https://www.loothuntr.co/"> > LootHuntr</a></div>
   </div>
   </div>
 
@@ -80,7 +80,46 @@
     </div>
 
 
+  <script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
+  <script src="https://unpkg.com/tippy.js@4"></script>
   <script>
+    //Init tooltips
+    tippy('.link',{
+      placement: 'bottom'
+    })
+
+    //Toggle mode
+    const toggle = document.querySelector('.js-change-theme');
+    const body = document.querySelector('body');
+    const profile = document.getElementById('profile');
+
+
+    toggle.addEventListener('click', () => {
+
+      if (body.classList.contains('text-gray-900')) {
+      toggle.innerHTML = "☀️";
+      body.classList.remove('text-gray-900');
+      body.classList.add('text-gray-100');
+      profile.classList.remove('bg-white');
+      profile.classList.add('bg-gray-900');
+      } else
+      {
+      toggle.innerHTML = "🌙";
+      body.classList.remove('text-gray-100');
+      body.classList.add('text-gray-900');
+      profile.classList.remove('bg-gray-900');
+      profile.classList.add('bg-white');
+
+      }
+    });
+
+    document.querySelectorAll('.gros_test').forEach(button => {
+      button.addEventListener('click', () => {
+        button.classList.toggle('-mr-80');
+        button.classList.toggle('pl-28');
+        button.classList.toggle('-mr-40');
+      });
+    });
   </script>
 
 </body>
