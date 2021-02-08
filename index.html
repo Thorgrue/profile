@@ -1,59 +1,4 @@
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <title>Gaelle Shearn</title>
-    <meta name="description" content="Gaelle Shearn Fullstack Developer">
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-
-<div class="container">
-  <body>
-
-    <div class="card-white">
-    <img src="images/photo.jpg" class="img-profile" alt="a slice of a black&white portrait, a big smile and wavy hairs">
-    <h1>WELCOME</h1>
-    <h2>Gaëlle Shearn - Fullstack Developer</h2>
-    <p>I'm looking for new ways to make the world a better place with others. I believe in human, sustainability, passion and food.
-I'm really looking forward my journey with Le Wagon!</p>
-    <a href="https://youtu.be/W2o1BwDq9sQ" class="btn-blue" target="_blank">Discover some honey for your ears 📻</a>
-    </div>
-
-    <div class="card-white">
-    <h2>Tell me you love me  🏗</h2>
-      <div class="list-inline">
-        <ul>
-          <li>
-            <a href="https://www.instagram.com/jeanluc_coccinelle/" target="_blank">
-              <i class="fab fa-linkedin-in">
-              </i>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/Thorgrue" target="_blank">
-              <i class="fab fa-github">
-            <a href="https://www.linkedin.com/in/gaelle-shearn/" target="_blank">
-              <i class="fab fa-linkedin-in">
-              </i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="card-white">
-      <img src="images/crane.jpg" class="img-display" alt="Beautiful crane with pretty colors of sunset">
-    </div>
-
-  </body>
-  </div>
-
-</html>
- -->
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -66,15 +11,28 @@ I'm really looking forward my journey with Le Wagon!</p>
   <meta name="author" content="Gaëlle SHEARN & tailwindtoolbox">
 
   <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css">
-  <!--Replace with your tailwind.css once created-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
 </head>
 
+<body>
+
 <body class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover" style="background-image:url('https://source.unsplash.com/BfrQnKBulYQ');">
+
+  <div class="w-screen">
+  <div class="gros_test grid w-4/12 float-right -mr-80 pl-28 mt-60 z-99">
+    <div class="test w-80 bg-white py-3 pr-2 my-1 rounded-l-full"><span class="text-2xl bg-blue-800 hover:bg-blue-900 p-4 mr-2 rounded-l-full"><i class="fab fa-spotify"></i></span><a href="https://how-good-is-your-spotify.herokuapp.com/" target="_blank"> > how good is your spotify?</a></div>
+    <div class="w-80 bg-white py-3 pr-2 my-1 rounded-l-full"><a href="#"><span class="text-2xl bg-blue-800 hover:bg-blue-900 p-4 mr-2 rounded-l-full"><i class="fas fa-home"></i></span> > Gîtes La Colline</a></div>
+    <div class="w-80 bg-white py-3 pr-2 my-1 rounded-l-full"><a href="#"><span class="text-2xl bg-blue-800 hover:bg-blue-900 p-4 px-5 mr-2 rounded-l-full"><i class="fas fa-book"></i></span> > Vikle</a></div>
+    <div class="w-80 bg-white py-3 pr-2 my-1 rounded-l-full"><a href="#"><span class="text-2xl bg-blue-800 hover:bg-blue-900 p-4 px-5 mr-2 rounded-l-full"><i class="fas fa-file-code"></i></span> > latruelleduweb</a></div>
+    <div class="w-80 bg-white py-3 pr-2 my-1 rounded-l-full"><span class="text-2xl bg-blue-800 hover:bg-blue-900 p-4 mr-2 rounded-l-full"><i class="fas fa-gem"></i></span><a href="https://www.loothuntr.co/"> > LootHuntr</a></div>
+  </div>
+  </div>
 
   <div class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
 
   <!-- Profile Card -->
-  <div id="profile" class="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
+  <div id="profile" class="z-0 w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
     <div class="p-4 md:p-12 text-center lg:text-left">
 
       <!-- Image for mobile view -->
@@ -121,16 +79,6 @@ I'm really looking forward my journey with Le Wagon!</p>
     <button class="js-change-theme focus:outline-none">🌙</button>
     </div>
 
-    <div class="absolute top-60 right-0 h-12 w-18 p-24">
-    <button class="js-change-theme focus:outline-none">🔎</button>
-    </div>
-
-    <div class="absolute top-100 right-0 h-12 w-18 p-24">
-    <button class="js-change-theme focus:outline-none">🔎</button>
-    </div>
-
-</div>
-
   <script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
   <script src="https://unpkg.com/tippy.js@4"></script>
   <script>
@@ -164,8 +112,15 @@ I'm really looking forward my journey with Le Wagon!</p>
       }
     });
 
-    </script>
+    document.querySelectorAll('.gros_test').forEach(button => {
+      button.addEventListener('click', () => {
+        button.classList.toggle('-mr-80');
+        button.classList.toggle('pl-28');
+        button.classList.toggle('-mr-40');
+      });
+    });
+  </script>
 
 </body>
-
 </html>
+
