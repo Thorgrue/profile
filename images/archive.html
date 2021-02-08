@@ -11,28 +11,15 @@
   <meta name="author" content="Gaëlle SHEARN & tailwindtoolbox">
 
   <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+  <!--Replace with your tailwind.css once created-->
 </head>
 
-<body>
-
 <body class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover" style="background-image:url('https://source.unsplash.com/BfrQnKBulYQ');">
-
-  <div class="w-screen">
-  <div class="grid w-4/12 float-right">
-    <a class="w-100 bg-white py-3 pr-2 my-1" href="#"><span class="text-2xl bg-blue-900 w-30 p-3 mr-2"><i class="fab fa-spotify"></i></span>how good is your spotify</a>
-    <a class="w-100 bg-white py-3 pr-2 my-1" href="#"><span class="text-2xl bg-blue-900 w-30 p-3 mr-2"><i class="fas fa-home"></i></span>La Colline</a>
-    <a class="w-100 bg-white py-3 pr-2 my-1" href="#"><span class="text-2xl bg-blue-900 w-30 p-3 mr-2"><i class="fas fa-book"></i></span>Vikle</a>
-    <a class="w-100 bg-white py-3 pr-2 my-1" href="#"><span class="text-2xl bg-blue-900 w-30 p-3 mr-2"><i class="fas fa-file-code"></i></span>latruelleduweb</a>
-    <a class="w-100 bg-white py-3 pr-2 my-1" href="#"><span class="text-2xl bg-blue-900 w-30 p-3 mr-2"><i class="fas fa-gem"></i></span>LootHuntr</a>
-  </div>
-  </div>
 
   <div class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
 
   <!-- Profile Card -->
-  <div id="profile" class="z-0 w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
+  <div id="profile" class="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
     <div class="p-4 md:p-12 text-center lg:text-left">
 
       <!-- Image for mobile view -->
@@ -79,10 +66,55 @@
     <button class="js-change-theme focus:outline-none">🌙</button>
     </div>
 
+    <div class="absolute top-60 right-0 h-12 w-18 p-24">
+    <button class="js-change-theme focus:outline-none">🔎</button>
+    </div>
 
+    <div class="absolute top-100 right-0 h-12 w-18 p-24">
+    <button class="js-change-theme focus:outline-none">🔎</button>
+    </div>
+
+    <div class="absolute top-140 right-0 h-12 w-18 p-24">
+    <button class="js-change-theme focus:outline-none">🔎</button>
+    </div>
+
+</div>
+
+  <script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
+  <script src="https://unpkg.com/tippy.js@4"></script>
   <script>
-  </script>
+    //Init tooltips
+    tippy('.link',{
+      placement: 'bottom'
+    })
+
+    //Toggle mode
+    const toggle = document.querySelector('.js-change-theme');
+    const body = document.querySelector('body');
+    const profile = document.getElementById('profile');
+
+
+    toggle.addEventListener('click', () => {
+
+      if (body.classList.contains('text-gray-900')) {
+      toggle.innerHTML = "☀️";
+      body.classList.remove('text-gray-900');
+      body.classList.add('text-gray-100');
+      profile.classList.remove('bg-white');
+      profile.classList.add('bg-gray-900');
+      } else
+      {
+      toggle.innerHTML = "🌙";
+      body.classList.remove('text-gray-100');
+      body.classList.add('text-gray-900');
+      profile.classList.remove('bg-gray-900');
+      profile.classList.add('bg-white');
+
+      }
+    });
+
+    </script>
 
 </body>
-</html>
 
+</html>

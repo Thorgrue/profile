@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Let's try this !</h1>
+  <div class="accordion">
+    <button type="button" class="accordion__button">Expand content</button>
+    <div class="accordion__content">
+      <p>SOME TEXT</p>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.accordion__button').forEach(button => {
+      button.addEventListener('click', () => {
+        button.classList.toggle('accordion__button--active');
+      });
+    });
+  </script>
+</body>
+</html>
