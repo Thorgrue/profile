@@ -17,17 +17,17 @@
 
 <body>
 <div class="gros_test relative font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover" style="background-image:url('https://source.unsplash.com/BfrQnKBulYQ');">
-  <div class="absolute inset-y-1/4 right-0 grid grid-flow-col grid-cols-1 grid-rows-5 gap-4">
-    <div class="col-start-5 bg-blue-800 hover:bg-blue-900 p-4 py-6 rounded-l-full flex"><span class="flex items-center text-2xl"><i class="fab fa-spotify"></i></span></div>
-      <div class="projects hidden w-80 bg-white py-3 pr-2 my-1 rounded-l-full"><a href="https://how-good-is-your-spotify.herokuapp.com/" target="_blank"> > how good is your spotify?</a></div>
-    <div class="col-start-5 bg-blue-800 hover:bg-blue-900 p-4 py-6 rounded-l-full flex"><span class="flex items-center text-2xl"><i class="fas fa-home"></i></span></div>
-      <div class="projects hidden w-80 bg-white py-3 pr-2 my-1 rounded-l-full"><a href="#"> > Gîtes La Colline</a></div>
-    <div class="col-start-5 bg-blue-800 hover:bg-blue-900 p-4 py-6 rounded-l-full flex"><span class="flex items-center text-2xl"><i class="fas fa-book"></i></span></div>
-      <div class="projects hidden w-80 bg-white py-3 pr-2 my-1 rounded-l-full"><a href="#"> > Vikle</a></div>
-    <div class="col-start-5 bg-blue-800 hover:bg-blue-900 p-4 py-6 rounded-l-full flex"><span class="flex items-center text-2xl"><i class="fas fa-file-code"></i></span></div>
-      <div class="projects hidden w-80 bg-white py-3 pr-2 my-1 rounded-l-full"><a href="#"> > latruelleduweb</a></div>
-    <div class="col-start-5 bg-blue-800 hover:bg-blue-900 p-4 py-6 rounded-l-full flex"><span class="flex items-center text-2xl"><i class="fas fa-gem"></i></span></div>
-      <div class="projects hidden w-80 bg-white py-3 pr-2 my-1 rounded-l-full"><a href="https://www.loothuntr.co/"> > LootHuntr</a></div>
+  <div class="transform absolute inset-y-1/4 right-0 grid grid-flow-col grid-cols-1 grid-rows-3 gap-4">
+    <div id="icon1" class="ml-60 tranform translate-x-80 col-start-2 z-10 bg-blue-800 hover:bg-blue-900 p-4 py-6 rounded-l-full flex"><span class="flex items-center text-2xl"><i class="fab fa-spotify"></i></span></div>
+      <div id="project1" class="hidden projects z-90 -ml-4  w-80 bg-white flex items-center"><a class="pl-3 py-auto" href="https://how-good-is-your-spotify.herokuapp.com/" target="_blank"> > how good is your spotify?</a></div>
+    <div id="icon2" class="ml-60 tranform translate-x-80 row-start-2 col-start-2 bg-blue-800 hover:bg-blue-900 p-4 py-6 rounded-l-full flex"><span class="flex items-center text-2xl"><i class="fas fa-home"></i></span></div>
+      <div id="project2" class="hidden projects row-start-2 row-span-1 z-90 -ml-4  w-80 bg-white flex items-center"><a class="pl-3 py-auto" href="#"> > Gîtes La Colline</a></div>
+    <div id="icon3" class="ml-60 tranform translate-x-80 row-start-3 col-start-2 bg-blue-800 hover:bg-blue-900 p-4 py-6 rounded-l-full flex"><span class="flex items-center text-2xl"><i class="fas fa-book"></i></span></div>
+      <div id="project3" class="hidden projects row-start-3 row-span-1 z-90 -ml-4  w-80 bg-white flex items-center"><a class="pl-3 py-auto" href="#"> > Vikle</a></div>
+    <div id="icon4" class="ml-60 tranform translate-x-80 row-start-4 col-start-2 bg-blue-800 hover:bg-blue-900 p-4 py-6 rounded-l-full flex"><span class="flex items-center text-2xl"><i class="fas fa-file-code"></i></span></div>
+      <div id="project4" class="hidden projects row-start-4 row-span-1 z-90 -ml-4  w-80 bg-white flex items-center"><a class="pl-3 py-auto" href="#"> > latruelleduweb</a></div>
+    <div id="icon5" class="ml-60 tranform translate-x-80 row-start-5 col-start-2 bg-blue-800 hover:bg-blue-900 p-4 py-6 rounded-l-full flex"><span class="flex items-center text-2xl"><i class="fas fa-gem"></i></span></div>
+      <div id="project5" class="hidden projects row-start-5 row-span-1 z-90 -ml-4  w-80 bg-white flex items-center"><a class="pl-3 py-auto" href="https://www.loothuntr.co/"> > LootHuntr</a></div>
   </div>
 
   <div class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
@@ -117,16 +117,53 @@
       }
     });
 
-    document.querySelectorAll('.gros_test').forEach(button => {
-      button.addEventListener('click', () => {
-        const toggle = document.querySelector('.projects');
-        toggle.classList.toggle('hidden');
-        toggle.classList.toggle('.col-start-5');
-        button.classList.toggle('.col-start-5');
-        button.classList.toggle('.col-start-1');
-        console.log("je suis la");
+      const projects = document.querySelectorAll('.projects');
+      projects.forEach((item, index) => {
+        const this_icon = `icon${index + 1}`;
+        const this_project = `project${index + 1}`;
+        const icon = document.getElementById(this_icon);
+        const project = document.getElementById(this_project);
+
+        icon.addEventListener('click', () => {
+        project.classList.toggle('hidden');
+        project.classList.toggle('col-start-2');
+        icon.classList.toggle('ml-60');
+        icon.classList.toggle('col-start-2');
+        icon.classList.toggle('col-start-1');
+        icon.classList.toggle('transform');
+        icon.classList.toggle('translate-x-80');
+        console.log("yes queen");
+        });
       });
-    });
+
+      // const icon1 = document.querySelector('.icon1');
+      // const project1 = document.querySelector('.project1');
+
+      // icon1.addEventListener('click', () => {
+      //   project1.classList.toggle('hidden');
+      //   icon1.classList.toggle('transform');
+      //   icon1.classList.toggle('translate-x-80');
+      //   console.log("yes bg");
+      // });
+
+
+
+  // const changeOnClickSidebar = (num) => {
+  //   const project = document.querySelector(`.project${num}`);
+  //   const sidebar = document.querySelector('.gros_test');
+
+  //   sidebar.addEventListener('click', () => {
+  //       // project.classList.toggle('hidden');
+  //       // button.classList.toggle('.-translate-x-6');
+  //       console.log("je suis la");
+  //     });
+  //   if (num < 5){
+  //     changeOnClickSidebar(num + 1);
+  //   }
+  // };
+
+  //   changeOnClickSidebar(1);
+
   </script>
 
 </body>
