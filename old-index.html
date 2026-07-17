@@ -12,42 +12,57 @@
   <meta name="author" content="Gaëlle SHEARN & tailwindtoolbox">
 
   <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="relative font-sans antialiased text-navy-night leading-normal tracking-wider bg-beige">
+<body class="relative font-sans antialiased text-gray-900 leading-normal tracking-wider bg-blue-sky">
 
   <!-- Pin to top right corner -->
   <div class="absolute top-0 right-0 h-12 w-18 p-4">
     <button class="js-change-language-fr focus:outline-none">🇬🇧</button>
     <button class="js-change-language-fr focus:outline-none">🇩🇪</button>
     <button class="js-change-language-fr focus:outline-none">🇫🇷</button>
-  </div>
+    </div>
 
-  <img src="images/title1.png" class="block max-w-7xl mx-auto" alt="TO DO">
+  <h1 class="text-center my-6">Utopia Muscle Training</h1>
+  <div class="max-w-5xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
 
-  <div class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-28 lg:my-0">
-
-    <div class="flex items-center py-8"> <!-- Mission Block -->
+    <div class="flex items-center pb-8"> <!-- Mission Card -->
       <!-- Text -->
-      <div id="profile" class="z-0 flex lg:w-3/4 lg:mr-4 h-full">
-        <div class="py-4 text-center lg:text-left">
+      <div id="profile" class="z-0 w-full flex lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
+        <div class="p-4 md:p-12 text-center lg:text-left">
+
+          <!-- Image for mobile view -->
+          <img src="images/photo1.jpg" class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center" alt="TO DO">
 
           <!-- Content -->
-          <h1 class="text-3xl font-bold pt-8 lg:pt-0">MISSION</h1>
-          <p class="pt-8 text-sm text-justify">
-            Utopia Muscle Training offers immersive activities as workout for a too-long-forgotten yet incredible muscle: the <b>Utopia muscle</b>.<br><br>
-            The workshops aim to unleash the power of <b>collective intelligence</b> and visualisation to co-create sustainable and engaging <b>visions of futures</b> that are enjoyable and actionable. Those workshops reclaim
-            collective dreaming as a tool to cultivate an <b>optimist</b> mindset and <b>agency</b>. They are keys to imagine futures of organisation and work.<br><br>
-            “Hope is not merely a wish, it is an intention.” <i>Steven Charlston</i></p>
+          <h1 class="text-3xl font-bold pt-8 lg:pt-0">Mission</h1>
+          <p class="pt-8 text-sm text-justify">We aim to unleash the power of collective intelligence and visualisation to co-create inclusive and engaging visions of futures that are enjoyable and actionable. 
+            Those workshops allow dreaming as a tool to cultivate an optimist mindset and our agency. <br></p>
+          
+          <div class="grid grid-cols-3">
+            <div class="col-span-1 place-self-center">
+              <img src="images/photo12.jpg" class="block rounded-full shadow-xl h-20 w-20" alt="TO DO">
+              <h1 class="text-xl font-bold pt-8 lg:pt-0">Gaëlle Shearn</h1>
+            </div>
+            <div class="col-span-2">
+              <p class="pt-8 text-sm text-justify">Future envisioning facilitator<br>
+                Some sentences about me and what i did that would give me a bit of credibility idk something you know? Just a couple of sentences to give some impression of something.</p>
+            </div>
+          </div>
+            
+          
+
+
         </div>
       </div>
 
       <!-- Pic -->
-      <div class="max-h-80px lg:w-1/4 ml-4 ">
+      <div class="max-h-300px lg:w-2/5">
         <!-- Big profile image for side bar (desktop) -->
-        <img src="images/sidebar.png" class="lg:rounded-lg shadow-2xl" alt="a smiling person">
+        <img src="images/photo1.jpg" class="rounded-none lg:rounded-lg shadow-2xl lg:block hidden" alt="a smiling woman with brown wavy hair and pull jumper looking at the camera">
       </div>
     </div>
 
@@ -55,100 +70,92 @@
       <!-- Pic -->
       <div class="max-h-300px lg:w-2/5">
         <!-- Big profile image for side bar (desktop) -->
-        <img src="images/photo1.jpg" class="rounded-none lg:rounded-lg shadow-2xl lg:block hidden" alt="a smiling person">
-      </div>
-
-      <!-- Text -->
-      <div id="profile" class="z-0 w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
-        <div class="p-4 md:p-12 text-center lg:text-left">
-
-          <!-- Image for mobile view -->
-          <img src="images/photo1.jpg" class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center" alt="a smiling woman with brown wavy hair and pull jumper looking at the camera">
-
-          <!-- Content -->
-          <h1 class="text-3xl font-bold pt-8 lg:pt-0">Glorious '2030s</h1>
-          <p class="pt-8 text-sm text-justify">Through a guided utopian conversation, participants will travel to the Glorious ‘2030s, where they will collectively draw the outlines of a fairer, more sustainable and joyful society, for themselves and for the world at large. Thanks to our cards deck of initiatives, they will then decide which concrete next steps will lead to this utopia!<br>
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="flex items-center pb-8"> <!-- Draw me a future Card -->
-      <!-- Text -->
-      <div id="profile" class="z-0 w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
-        <div class="p-4 md:p-12 text-center lg:text-left">
-
-          <!-- Image for mobile view -->
-          <img src="images/photo1.jpg" class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center" alt="a smiling woman with brown wavy hair and pull jumper looking at the camera">
-
-          <!-- Content -->
-          <h1 class="text-3xl font-bold pt-8 lg:pt-0">Draw me a future</h1>
-          <p class="pt-8 text-sm text-justify"><p>Using a wall size poster depicting an urban-rural landscape of a society that had managed its transition, participants work in teams to elaborate the transformation of one sectors such as mobility, education or agriculture. For a playful ending, they present their programs at a fictional citizen assembly!</p>
-        </div>
-      </div>
-      <!-- Pic -->
-      <div class="max-h-300px lg:w-2/5">
-        <!-- Big profile image for side bar (desktop) -->
         <img src="images/photo1.jpg" class="rounded-none lg:rounded-lg shadow-2xl lg:block hidden" alt="a smiling woman with brown wavy hair and pull jumper looking at the camera">
       </div>
-    </div>
 
-
-    <div class="flex items-center pb-8"> <!-- New narrative collage Card -->
-      <!-- Pic -->
-      <div class="max-h-300px lg:w-2/5">
-        <!-- Big profile image for side bar (desktop) -->
-        <img src="images/photo1.jpg" class="rounded-none lg:rounded-lg shadow-2xl lg:block hidden" alt="a smiling woman with brown wavy hair and pull jumper looking at the camera">
-      </div>
       <!-- Text -->
       <div id="profile" class="z-0 w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
-        <div class="p-4 md:p-12 text-center lg:text-left">
-
-          <!-- Image for mobile view -->
-          <img src="images/photo1.jpg" class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center" alt="a smiling woman with brown wavy hair and pull jumper looking at the camera">
-
-          <!-- Content -->
-          <h1 class="text-3xl font-bold pt-8 lg:pt-0">New narrative collage</h1>
-          <p class="pt-8 text-sm text-justify"><p>Through a collaborative card game, participants discover the impact of stories on our brains and behaviour. In the second part, they will collectively write a story that brings about a desirable future that is compatible with planetary boundaries.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="grid grid-cols-2">
-      <!-- INTENTIONS -->
-      <div class="p-4 md:p-12 text-center lg:text-left">
-        <h1 class="text-3xl font-bold pt-8 lg:pt-0">Intentions</h1>
-        <p class="pt-8 text-sm text-justify"><ls>
-          <li>strengthen cohesion and experience collective intelligence through a regenerative activity</li>
-          <li>articulate ideas and ideals clearly to anchor them firmly in reality</li>
-          <li>foster engagement with and understanding of complex issues through dialogue</li>
-          <li>(re)imagine individual aspirations as contributions to collective projects</li>
-          <li>boost collective and individual agency and reinforce the conviction that desirable futures are both possible and within reach</li>
-        </ls>
-      </div>
-
-      <!-- FORMAT -->
-      <div class="p-4 md:p-12 text-center lg:text-left">
-        <h1 class="text-3xl font-bold pt-8 lg:pt-0">Format</h1>
-        <p class="pt-8 text-sm text-justify">We tailor our workshops to the needs of your collective, focusing on the topics  that matters to you, such as citizen participation, mental health, nature restoration, housing, collective wellbeing, agriculture...<br><ls>
-          <li>Format: 2 - 5 hours </li>
-          <li>Participants: 5 - 50 people</li>
-          <li>Place: online or onsite</li>
-          <li>Price range : 400€ to 1500€</li>
-        </ls>
-      </div>
-    </div>
-
-    <div class="flex items-center pb-8"> <!-- Next steps Card -->
-      <!-- Text -->
-      <div id="profile" class="z-0 w-full lg:w-5/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none mx-6 lg:mx-0">
         <div class="p-4 md:p-12 text-center lg:text-left">
 
           <!-- Image for mobile view -->
           <img src="images/photo.jpg" class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center" alt="a smiling woman with brown wavy hair and pull jumper looking at the camera">
 
           <!-- Content -->
-          <h1 class="text-3xl font-bold pt-8 lg:pt-0">Next steps</h1>
+          <h1 class="text-3xl font-bold pt-8 lg:pt-0">Workshops</h1>
+          <p class="pt-8 text-sm text-justify">Glorious 2030's<br>
+            Through a guided utopian conversation, participants will travel to the Glorious ‘2030s, where they will collectively draw the outlines of a fairer, more sustainable and joyful society, for themselves and for the world at large. Thanks to our cards deck of initiatives, they will then decide which concrete next steps will lead to this utopia!<br>
+            Draw me a future<br>
+            Using a wall size poster depicting an urban-rural landscape of a society that had managed its transition, participants work in teams to elaborate the transformation of one sectors such as mobility, education or agriculture. For a playful ending, they present their programs at a fictional citizen assembly!<br>
+            New narrative collage<br>
+            Through a collaborative card game, participants discover the impact of stories on our brains and behaviour. In the second part, they will collectively write a story that brings about a desirable future that is compatible with planetary boundaries.<br></p>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="flex items-center pb-8"> <!-- Intentions Card -->
+      <!-- Text -->
+      <div id="profile" class="z-0 w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
+        <div class="p-4 md:p-12 text-center lg:text-left">
+
+          <!-- Image for mobile view -->
+          <img src="images/photo.jpg" class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center" alt="a smiling woman with brown wavy hair and pull jumper looking at the camera">
+
+          <!-- Content -->
+          <h1 class="text-3xl font-bold pt-8 lg:pt-0">Intentions</h1>
+          <p class="pt-8 text-sm text-justify"><ls>
+            <li>strengthen cohesion and experience collective intelligence through a regenerative activity</li>
+            <li>articulate ideas and ideals clearly to anchor them firmly in reality</li>
+            <li>foster engagement with and understanding of complex issues through dialogue</li>
+            <li>(re)imagine individual aspirations as contributions to collective projects</li>
+            <li>boost collective and individual agency and reinforce the conviction that desirable futures are both possible and within reach</li>
+          </ls>
+        </div>
+      </div>
+
+      <!-- Pic -->
+      <div class="max-h-300px lg:w-2/5">
+        <!-- Big profile image for side bar (desktop) -->
+        <img src="images/photo1.jpg" class="rounded-none lg:rounded-lg shadow-2xl lg:block hidden" alt="a smiling woman with brown wavy hair and pull jumper looking at the camera">
+      </div>
+    </div>
+
+    <div class="flex items-center pb-8"> <!-- Format Card -->
+      <!-- Text -->
+      <div id="profile" class="z-0 w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
+        <div class="p-4 md:p-12 text-center lg:text-left">
+
+          <!-- Image for mobile view -->
+          <img src="images/photo.jpg" class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center" alt="a smiling woman with brown wavy hair and pull jumper looking at the camera">
+
+          <!-- Content -->
+          <h1 class="text-3xl font-bold pt-8 lg:pt-0">Format</h1>
+          <p class="pt-8 text-sm text-justify">We tailor our workshops to the needs of your collective, focusing on the topics  that matters to you, such as citizen participation, mental health, nature restoration, housing, collective wellbeing, agriculture...<br><ls>
+            <li>Format: 2 - 5 hours </li>
+            <li>Participants: 5 - 50 people</li>
+            <li>Place: online or onsite</li>
+            <li>Price range : 400€ to 1500€</li>
+          </ls>
+        </div>
+      </div>
+
+      <!-- Pic -->
+      <div class="max-h-300px lg:w-2/5">
+        <!-- Big profile image for side bar (desktop) -->
+        <img src="images/photo1.jpg" class="rounded-none lg:rounded-lg shadow-2xl lg:block hidden" alt="a smiling woman with brown wavy hair and pull jumper looking at the camera">
+      </div>
+    </div>
+
+    <div class="flex items-center pb-8"> <!-- Next steps Card -->
+      <!-- Text -->
+      <div id="profile" class="z-0 w-full lg:w-5/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
+        <div class="p-4 md:p-12 text-center lg:text-left">
+
+          <!-- Image for mobile view -->
+          <img src="images/photo.jpg" class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center" alt="a smiling woman with brown wavy hair and pull jumper looking at the camera">
+
+          <!-- Content -->
+          <h1 class="text-3xl font-bold pt-8 lg:pt-0">Mission</h1>
           <p class="pt-8 text-sm text-justify">We aim to unleash the power of collective intelligence and visualisation to co-create inclusive and engaging visions of futures that are enjoyable and actionable. 
             Those workshops allow dreaming as a tool to cultivate an optimist mindset and our agency. <br></p>
 

@@ -1,0 +1,22 @@
+:root {
+    --color-beige: #faf4ef;
+    --color-blue-sky: #94b9ff;
+    --color-green-field: #9abb50;
+    --color-navy-night: #404682;
+}
+
+.bg-blue-sky {
+    background-color: var(--color-blue-sky);
+}
+
+.bg-green-field {
+    background-color: var(--color-green-field);
+}
+
+.bg-beige {
+    background-color: var(--color-beige);
+}
+
+.text-navy-night {
+    color: var(--color-navy-night)
+}
