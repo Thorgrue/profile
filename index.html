@@ -1,237 +1,505 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Utopia Muscle Training — Workshops on Desirable & Sustainable Futures</title>
+<meta name="description" content="Utopia Muscle Training runs immersive workshops that build collective intelligence, hope and agency. Facilitated by Gaëlle Shearn, we co-create sustainable, joyful and actionable visions of the future for teams, NGOs, schools and public organisations in Berlin and beyond." />
+<meta name="keywords" content="utopia workshop, futures thinking, collective intelligence, sustainable futures workshop, facilitation Berlin, Gaëlle Shearn, Glorious 2030s, Draw me a future, New Narratives Collage, solarpunk, ecological transition, agile coach, foresight workshop" />
+<meta name="author" content="Gaëlle Shearn — Utopia Muscle Training" />
+<meta name="robots" content="index, follow" />
+<!-- <link rel="canonical" href="https://utopiamuscle.com/" /> ?? -->
 
-  <title>Gaëlle SHEARN - Fullstack developer</title>
-  <meta name="description" content="Gaëlle SHEARN, fullstack developer profile">
-  <meta name="keywords" content="Fullstack Developer Profile Open-to-Work">
-  <meta name="author" content="Gaëlle SHEARN & tailwindtoolbox">
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Utopia Muscle Training" />
+<meta property="og:title" content="Utopia Muscle Training — Workshops on Desirable Futures" />
+<meta property="og:description" content="Immersive workshops to train the utopia muscle: collective intelligence, visualisation and hope for sustainable, joyful, actionable futures." /> 
+<meta property="og:url" content="https://utopiamuscle.com/" />
+<meta property="og:image" content="assets/workshop-glorious.jpg" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="fr_FR" />
 
-  <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+<!-- Twitter -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+
+<!-- JSON-LD structured data --> 
+
+<style>
+  :root{
+    --beige:#faf4ef;
+    --ink:#404682;
+    --blue:#94b9ff;
+    --blue-soft:#c8dcf1;
+    --green:#9abb50;
+    --card:#ffffff;
+    --border:#e7e2d2;
+    --muted:#8a8a95;
+    --radius:1.25rem;
+    --shadow:0 10px 40px -20px rgba(30,40,90,.35);
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:"Inter",system-ui,sans-serif;
+    background:var(--beige); color:var(--ink);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:"Fredoka",sans-serif;margin:0}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .container{max-width:1040px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-family:"Fredoka",sans-serif;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:1.35rem;color:var(--blue)}
+  .eyebrow.green{color:var(--green)}
+  .hand{font-family:"Caveat",cursive}
+
+  /* Language switcher */
+  .lang{position:absolute;top:20px;right:24px;display:flex;gap:10px;font-size:22px;z-index:10}
+  .lang button{background:none;border:0;cursor:pointer;font-size:22px;opacity:.55;transition:all .2s;padding:2px}
+  .lang button:hover{opacity:1}
+  .lang button.active{opacity:1;transform:scale(1.15)}
+
+  /* Header */
+  header.hero{padding:64px 24px 24px;position:relative}
+  .logo{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;line-height:.9}
+  .logo .l1{color:var(--blue);font-size:clamp(40px,7vw,64px);font-weight:700;letter-spacing:-.02em}
+  .logo .l2{color:var(--ink);font-size:clamp(28px,4.5vw,40px);font-weight:600;margin-top:-4px}
+  .logo .l3{font-family:"Caveat",cursive;color:var(--ink);font-size:clamp(40px,7vw,64px);transform:rotate(-4deg);display:inline-block;margin-top:4px}
+
+  /* Mission — centered with Gaëlle card */
+  section.mission{padding:48px 24px 24px}
+  .mission-inner{max-width:720px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:20px}
+  .mission-inner p{margin:0;max-width:640px}
+  .lead{font-size:1.125rem}
+  .quote{font-family:"Caveat",cursive;font-size:1.4rem;color:rgba(42,47,90,.7)}
+  .card-gaelle{
+    position:relative;background:var(--blue-soft);border-radius:var(--radius);
+    padding:64px 26px 26px;max-width:420px;margin-top:60px;text-align:center;
+    box-shadow:0 15px 40px -25px rgba(30,40,90,.5);
+  }
+  .card-gaelle img{
+    position:absolute;top:-56px;left:50%;transform:translateX(-50%);
+    width:112px;height:112px;border-radius:50%;object-fit:cover;
+    border:4px solid var(--beige);box-shadow:0 10px 25px -10px rgba(0,0,0,.35);
+  }
+  .card-gaelle h3{font-size:1.15rem;color:var(--ink);font-weight:600}
+  .card-gaelle p{font-size:.92rem;color:rgba(42,47,90,.85);margin:10px 0 0}
+
+  /* Workshops */
+  section.workshops{padding:40px 24px}
+  .workshops-list{max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:38px}
+  .ws{
+    position:relative;background:var(--card);border-radius:1.5rem;overflow:hidden;
+    box-shadow:var(--shadow);display:grid;grid-template-columns:2fr 3fr;min-height:300px;
+  }
+  .ws.green{outline-color:rgba(139,201,90,.3)}
+  .ws-img{position:relative;overflow:hidden}
+  .ws-img img{width:100%;height:100%;object-fit:cover}
+  .ws-body{position:relative;padding:28px 32px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+  .ws-body h3{font-size:.95rem}
+  .ws-body .preview{color:var(--muted);font-size:.92rem;margin:0}
+  .ws-body .hint{margin-top:auto;color:var(--blue);font-size:.75rem;font-weight:500}
+  .ws.green .ws-body h3,.ws.green .ws-body .hint{color:var(--green)}
+  .ws-overlay{
+    position:absolute;inset:0;background:rgba(200,220,241,.96);
+    padding:28px 32px;display:flex;flex-direction:column;justify-content:center;gap:12px;
+    opacity:0;transform:translateY(6px);transition:all .3s ease;pointer-events:none;
+  }
+  .ws.green .ws-overlay{background:rgba(213,235,187,.96)}
+  .ws-body:hover .ws-overlay,.ws-body:focus-within .ws-overlay{opacity:1;transform:none}
+  .ws-overlay p{margin:0;font-size:.95rem;line-height:1.55}
+  .ws-overlay a{color:var(--blue);font-size:.8rem;text-decoration:underline;text-underline-offset:4px;align-self:flex-start;font-weight:500}
+  .ws.green .ws-overlay a{color:var(--green)}
+  @media (max-width:640px){ .ws{grid-template-columns:1fr} .ws-img img{height:180px} }
+
+  /* Facilitator note */
+  section.note{padding:32px 24px}
+  .note-inner{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+  .note-inner .italic{font-style:italic;color:rgba(42,47,90,.8)}
+
+  /* Intentions & Format */
+  section.two-col{padding:48px 24px}
+  .two-col-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  .two-col-grid h2{margin-bottom:14px}
+  .two-col-grid ul{padding-left:20px;margin:0}
+  .two-col-grid li{margin:8px 0}
+  @media (max-width:720px){ .two-col-grid{grid-template-columns:1fr;gap:32px} }
+
+  /* Partners */
+  section.partners{padding:48px 24px}
+  .partners-inner{max-width:1000px;margin:0 auto}
+  .partners-list{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;margin-top:20px}
+  .partner{max-width:150px;border-radius:10px;align-self: center;}
+
+  /* Next steps */
+  section.next{padding:48px 24px}
+  .next-inner{max-width:860px;margin:0 auto;background:rgba(200,220,241,.5);border-radius:1.5rem;padding:36px;box-shadow:0 10px 25px -10px rgba(0,0,0,.35)}
+  .next-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px}
+  .next-grid a{display:flex;gap:14px;align-items:flex-start;text-decoration:none;color:rgba(42,47,90,.9);transition:color .2s}
+  .next-grid a:hover{color:var(--blue)}
+  .next-grid svg{width:24px;height:24px;flex-shrink:0;color:var(--blue);margin-top:2px}
+  @media (max-width:640px){ .next-grid{grid-template-columns:1fr} }
+
+  /* Footer */
+  footer{padding:64px 24px 40px;text-align:center}
+  .footer-inner{max-width:1000px;margin:0 auto;align-items:center}
+  .footer-sm{font-size:.75rem;color:var(--muted)}
+  .impressum-btn{background:none;border:0;cursor:pointer;color:var(--blue);font:inherit;text-decoration:underline;text-underline-offset:4px;font-size:.9rem}
+
+  /* Modal */
+  .modal{
+    position:fixed;inset:0;background:rgba(30,35,70,.55);display:none;
+    align-items:center;justify-content:center;z-index:100;padding:20px;
+  }
+  .modal.open{display:flex}
+  .modal-box{
+    background:#fff;border-radius:1.25rem;max-width:560px;width:100%;
+    padding:36px 32px;position:relative;box-shadow:0 30px 80px -20px rgba(0,0,0,.4);
+    max-height:90vh;overflow-y:auto;
+  }
+  .modal-box h2{margin-bottom:16px;color:var(--ink)}
+  .modal-box p{margin:6px 0;font-size:.95rem}
+  .modal-close{
+    position:absolute;top:14px;right:16px;background:none;border:0;font-size:26px;
+    cursor:pointer;color:var(--muted);line-height:1;
+  }
+  .modal-close:hover{color:var(--ink)}
+</style>
 </head>
+<body>
 
-<body class="relative font-sans antialiased text-navy-night leading-normal tracking-wider bg-beige">
+<div class="lang" role="group" aria-label="Language">
+  <button data-lang="en" class="active" aria-label="English">🇬🇧</button>
+  <button data-lang="de" aria-label="Deutsch">🇩🇪</button>
+  <button data-lang="fr" aria-label="Français">🇫🇷</button>
+</div>
 
-  <!-- Pin to top right corner -->
-  <div class="absolute top-0 right-0 h-12 w-18 p-4">
-    <button class="js-change-language-fr focus:outline-none">🇬🇧</button>
-    <button class="js-change-language-fr focus:outline-none">🇩🇪</button>
-    <button class="js-change-language-fr focus:outline-none">🇫🇷</button>
-  </div>
-
-  <img src="images/title1.png" class="block max-w-7xl mx-auto" alt="TO DO">
-
-  <div class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-28 lg:my-0">
-
-    <div class="flex items-center py-8"> <!-- Mission Block -->
-      <!-- Text -->
-      <div id="profile" class="z-0 flex lg:w-3/4 lg:mr-4 h-full">
-        <div class="py-4 text-center lg:text-left">
-
-          <!-- Content -->
-          <h1 class="text-3xl font-bold pt-8 lg:pt-0">MISSION</h1>
-          <p class="pt-8 text-sm text-justify">
-            Utopia Muscle Training offers immersive activities as workout for a too-long-forgotten yet incredible muscle: the <b>Utopia muscle</b>.<br><br>
-            The workshops aim to unleash the power of <b>collective intelligence</b> and visualisation to co-create sustainable and engaging <b>visions of futures</b> that are enjoyable and actionable. Those workshops reclaim
-            collective dreaming as a tool to cultivate an <b>optimist</b> mindset and <b>agency</b>. They are keys to imagine futures of organisation and work.<br><br>
-            “Hope is not merely a wish, it is an intention.” <i>Steven Charlston</i></p>
-        </div>
-      </div>
-
-      <!-- Pic -->
-      <div class="max-h-80px lg:w-1/4 ml-4 ">
-        <!-- Big profile image for side bar (desktop) -->
-        <img src="images/sidebar.png" class="lg:rounded-lg shadow-2xl" alt="a smiling person">
-      </div>
-    </div>
-
-    <div class="flex items-center pb-8"> <!-- Workshops Card -->
-      <!-- Pic -->
-      <div class="max-h-300px lg:w-2/5">
-        <!-- Big profile image for side bar (desktop) -->
-        <img src="images/photo1.jpg" class="rounded-none lg:rounded-lg shadow-2xl lg:block hidden" alt="a smiling person">
-      </div>
-
-      <!-- Text -->
-      <div id="profile" class="z-0 w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
-        <div class="p-4 md:p-12 text-center lg:text-left">
-
-          <!-- Image for mobile view -->
-          <img src="images/photo1.jpg" class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center" alt="a smiling woman with brown wavy hair and pull jumper looking at the camera">
-
-          <!-- Content -->
-          <h1 class="text-3xl font-bold pt-8 lg:pt-0">Glorious '2030s</h1>
-          <p class="pt-8 text-sm text-justify">Through a guided utopian conversation, participants will travel to the Glorious ‘2030s, where they will collectively draw the outlines of a fairer, more sustainable and joyful society, for themselves and for the world at large. Thanks to our cards deck of initiatives, they will then decide which concrete next steps will lead to this utopia!<br>
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="flex items-center pb-8"> <!-- Draw me a future Card -->
-      <!-- Text -->
-      <div id="profile" class="z-0 w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
-        <div class="p-4 md:p-12 text-center lg:text-left">
-
-          <!-- Image for mobile view -->
-          <img src="images/photo1.jpg" class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center" alt="a smiling woman with brown wavy hair and pull jumper looking at the camera">
-
-          <!-- Content -->
-          <h1 class="text-3xl font-bold pt-8 lg:pt-0">Draw me a future</h1>
-          <p class="pt-8 text-sm text-justify"><p>Using a wall size poster depicting an urban-rural landscape of a society that had managed its transition, participants work in teams to elaborate the transformation of one sectors such as mobility, education or agriculture. For a playful ending, they present their programs at a fictional citizen assembly!</p>
-        </div>
-      </div>
-      <!-- Pic -->
-      <div class="max-h-300px lg:w-2/5">
-        <!-- Big profile image for side bar (desktop) -->
-        <img src="images/photo1.jpg" class="rounded-none lg:rounded-lg shadow-2xl lg:block hidden" alt="a smiling woman with brown wavy hair and pull jumper looking at the camera">
-      </div>
-    </div>
-
-
-    <div class="flex items-center pb-8"> <!-- New narrative collage Card -->
-      <!-- Pic -->
-      <div class="max-h-300px lg:w-2/5">
-        <!-- Big profile image for side bar (desktop) -->
-        <img src="images/photo1.jpg" class="rounded-none lg:rounded-lg shadow-2xl lg:block hidden" alt="a smiling woman with brown wavy hair and pull jumper looking at the camera">
-      </div>
-      <!-- Text -->
-      <div id="profile" class="z-0 w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
-        <div class="p-4 md:p-12 text-center lg:text-left">
-
-          <!-- Image for mobile view -->
-          <img src="images/photo1.jpg" class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center" alt="a smiling woman with brown wavy hair and pull jumper looking at the camera">
-
-          <!-- Content -->
-          <h1 class="text-3xl font-bold pt-8 lg:pt-0">New narrative collage</h1>
-          <p class="pt-8 text-sm text-justify"><p>Through a collaborative card game, participants discover the impact of stories on our brains and behaviour. In the second part, they will collectively write a story that brings about a desirable future that is compatible with planetary boundaries.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="grid grid-cols-2">
-      <!-- INTENTIONS -->
-      <div class="p-4 md:p-12 text-center lg:text-left">
-        <h1 class="text-3xl font-bold pt-8 lg:pt-0">Intentions</h1>
-        <p class="pt-8 text-sm text-justify"><ls>
-          <li>strengthen cohesion and experience collective intelligence through a regenerative activity</li>
-          <li>articulate ideas and ideals clearly to anchor them firmly in reality</li>
-          <li>foster engagement with and understanding of complex issues through dialogue</li>
-          <li>(re)imagine individual aspirations as contributions to collective projects</li>
-          <li>boost collective and individual agency and reinforce the conviction that desirable futures are both possible and within reach</li>
-        </ls>
-      </div>
-
-      <!-- FORMAT -->
-      <div class="p-4 md:p-12 text-center lg:text-left">
-        <h1 class="text-3xl font-bold pt-8 lg:pt-0">Format</h1>
-        <p class="pt-8 text-sm text-justify">We tailor our workshops to the needs of your collective, focusing on the topics  that matters to you, such as citizen participation, mental health, nature restoration, housing, collective wellbeing, agriculture...<br><ls>
-          <li>Format: 2 - 5 hours </li>
-          <li>Participants: 5 - 50 people</li>
-          <li>Place: online or onsite</li>
-          <li>Price range : 400€ to 1500€</li>
-        </ls>
-      </div>
-    </div>
-
-    <div class="flex items-center pb-8"> <!-- Next steps Card -->
-      <!-- Text -->
-      <div id="profile" class="z-0 w-full lg:w-5/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none mx-6 lg:mx-0">
-        <div class="p-4 md:p-12 text-center lg:text-left">
-
-          <!-- Image for mobile view -->
-          <img src="images/photo.jpg" class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center" alt="a smiling woman with brown wavy hair and pull jumper looking at the camera">
-
-          <!-- Content -->
-          <h1 class="text-3xl font-bold pt-8 lg:pt-0">Next steps</h1>
-          <p class="pt-8 text-sm text-justify">We aim to unleash the power of collective intelligence and visualisation to co-create inclusive and engaging visions of futures that are enjoyable and actionable. 
-            Those workshops allow dreaming as a tool to cultivate an optimist mindset and our agency. <br></p>
-
-           <!-- Button to open an email -->
-          <div class="pt-12 pb-8">
-            <a href="mailto:shearn.gaelle@gmail.com?">
-              <button class="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded-full">Get in touch</button>
-            </a>
-          </div>
-
-          <!-- Icons SNS -->
-          <div class="mt-6 pb-16 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-between">
-            <a class="link" href="https://www.linkedin.com/in/gaelle-shearn/" data-tippy-content="Gaëlle SHEARN" target="_blank"><svg class="h-6 fill-current text-gray-600 hover:text-blue-800" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Linkedin</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-            <a class="link" href="https://github.com/Thorgrue" data-tippy-content="@thorgrue" target="_blank"><svg class="h-6 fill-current text-gray-600 hover:text-blue-800" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
-            <a class="link" href="https://github.com/tailwindtoolbox/Profile-Card" target="_blank" data-tippy-content="Orignal template"><svg class="h-6 fill-current text-gray-600 hover:text-blue-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 15.781c-2.084 0-3.781-1.696-3.781-3.781s1.696-3.781 3.781-3.781c1.172 0 2.306.523 3.136 1.669l1.857-1.218c-1.281-1.826-3.133-2.67-4.993-2.67-3.308 0-6 2.692-6 6s2.691 6 6 6c1.881 0 3.724-.859 4.994-2.67l-1.857-1.218c-.828 1.14-1.959 1.669-3.137 1.669z"/></svg></svg>
-            <a class="link" href="https://www.youtube.com/watch?v=4z7gDsSKUmU" target="_blank" data-tippy-content="how to change the world?"><svg class="h-6 fill-current text-gray-600 hover:text-blue-800" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" ><title>How to change the world?</title><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
-          </div>
-        </div>
-      </div>
+<header class="hero">
+  <div class="container">
+    <div class="logo" style="margin-top:16px">
+      <div><img src="images/title.png" alt="Utopia Muscle Training" /></div>
     </div>
   </div>
+</header>
 
-    <script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
-    <script src="https://unpkg.com/tippy.js@4"></script>
-    <script>
-      //Init tooltips
-      tippy('.link',{
-        placement: 'bottom'
-      })
-  
-      //Toggle mode
-      const toggle = document.querySelector('.js-change-language-fr');
-      const body = document.querySelector('body');
-      const profile = document.getElementById('profile');
-      const projects = document.querySelectorAll('.projects');
-  
-  
-      toggle.addEventListener('click', () => {
-  
-        if (body.classList.contains('text-gray-900')) {
-        toggle.innerHTML = "☀️";
-        body.classList.remove('text-gray-900');
-        body.classList.add('text-gray-100');
-        profile.classList.remove('bg-white');
-        profile.classList.add('bg-gray-900');
-        projects.forEach((item) => {
-          item.classList.remove('bg-white');
-          item.classList.add('bg-gray-900');
-          });
-        } else
-        {
-        toggle.innerHTML = "🌙";
-        body.classList.remove('text-gray-100');
-        body.classList.add('text-gray-900');
-        profile.classList.remove('bg-gray-900');
-        profile.classList.add('bg-white');
-        projects.forEach((item) => {
-          item.classList.remove('bg-gray-900');
-          item.classList.add('bg-white');
-          });
-        }
-      });
-  
-        projects.forEach((item, index) => {
-          const this_icon = `icon${index + 1}`;
-          const this_project = `project${index + 1}`;
-          const icon = document.getElementById(this_icon);
-          const project = document.getElementById(this_project);
-  
-          icon.addEventListener('click', () => {
-          project.classList.toggle('hidden');
-          project.classList.toggle('col-start-2');
-          icon.classList.toggle('ml-60');
-          icon.classList.toggle('col-start-2');
-          icon.classList.toggle('col-start-1');
-          icon.classList.toggle('transform');
-          icon.classList.toggle('translate-x-80');
-          console.log("yes queen");
-          });
-        });
-  
-    </script>
-  
+<section class="mission">
+  <div class="mission-inner">
+    <h2 class="eyebrow" data-i18n="mission"></h2>
+    <p class="lead" data-i18n-html="missionLead"></p>
+    <p data-i18n-html="missionBody"></p>
+    <p class="quote" data-i18n="quote"></p>
 
+    <div class="card-gaelle">
+      <img src="images/gaelle.jpg" alt="Gaëlle Shearn" />
+      <h3 data-i18n="facilitatorName"></h3>
+      <p data-i18n="facilitatorBio"></p>
+    </div>
+  </div>
+</section>
+
+<section class="workshops">
+  <div class="workshops-list" id="workshops"></div>
+</section>
+
+<section class="note">
+  <div class="note-inner">
+    <p class="italic" data-i18n="trainedNote"></p>
+    <p data-i18n="contextIntro"></p>
+    <div id="great"></div>
+  </div>
+</section>
+
+<section class="two-col">
+  <div class="two-col-grid">
+    <div>
+      <h2 class="eyebrow green" data-i18n="intentions"></h2>
+      <ul id="intentions"></ul>
+    </div>
+    <div>
+      <h2 class="eyebrow green" data-i18n="format"></h2>
+      <p data-i18n="formatIntro"></p>
+      <ul id="formatList"></ul>
+    </div>
+  </div>
+</section>
+
+<section class="partners">
+  <div class="partners-inner">
+    <h2 class="eyebrow" data-i18n="partnersTitle"></h2>
+    <div class="partners-list">
+      <div class="partner"><img src="images/logo_institutfrancais.png" alt="Institut Français" /></div>
+      <div class="partner"><img src="images/logo_ysi.png" alt="YSI" /></div>
+      <div class="partner"><img src="images/logo_bildungslab.png" alt="BildungsLab" /></div>
+      <div class="partner"><img src="images/logo_zelena.png" alt="Zelena Akcija" /></div>
+      <div class="partner"><img src="images/logo_reclaim.png" alt="Reclaim - Ecofeminist Alliance" /></div>
+      <div class="partner"><img src="images/logo_eszenzia.png" alt="Eszenzia" /></div>
+    </div>
+  </div>
+</section>
+
+<section class="next">
+  <div class="next-inner">
+    <h2 class="eyebrow" data-i18n="nextSteps"></h2>
+    <div class="next-grid">
+      <a href="mailto:hello@utopiamuscle.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+        <span data-i18n="email"></span>
+      </a>
+      <a href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span data-i18n="download"></span>
+      </a>
+      <a href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+        <span data-i18n="podcast"></span>
+      </a>
+      <a href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span data-i18n="calendar"></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <img src="images/outro.png" alt="Utopia Muscle Training" />
+    </div>
+    <button class="impressum-btn" id="openImpressum" data-i18n="impressum"></button>
+    <p class="footer-sm" data-i18n="rights"></p>
+  </div>
+</footer>
+
+<div class="modal" id="impressumModal" role="dialog" aria-modal="true" aria-labelledby="impressumTitle">
+  <div class="modal-box">
+    <button class="modal-close" id="closeImpressum" aria-label="Close">×</button>
+    <h2 id="impressumTitle" data-i18n="impressum"></h2>
+    <p><strong>Utopia Muscle Training</strong></p>
+    <p>Gaëlle Shearn</p>
+    <p>Berlin, Germany</p>
+    <p>Email: <a href="mailto:hello@utopiamuscle.com">hello@utopiamuscle.com</a></p>
+    <p style="margin-top:16px" data-i18n="impressumResponsible"></p>
+    <p>Gaëlle Shearn</p>
+    <p style="margin-top:16px;font-size:.85rem;color:var(--muted)" data-i18n="impressumDisclaimer"></p>
+  </div>
+</div>
+
+<script>
+const workshops = [
+  {
+    id:"glorious", accent:"blue", image:"images/ws_2030glorieuses.jpeg",
+    title:{ en:"Glorious '2030s", de:"Glorreiche 2030er", fr:"Glorieuses années 2030" },
+    body:{
+      en:"Travel to the Glorious '2030s through a guided utopian conversation that will give you the opportunity to draw with other travellers the outlines of a fairer, sustainable and joyful society. With your group and our cards deck, decide which concrete next steps will lead to this utopia!",
+      de:"Reise in die glorreichen 2030er durch ein geführtes utopisches Gespräch, das dir die Möglichkeit gibt, gemeinsam mit anderen Reisenden die Umrisse einer gerechteren, nachhaltigen und freudvollen Gesellschaft zu zeichnen. Entscheidet mit unserem Kartendeck, welche konkreten nächsten Schritte zu dieser Utopie führen!",
+      fr:"Voyagez dans les Glorieuses années 2030 à travers une conversation utopique guidée qui vous donnera l'opportunité de dessiner avec d'autres voyageurs les contours d'une société plus juste, durable et joyeuse. Avec votre groupe et notre jeu de cartes, décidez des prochaines étapes concrètes vers cette utopie !"
+    },
+    link:{ label:"2030glorieuses.org", href:"https://www.2030glorieuses.org/site-public" }
+  },
+  {
+    id:"draw", accent:"green", image:"images/ws_drawme.jpg",
+    title:{ en:"Draw me a future", de:"Zeichne mir eine Zukunft", fr:"Dessine-moi un futur" },
+    body:{
+      en:"Using a wall size allegory of a future urban-rural landscape, participants work in teams to elaborate the evolution of different sectors like mobility, education or agriculture. For a playful ending, they present their programs at a fictional citizen assembly!",
+      de:"Anhand einer wandgroßen Allegorie einer zukünftigen städtisch-ländlichen Landschaft arbeiten die Teilnehmenden in Teams an der Entwicklung verschiedener Sektoren wie Mobilität, Bildung oder Landwirtschaft. Zum spielerischen Abschluss präsentieren sie ihre Programme in einer fiktiven Bürgerversammlung!",
+      fr:"À partir d'une allégorie murale d'un futur paysage urbain et rural, les participants travaillent en équipes pour élaborer l'évolution de différents secteurs comme la mobilité, l'éducation ou l'agriculture. Pour une fin ludique, ils présentent leurs programmes lors d'une assemblée citoyenne fictive !"
+    },
+    link:{ label:"renaissanceecologique.org", href:"https://renaissanceecologique.org/ateliers-et-formations" }
+  },
+  {
+    id:"collage", accent:"blue", image:"images/ws_nnc.jpg",
+    title:{ en:"New Narratives Collage", de:"Collage neuer Narrative", fr:"Fresque des Nouveaux Récits" },
+    body:{
+      en:"Through a collaborative card game, participants discover the impact of stories on our brains and behaviour. In the second part, they will collectively write a story that brings about a desirable future that is compatible with planetary boundaries.",
+      de:"Durch ein kollaboratives Kartenspiel entdecken die Teilnehmenden den Einfluss von Geschichten auf unser Gehirn und Verhalten. Im zweiten Teil schreiben sie gemeinsam eine Geschichte, die eine wünschenswerte Zukunft im Einklang mit den planetaren Grenzen entstehen lässt.",
+      fr:"À travers un jeu de cartes collaboratif, les participants découvrent l'impact des récits sur notre cerveau et nos comportements. Dans la seconde partie, ils écrivent collectivement une histoire qui fait advenir un futur désirable et compatible avec les limites planétaires."
+    },
+    link:{ label:"fresquedesnouveauxrecits.org", href:"https://www.fresquedesnouveauxrecits.org/en-new-narratives-collage" }
+  }
+];
+
+const T = {
+  en:{
+    mission:"Mission",
+    missionLead:"Utopia Muscle Training offers immersive activities as workout for a too-long-forgotten yet incredible muscle: the <strong>Utopia muscle</strong>.",
+    missionBody:"The workshops aim to unleash the power of <strong>collective intelligence</strong> and visualisation to co-create sustainable and engaging <strong>visions of futures</strong> that are enjoyable and actionable. Those workshops reclaim collective dreaming as a tool to cultivate an <strong>optimist</strong> mindset and <strong>agency</strong>. They are keys to imagine futures of organisation and work.",
+    quote:"\"Hope is not merely a wish, it is an intention.\" — Steven Charlston",
+    facilitatorName:"Gaëlle Shearn",
+    facilitatorBio:"Passionate about facilitation, convinced of the power of utopia as proactive and transformative tool, I lead collaborative activities on desirable and sustainable futures. Agile coach and facilitator, I have been leading and growing with teams for the last 7 years, in cooperation contexts.",
+    hoverHint:"Hover to read more →",
+    trainedNote:"I am a trained facilitator as well of other workshops connected to sustainability and social change such as Sexism Fresko, Solarpunk Futures, 2tonnes and discovering ecofeminism. I would be delighted to facilitate one or the other for you.",
+    contextIntro:"Those workshops are methodologies and tools that can be applied to several contexts.",
+    great:[
+      "They are <em>great</em> if you are looking for immersive and collective ways to <strong>rethink</strong> your organisation's future in this multi-crisis ever-changing environment.",
+      "They are <em>great</em> if you are looking for new and concrete ways to <strong>improve</strong> even more your impact, beyond labels, CO₂ compensation or recycling.",
+      "They are <em>great</em> if you are looking for meaningful and relevant ways to <strong>connect</strong> with your colleagues, members or partners.",
+      "They are <em>great</em> if you are looking for hopeful and powerful ways to <strong>engage</strong> students or groups in imagining their future and future collective organisation(s)."
+    ],
+    intentions:"Intentions",
+    intentionsList:[
+      "strengthen cohesion and experience collective intelligence through a regenerative activity",
+      "foster engagement with and understanding of complex issues through dialogue",
+      "(re)imagine individual aspirations as contributions to collective projects",
+      "boost collective and individual agency and reinforce the conviction that desirable futures are both possible and within reach"
+    ],
+    format:"Format",
+    formatIntro:"We tailor our workshops to the needs of your collective, focusing on the topics that matter to you, such as citizen participation, mental health, nature restoration, social change, housing, collective wellbeing, agriculture…",
+    formatList:["Format: 2 – 5 hours","Participants: 5 – 50 people","Place: online or onsite","Price range: 400€ to 1500€"],
+    partnersTitle:"We've worked together",
+    nextSteps:"Next steps",
+    email:"send me an email to organise a workshop",
+    download:"download my one-pager",
+    podcast:"listen to my take on the Serious Game for Serious Change podcast",
+    calendar:"check the next open workshops that I am (co)facilitating",
+    impressum:"Impressum",
+    impressumResponsible:"Responsible for content:",
+    impressumDisclaimer:"All content on this site is provided for informational purposes. Images and content © their respective owners.",
+    rights:"© 2026 Utopia Muscle Training, all rights reserved · developed with love"
+  },
+  de:{
+    mission:"Mission",
+    missionLead:"Utopia Muscle Training bietet immersive Aktivitäten als Training für einen zu lange vergessenen, aber unglaublichen Muskel: den <strong>Utopie-Muskel</strong>.",
+    missionBody:"Die Workshops entfesseln die Kraft der <strong>kollektiven Intelligenz</strong> und der Visualisierung, um gemeinsam nachhaltige und mitreißende <strong>Zukunftsvisionen</strong> zu entwickeln, die Freude machen und umsetzbar sind. Sie holen kollektives Träumen zurück als Werkzeug, um eine <strong>optimistische</strong> Haltung und <strong>Handlungsfähigkeit</strong> zu kultivieren – Schlüssel, um Zukünfte von Organisation und Arbeit zu denken.",
+    quote:"„Hoffnung ist nicht bloß ein Wunsch, sondern eine Absicht.\" — Steven Charlston",
+    facilitatorName:"Gaëlle Shearn",
+    facilitatorBio:"Leidenschaftlich für Moderation, überzeugt von der Kraft der Utopie als proaktives und transformatives Werkzeug, leite ich kollaborative Aktivitäten zu wünschenswerten und nachhaltigen Zukünften. Als Agile Coach und Moderatorin begleite ich seit 7 Jahren Teams in kooperativen Kontexten.",
+    hoverHint:"Für mehr Infos hovern →",
+    trainedNote:"Ich bin ebenfalls ausgebildete Moderatorin weiterer Workshops rund um Nachhaltigkeit und sozialen Wandel wie Sexism Fresko, Solarpunk Futures, 2tonnes oder Ökofeminismus entdecken. Gerne moderiere ich einen davon für dich.",
+    contextIntro:"Diese Workshops sind Methoden und Werkzeuge, die sich auf viele Kontexte anwenden lassen.",
+    great:[
+      "Sie sind <em>ideal</em>, wenn du immersive und kollektive Wege suchst, um die Zukunft deiner Organisation in diesem sich wandelnden Krisenumfeld <strong>neu zu denken</strong>.",
+      "Sie sind <em>ideal</em>, wenn du neue, konkrete Wege suchst, um deinen Impact über Labels, CO₂-Kompensation oder Recycling hinaus <strong>zu verbessern</strong>.",
+      "Sie sind <em>ideal</em>, wenn du sinnvolle und relevante Wege suchst, um dich mit Kolleg:innen, Mitgliedern oder Partner:innen zu <strong>verbinden</strong>.",
+      "Sie sind <em>ideal</em>, wenn du hoffnungsvolle, kraftvolle Wege suchst, um Schüler:innen oder Gruppen für ihre Zukunft und zukünftige kollektive Organisation zu <strong>begeistern</strong>."
+    ],
+    intentions:"Absichten",
+    intentionsList:[
+      "Zusammenhalt stärken und kollektive Intelligenz durch eine regenerative Aktivität erleben",
+      "Engagement für und Verständnis komplexer Themen durch Dialog fördern",
+      "individuelle Aspirationen als Beiträge zu kollektiven Projekten (neu) denken",
+      "kollektive und individuelle Handlungsfähigkeit stärken und die Überzeugung, dass wünschenswerte Zukünfte möglich und erreichbar sind"
+    ],
+    format:"Format",
+    formatIntro:"Wir passen unsere Workshops an die Bedürfnisse eures Kollektivs an, mit Fokus auf eure Themen wie Bürgerbeteiligung, mentale Gesundheit, Renaturierung, sozialer Wandel, Wohnen, kollektives Wohlbefinden, Landwirtschaft…",
+    formatList:["Format: 2 – 5 Stunden","Teilnehmende: 5 – 50 Personen","Ort: online oder vor Ort","Preisrahmen: 400€ bis 1500€"],
+    partnersTitle:"Wir haben zusammengearbeitet",
+    nextSteps:"Nächste Schritte",
+    email:"schreib mir eine E-Mail, um einen Workshop zu organisieren",
+    download:"lade mein One-Pager herunter",
+    podcast:"höre meinen Beitrag im Podcast Serious Game for Serious Change",
+    calendar:"sieh dir die nächsten offenen Workshops an, die ich (mit-)moderiere",
+    footerQuote:"<span style='color:var(--blue)'>Utopie</span> ist keine Flucht vor der Realität, sondern <span style='color:var(--blue)'>der Weg</span>, sie zu verändern.",
+    impressum:"Impressum",
+    impressumResponsible:"Verantwortlich für den Inhalt:",
+    impressumDisclaimer:"Alle Inhalte dieser Seite dienen Informationszwecken. Bilder und Inhalte © den jeweiligen Eigentümer:innen.",
+    rights:"© 2026 Utopia Muscle Training, alle Rechte vorbehalten · mit Liebe entwickelt"
+  },
+  fr:{
+    mission:"Mission",
+    missionLead:"Utopia Muscle Training propose des activités immersives pour muscler un muscle trop longtemps oublié mais incroyable : le <strong>muscle de l'Utopie</strong>.",
+    missionBody:"Les ateliers libèrent le pouvoir de l'<strong>intelligence collective</strong> et de la visualisation pour co-créer des <strong>visions de futurs</strong> durables, engageantes, joyeuses et actionnables. Ils revendiquent le rêve collectif comme outil pour cultiver un état d'esprit <strong>optimiste</strong> et de <strong>l'agentivité</strong>. Ce sont des clés pour imaginer les futurs de l'organisation et du travail.",
+    quote:"« L'espoir n'est pas un simple souhait, c'est une intention. » — Steven Charlston",
+    facilitatorName:"Gaëlle Shearn",
+    facilitatorBio:"Passionnée de facilitation, convaincue du pouvoir de l'utopie comme outil proactif et transformateur, j'anime des activités collaboratives sur les futurs désirables et soutenables. Coach agile et facilitatrice, j'accompagne et fais grandir des équipes depuis 7 ans, en contextes coopératifs.",
+    hoverHint:"Survolez pour en lire plus →",
+    trainedNote:"Je suis également formée à d'autres ateliers liés à la durabilité et au changement social comme Sexism Fresko, Solarpunk Futures, 2tonnes ou À la découverte de l'écoféminisme. Je serais ravie d'en animer un pour vous.",
+    contextIntro:"Ces ateliers sont des méthodologies et outils applicables à de nombreux contextes.",
+    great:[
+      "Ils sont <em>parfaits</em> si vous cherchez des façons immersives et collectives de <strong>repenser</strong> le futur de votre organisation dans cet environnement multi-crises en perpétuel changement.",
+      "Ils sont <em>parfaits</em> si vous cherchez de nouvelles façons concrètes d'<strong>améliorer</strong> encore votre impact, au-delà des labels, de la compensation CO₂ ou du recyclage.",
+      "Ils sont <em>parfaits</em> si vous cherchez des façons signifiantes et pertinentes de <strong>connecter</strong> vos collègues, membres ou partenaires.",
+      "Ils sont <em>parfaits</em> si vous cherchez des façons pleines d'espoir et puissantes d'<strong>engager</strong> étudiant·es ou groupes à imaginer leur futur et leurs futures organisations collectives."
+    ],
+    intentions:"Intentions",
+    intentionsList:[
+      "renforcer la cohésion et vivre l'intelligence collective à travers une activité régénérative",
+      "favoriser l'engagement et la compréhension d'enjeux complexes par le dialogue",
+      "(ré)imaginer les aspirations individuelles comme contributions à des projets collectifs",
+      "renforcer l'agentivité collective et individuelle et la conviction que des futurs désirables sont possibles et à portée"
+    ],
+    format:"Format",
+    formatIntro:"Nous adaptons nos ateliers aux besoins de votre collectif, en nous concentrant sur les sujets qui comptent pour vous : participation citoyenne, santé mentale, restauration de la nature, changement social, logement, bien-être collectif, agriculture…",
+    formatList:["Format : 2 – 5 heures","Participant·es : 5 – 50 personnes","Lieu : en ligne ou sur place","Tarif : 400€ à 1500€"],
+    partnersTitle:"Nous avons travaillé ensemble",
+    nextSteps:"Prochaines étapes",
+    email:"envoyez-moi un e-mail pour organiser un atelier",
+    download:"téléchargez mon one-pager",
+    podcast:"écoutez mon intervention dans le podcast Serious Game for Serious Change",
+    calendar:"consultez les prochains ateliers ouverts que je (co)anime",
+    footerQuote:"L'<span style='color:var(--blue)'>utopie</span> n'est pas une façon de fuir la réalité, c'est <span style='color:var(--blue)'>la façon</span> de la changer.",
+    impressum:"Mentions légales",
+    impressumResponsible:"Responsable du contenu :",
+    impressumDisclaimer:"Tout le contenu de ce site est fourni à titre informatif. Images et contenu © à leurs propriétaires respectifs.",
+    rights:"© 2026 Utopia Muscle Training, tous droits réservés · développé avec amour"
+  }
+};
+
+let lang = "en";
+
+function renderWorkshops(){
+  const c = T[lang];
+  const root = document.getElementById("workshops");
+  root.innerHTML = workshops.map(w => `
+    <article class="ws ${w.accent==='green'?'green':''}">
+      <div class="ws-img"><img src="${w.image}" alt="${w.title[lang]}" loading="lazy" /></div>
+      <div class="ws-body" tabindex="0">
+        <h3 class="eyebrow ${w.accent==='green'?'green':''}">${w.title[lang]}</h3>
+        <p class="preview">${w.body[lang].slice(0,120)}…</p>
+        <span class="hint">${c.hoverHint}</span>
+        <div class="ws-overlay">
+          <h3 class="eyebrow ${w.accent==='green'?'green':''}">${w.title[lang]}</h3>
+          <p>${w.body[lang]}</p>
+          <a href="${w.link.href}" target="_blank" rel="noreferrer">${w.link.label}</a>
+        </div>
+      </div>
+    </article>
+  `).join("");
+}
+
+function apply(){
+  const c = T[lang];
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const k = el.getAttribute("data-i18n");
+    if (c[k] !== undefined) el.textContent = c[k];
+  });
+  document.querySelectorAll("[data-i18n-html]").forEach(el=>{
+    const k = el.getAttribute("data-i18n-html");
+    if (c[k] !== undefined) el.innerHTML = c[k];
+  });
+  // intentions
+  document.getElementById("intentions").innerHTML =
+    c.intentionsList.map(li=>`<li>${li}</li>`).join("");
+  document.getElementById("formatList").innerHTML =
+    c.formatList.map(li=>`<li>${li}</li>`).join("");
+  document.getElementById("great").innerHTML =
+    c.great.map(p=>`<p>${p}</p>`).join("");
+  renderWorkshops();
+}
+
+document.querySelectorAll(".lang button").forEach(b=>{
+  b.addEventListener("click",()=>{
+    lang = b.getAttribute("data-lang");
+    document.querySelectorAll(".lang button").forEach(x=>x.classList.toggle("active", x===b));
+    apply();
+  });
+});
+
+// Modal
+const modal = document.getElementById("impressumModal");
+document.getElementById("openImpressum").addEventListener("click",()=>modal.classList.add("open"));
+document.getElementById("closeImpressum").addEventListener("click",()=>modal.classList.remove("open"));
+modal.addEventListener("click",e=>{ if(e.target===modal) modal.classList.remove("open"); });
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") modal.classList.remove("open"); });
+
+apply();
+</script>
 </body>
 </html>
