@@ -69,7 +69,7 @@
   /* Mission & Gaelle's card */
   section.mission{padding:48px 24px 24px}
   .mission-inner{
-    max-width:1080px;margin:0 auto;
+    max-width:1000px;margin:0 auto;
     display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center;
   }
   .mission-text{max-width:560px}
@@ -102,7 +102,7 @@
   }
   .ws.green{outline-color:rgba(139,201,90,.3)}
 
-/* Carousel */
+  /* Carousel */
   .ws-carousel{position:relative;overflow:hidden;background:#f2ecdc}
   .ws-slides{position:relative;width:100%;height:100%;min-height:260px}
   .ws-slide{
@@ -132,7 +132,7 @@
   .ws-dots span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.5);transition:all .25s}
   .ws-dots span.active{background:#fff;transform:scale(1.3)}
 
-
+  /* Workshop flipping cards */
   .ws-body{position:relative;padding:28px 32px;display:flex;flex-direction:column;justify-content:center;gap:12px}
   .ws-body h3{font-size:.95rem}
   .ws-body .preview{color:var(--muted);font-size:.92rem;margin:0}
@@ -152,8 +152,36 @@
 
   /* Facilitator note */
   section.note{padding:32px 24px}
-  .note-inner{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+  .note-inner{max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
   .note-inner .italic{font-style:italic;color:rgba(42,47,90,.8)}
+
+  /* Value cards */
+  .value-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:8px;
+  }
+  .value-card{
+    position:relative;border-radius:1rem;padding:22px 20px;
+    outline:1px solid rgba(110,168,220,.22);box-shadow:0 8px 30px -22px rgba(30,40,90,.4);
+    min-height:200px;display:flex;flex-direction:column;gap:10px;
+    cursor:pointer;overflow:hidden;
+  }
+  .value-icon{ 
+    width:44px;height:44px;border-radius:12px;background:var(--blue-soft);
+    display:flex;align-items:center;justify-content:center;color:var(--blue);
+  } 
+  .value-card:nth-child(2n) .value-icon{background:var(--green-soft);color:var(--green)}
+  .value-icon svg{width:22px;height:22px}
+  .value-card h4{font-size:1rem;color:var(--ink);font-weight:600;line-height:1.3}
+  .value-overlay{
+    position:absolute;inset:0;background:rgba(200,220,241,.97);
+    padding:22px 20px;display:flex;align-items:center;
+    font-size:.9rem;line-height:1.5;
+    opacity:0;transform:translateY(6px);transition:all .3s ease;
+  }
+  .value-card:nth-child(2n) .value-overlay{background:rgba(213,235,187,.97)}
+  .value-card:hover .value-overlay,.value-card:focus-within .value-overlay{opacity:1;transform:none}
+  @media (max-width:900px){ .value-grid{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:520px){ .value-grid{grid-template-columns:1fr} }
 
   /* Intentions & Format */
   section.two-col{padding:48px 24px}
@@ -246,7 +274,7 @@
   <div class="note-inner">
     <p class="italic" data-i18n="trainedNote"></p>
     <p data-i18n="contextIntro"></p>
-    <div id="great"></div>
+    <div class="value-grid" id="value"></div>
   </div>
 </section>
 
@@ -327,6 +355,7 @@
 </div>
 
 <script>
+  /* Workshops data */
 const workshops = [
   {
     id:"glorious", accent:"blue",
@@ -375,6 +404,15 @@ const workshops = [
   }
 ];
 
+/* Values data */
+const valueIcons = [ 
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="m16.24 16.24 2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="m4.93 19.07 2.83-2.83"/><path d="m16.24 7.76 2.83-2.83"/></svg>', 
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>', 
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg>', 
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 15 8l6 .9-4.5 4.3L18 20l-6-3-6 3 1.5-6.8L3 8.9 9 8z"/></svg>' 
+];
+
+/* Translations data */
 const T = {
   en:{
     mission:"Mission",
@@ -386,11 +424,11 @@ const T = {
     hoverHint:"Hover to read more →",
     trainedNote:"I am a trained facilitator as well of other workshops connected to sustainability and social change such as Sexism Fresko, Solarpunk Futures, 2tonnes and discovering ecofeminism. I would be delighted to facilitate one or the other for you.",
     contextIntro:"Those workshops are methodologies and tools that can be applied to several contexts.",
-    great:[
-      "They are <em>great</em> if you are looking for immersive and collective ways to <strong>rethink</strong> your organisation's future in this multi-crisis ever-changing environment.",
-      "They are <em>great</em> if you are looking for new and concrete ways to <strong>improve</strong> even more your impact, beyond labels, CO₂ compensation or recycling.",
-      "They are <em>great</em> if you are looking for meaningful and relevant ways to <strong>connect</strong> with your colleagues, members or partners.",
-      "They are <em>great</em> if you are looking for hopeful and powerful ways to <strong>engage</strong> students or groups in imagining their future and future collective organisation(s)."
+    value:[
+      { title: "Rethink future of your organisation", body: "They are <em>great</em> if you are looking for immersive and collective ways to <strong>rethink</strong> your organisation's future in this multi-crisis ever-changing environment." },
+      { title: "Improve your impact from within", body: "They are <em>great</em> if you are looking for new and concrete ways to <strong>improve</strong> even more your impact, beyond labels, CO₂ compensation or recycling." },
+      { title: "Meaningful tool to connect", body: "They are <em>great</em> if you are looking for meaningful and relevant ways to <strong>connect</strong> with your colleagues, members or partners." },
+      { title: "Empower and engage", body: "They are <em>great</em> if you are looking for hopeful and powerful ways to <strong>engage</strong> students or groups in imagining their future and future collective organisation(s)." }
     ],
     intentions:"Intentions",
     intentionsList:[
@@ -423,11 +461,11 @@ const T = {
     hoverHint:"Für mehr Infos hovern →",
     trainedNote:"Ich bin ebenfalls ausgebildete Moderatorin weiterer Workshops rund um Nachhaltigkeit und sozialen Wandel wie Sexism Fresko, Solarpunk Futures, 2tonnes oder Ökofeminismus entdecken. Gerne moderiere ich einen davon für dich.",
     contextIntro:"Diese Workshops sind Methoden und Werkzeuge, die sich auf viele Kontexte anwenden lassen.",
-    great:[
-      "Sie sind <em>ideal</em>, wenn du immersive und kollektive Wege suchst, um die Zukunft deiner Organisation in diesem sich wandelnden Krisenumfeld <strong>neu zu denken</strong>.",
-      "Sie sind <em>ideal</em>, wenn du neue, konkrete Wege suchst, um deinen Impact über Labels, CO₂-Kompensation oder Recycling hinaus <strong>zu verbessern</strong>.",
-      "Sie sind <em>ideal</em>, wenn du sinnvolle und relevante Wege suchst, um dich mit Kolleg:innen, Mitgliedern oder Partner:innen zu <strong>verbinden</strong>.",
-      "Sie sind <em>ideal</em>, wenn du hoffnungsvolle, kraftvolle Wege suchst, um Schüler:innen oder Gruppen für ihre Zukunft und zukünftige kollektive Organisation zu <strong>begeistern</strong>."
+    value:[ 
+      { title:"Zukunft neu denken", body:"Immersive und kollektive Wege, die Zukunft deiner Organisation in einem Krisenumfeld <strong>neu zu denken</strong>." }, 
+      { title:"Impact steigern", body:"Neue konkrete Wege, deinen Impact über Labels, CO₂-Kompensation oder Recycling hinaus <strong>zu verbessern</strong>." }, 
+      { title:"Menschen verbinden", body:"Sinnvolle und relevante Wege, dich mit Kolleg:innen, Mitgliedern oder Partner:innen zu <strong>verbinden</strong>." }, 
+      { title:"Gruppen begeistern", body:"Hoffnungsvolle, kraftvolle Wege, Schüler:innen oder Gruppen für ihre Zukunft und kollektive Organisation zu <strong>begeistern</strong>." } 
     ],
     intentions:"Absichten",
     intentionsList:[
@@ -461,11 +499,11 @@ const T = {
     hoverHint:"Survolez pour en lire plus →",
     trainedNote:"Je suis également formée à d'autres ateliers liés à la durabilité et au changement social comme Sexism Fresko, Solarpunk Futures, 2tonnes ou À la découverte de l'écoféminisme. Je serais ravie d'en animer un pour vous.",
     contextIntro:"Ces ateliers sont des méthodologies et outils applicables à de nombreux contextes.",
-    great:[
-      "Ils sont <em>parfaits</em> si vous cherchez des façons immersives et collectives de <strong>repenser</strong> le futur de votre organisation dans cet environnement multi-crises en perpétuel changement.",
-      "Ils sont <em>parfaits</em> si vous cherchez de nouvelles façons concrètes d'<strong>améliorer</strong> encore votre impact, au-delà des labels, de la compensation CO₂ ou du recyclage.",
-      "Ils sont <em>parfaits</em> si vous cherchez des façons signifiantes et pertinentes de <strong>connecter</strong> vos collègues, membres ou partenaires.",
-      "Ils sont <em>parfaits</em> si vous cherchez des façons pleines d'espoir et puissantes d'<strong>engager</strong> étudiant·es ou groupes à imaginer leur futur et leurs futures organisations collectives."
+    value:[ 
+      { title:"Repenser le futur", body:"Des façons immersives et collectives de <strong>repenser</strong> le futur de votre organisation dans cet environnement multi-crises." }, 
+      { title:"Améliorer l'impact", body:"De nouvelles façons concrètes d'<strong>améliorer</strong> votre impact au-delà des labels, de la compensation CO₂ ou du recyclage." }, 
+      { title:"Connecter les gens", body:"Des façons signifiantes et pertinentes de <strong>connecter</strong> vos collègues, membres ou partenaires." }, 
+      { title:"Engager les groupes", body:"Des façons pleines d'espoir et puissantes d'<strong>engager</strong> étudiant·es ou groupes à imaginer leurs futurs collectifs." } 
     ],
     intentions:"Intentions",
     intentionsList:[
@@ -558,6 +596,17 @@ function renderWorkshops(){
   });
 }
 
+function renderValue(){ 
+  const c = T[lang]; 
+  document.getElementById("value").innerHTML = c.value.map((g,i)=>` 
+    <div class="value-card" tabindex="0"> 
+      <div class="value-icon">${valueIcons[i]}</div> 
+      <h4>${g.title}</h4> 
+      <div class="value-overlay"><p>${g.body}</p></div> 
+    </div> 
+  `).join(""); 
+}
+
 function apply(){
   const c = T[lang];
   document.documentElement.lang = lang;
@@ -574,9 +623,10 @@ function apply(){
     c.intentionsList.map(li=>`<li>${li}</li>`).join("");
   document.getElementById("formatList").innerHTML =
     c.formatList.map(li=>`<li>${li}</li>`).join("");
-  document.getElementById("great").innerHTML =
-    c.great.map(p=>`<p>${p}</p>`).join("");
+  document.getElementById("value").innerHTML =
+    c.value.map(p=>`<p>${p}</p>`).join("");
   renderWorkshops();
+  renderValue();
 }
 
 document.querySelectorAll(".lang button").forEach(b=>{
