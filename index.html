@@ -27,7 +27,51 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
 
-<!-- JSON-LD structured data --> 
+<!-- JSON-LD structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Utopia Muscle Training",
+      "url": "https://linktr.ee/utopiamuscletraining",
+      "logo": "images/gaelle.jpg",
+      "founder": { "@type": "Person", "name": "Gaëlle Shearn" },
+      "sameAs": [],
+      "description": "Immersive workshops training the utopia muscle — collective intelligence and visualisation for sustainable, joyful and actionable futures."
+    },
+    {
+      "@type": "Person",
+      "name": "Gaëlle Shearn",
+      "jobTitle": "Facilitator & Agile Coach",
+      "image": "images/gaelle.jpg",
+      "worksFor": { "@type": "Organization", "name": "Utopia Muscle Training" }
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Futures & sustainability workshop facilitation",
+      "provider": { "@type": "Organization", "name": "Utopia Muscle Training" },
+      "areaServed": "Worldwide (online) & Europe (onsite)",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "EUR",
+        "lowPrice": "400",
+        "highPrice": "1500"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Workshops",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Glorious 2030s" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Draw me a future" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Narratives Collage" } }
+        ]
+      }
+    }
+  ]
+}
+</script>
 
 <style>
   :root{
@@ -88,9 +132,9 @@
   }
   .card-gaelle h3{font-size:1.15rem;color:var(--ink);font-weight:600}
   .card-gaelle p{font-size:.92rem;color:rgba(42,47,90,.85);margin:10px 0 0}
-  @media (max-width:860px){ 
-    .mission-inner{grid-template-columns:1fr;text-align:center;gap:24px} 
-    .mission-text{margin:0 auto} 
+  @media (max-width:860px){
+    .mission-inner{grid-template-columns:1fr;text-align:center;gap:24px}
+    .mission-text{margin:0 auto}
   }
 
   /* Workshops */
@@ -165,10 +209,10 @@
     min-height:200px;display:flex;flex-direction:column;gap:10px;
     cursor:pointer;overflow:hidden;
   }
-  .value-icon{ 
+  .value-icon{
     width:44px;height:44px;border-radius:12px;background:var(--blue-soft);
     display:flex;align-items:center;justify-content:center;color:var(--blue);
-  } 
+  }
   .value-card:nth-child(2n) .value-icon{background:var(--green-soft);color:var(--green)}
   .value-icon svg{width:22px;height:22px}
   .value-card h4{font-size:1rem;color:var(--ink);font-weight:600;line-height:1.3}
@@ -184,12 +228,12 @@
   @media (max-width:520px){ .value-grid{grid-template-columns:1fr} }
 
   /* Intentions & Format */
-  section.two-col{padding:48px 24px}
-  .two-col-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px}
-  .two-col-grid h2{margin-bottom:14px}
-  .two-col-grid ul{padding-left:20px;margin:0}
-  .two-col-grid li{margin:8px 0}
-  @media (max-width:720px){ .two-col-grid{grid-template-columns:1fr;gap:32px} }
+  section.intentions-format{padding:48px 24px}
+  .intentions-format-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  .intentions-format-grid h2{margin-bottom:14px}
+  .intentions-format-grid ul{padding-left:20px;margin:0}
+  .intentions-format-grid li{margin:8px 0}
+  @media (max-width:720px){ .intentions-format-grid{grid-template-columns:1fr;gap:32px} }
 
   /* Partners */
   section.partners{padding:48px 24px}
@@ -198,37 +242,29 @@
   .partner{max-width:150px;border-radius:10px;align-self: center;}
 
   /* Next steps */
-  section.next{padding:48px 24px}
-  .next-inner{max-width:860px;margin:0 auto;background:rgba(200,220,241,.5);border-radius:1.5rem;padding:36px;box-shadow:0 10px 25px -10px rgba(0,0,0,.35)}
-  .next-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px}
-  .next-grid a{display:flex;gap:14px;align-items:flex-start;text-decoration:none;color:rgba(42,47,90,.9);transition:color .2s}
-  .next-grid a:hover{color:var(--blue)}
-  .next-grid svg{width:24px;height:24px;flex-shrink:0;color:var(--blue);margin-top:2px}
-  @media (max-width:640px){ .next-grid{grid-template-columns:1fr} }
+  section.next-steps{padding:48px 24px}
+  .next-steps-inner{max-width:860px;margin:0 auto;background:rgba(200,220,241,.5);border-radius:1.5rem;padding:36px;box-shadow:0 10px 25px -10px rgba(0,0,0,.35)}
+  .next-steps-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px}
+  .next-steps-grid a{display:flex;gap:14px;align-items:flex-start;text-decoration:none;color:rgba(42,47,90,.9);transition:color .2s}
+  .next-steps-grid a:hover{color:var(--blue)}
+  .next-steps-grid svg{width:24px;height:24px;flex-shrink:0;color:var(--blue);margin-top:2px}
+  @media (max-width:640px){ .next-steps-grid{grid-template-columns:1fr} }
 
   /* Footer */
   footer{padding:64px 24px 40px;text-align:center}
   .footer-inner{max-width:1000px;margin:0 auto;align-items:center}
   .footer-sm{font-size:.75rem;color:var(--muted)}
   .impressum-btn{background:none;border:0;cursor:pointer;color:var(--blue);font:inherit;text-decoration:underline;text-underline-offset:4px;font-size:.9rem}
+  .seo-btn{background:none;border:0;cursor:pointer;color:var(--blue);font:inherit;text-decoration:underline;text-underline-offset:4px;font-size:.9rem}
+  .faq-btn{background:none;border:0;cursor:pointer;color:var(--blue);font:inherit;text-decoration:underline;text-underline-offset:4px;font-size:.9rem}
 
   /* Modal */
-  .modal{
-    position:fixed;inset:0;background:rgba(30,35,70,.55);display:none;
-    align-items:center;justify-content:center;z-index:100;padding:20px;
-  }
+  .modal{position:fixed;inset:0;background:rgba(30,35,70,.55);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
   .modal.open{display:flex}
-  .modal-box{
-    background:#fff;border-radius:1.25rem;max-width:560px;width:100%;
-    padding:36px 32px;position:relative;box-shadow:0 30px 80px -20px rgba(0,0,0,.4);
-    max-height:90vh;overflow-y:auto;
-  }
+  .modal-box{background:#fff;border-radius:1.25rem;max-width:560px;width:100%;padding:36px 32px;position:relative;box-shadow:0 30px 80px -20px rgba(0,0,0,.4);max-height:90vh;overflow-y:auto}
   .modal-box h2{margin-bottom:16px;color:var(--ink)}
   .modal-box p{margin:6px 0;font-size:.95rem}
-  .modal-close{
-    position:absolute;top:14px;right:16px;background:none;border:0;font-size:26px;
-    cursor:pointer;color:var(--muted);line-height:1;
-  }
+  .modal-close{position:absolute;top:14px;right:16px;background:none;border:0;font-size:26px;cursor:pointer;color:var(--muted);line-height:1}
   .modal-close:hover{color:var(--ink)}
 </style>
 </head>
@@ -266,7 +302,7 @@
   </div>
 </section>
 
-<section class="workshops">
+<section class="workshops" aria-label="Workshops">
   <div class="workshops-list" id="workshops"></div>
 </section>
 
@@ -278,8 +314,8 @@
   </div>
 </section>
 
-<section class="two-col">
-  <div class="two-col-grid">
+<section class="intentions-format">
+  <div class="intentions-format-grid">
     <div>
       <h2 class="eyebrow green" data-i18n="intentions"></h2>
       <ul id="intentions"></ul>
@@ -306,11 +342,11 @@
   </div>
 </section>
 
-<section class="next">
-  <div class="next-inner">
+<section class="next-steps">
+  <div class="next-steps-inner">
     <h2 class="eyebrow" data-i18n="nextSteps"></h2>
-    <div class="next-grid">
-      <a href="mailto:hello@utopiamuscle.com">
+    <div class="next-steps-grid">
+      <a href="mailto:utopiamuscletraining@gmail.com">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
         <span data-i18n="email"></span>
       </a>
@@ -335,7 +371,10 @@
     <div>
       <img src="images/outro.png" alt="Utopia Muscle Training" />
     </div>
+    <br>
     <button class="impressum-btn" id="openImpressum" data-i18n="impressum"></button>
+    <button class="seo-btn" id="openSeo" data-i18n="seo"></button>
+    <button class="faq-btn" id="openFaq" data-i18n="faq"></button>
     <p class="footer-sm" data-i18n="rights"></p>
   </div>
 </footer>
@@ -347,15 +386,33 @@
     <p><strong>Utopia Muscle Training</strong></p>
     <p>Gaëlle Shearn</p>
     <p>Berlin, Germany</p>
-    <p>Email: <a href="mailto:hello@utopiamuscle.com">hello@utopiamuscle.com</a></p>
-    <p style="margin-top:16px" data-i18n="impressumResponsible"></p>
-    <p>Gaëlle Shearn</p>
+    <p>Email: <a href="mailto:utopiamuscletraining@gmail.com">utopiamuscletraining@gmail.com</a></p>
     <p style="margin-top:16px;font-size:.85rem;color:var(--muted)" data-i18n="impressumDisclaimer"></p>
   </div>
 </div>
 
+<!-- SEO-rich content block: about + FAQ -->
+<div class="modal" id="seoModal" role="dialog" aria-modal="true" aria-labelledby="seoTitle">
+  <div class="modal-box">
+    <button class="modal-close" id="closeSeo" aria-label="Close">×</button>
+    <h2 id="seoTitle" data-i18n="seoTitle"></h2>
+    <p data-i18n="seoP1"></p>
+    <p data-i18n="seoP2"></p>
+    <h3 data-i18n="whoTitle"></h3>
+    <p data-i18n="whoP"></p>
+  </div>
+</div>
+
+<div class="modal" id="faqModal" role="dialog" aria-modal="true" aria-labelledby="faqTitle">
+  <div class="modal-box">
+    <button class="modal-close" id="closeFaq" aria-label="Close">×</button>
+    <h2 id="faqTitle" data-i18n="faqTitle"></h2>
+    <div id="faqContent"></div>
+  </div>
+</div>
+
 <script>
-  /* Workshops data */
+/* Workshops data */
 const workshops = [
   {
     id:"glorious", accent:"blue",
@@ -405,11 +462,11 @@ const workshops = [
 ];
 
 /* Values data */
-const valueIcons = [ 
-  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="m16.24 16.24 2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="m4.93 19.07 2.83-2.83"/><path d="m16.24 7.76 2.83-2.83"/></svg>', 
-  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>', 
-  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg>', 
-  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 15 8l6 .9-4.5 4.3L18 20l-6-3-6 3 1.5-6.8L3 8.9 9 8z"/></svg>' 
+const valueIcons = [
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="m16.24 16.24 2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="m4.93 19.07 2.83-2.83"/><path d="m16.24 7.76 2.83-2.83"/></svg>',
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg>',
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 15 8l6 .9-4.5 4.3L18 20l-6-3-6 3 1.5-6.8L3 8.9 9 8z"/></svg>'
 ];
 
 /* Translations data */
@@ -441,13 +498,26 @@ const T = {
     formatIntro:"We tailor our workshops to the needs of your collective, focusing on the topics that matter to you, such as citizen participation, mental health, nature restoration, social change, housing, collective wellbeing, agriculture…",
     formatList:["Format: 2 – 5 hours","Participants: 5 – 50 people","Place: online or onsite","Price range: 400€ to 1500€"],
     partnersTitle:"We've worked together",
+    seo:"About",
+    seoTitle:"About Utopia Muscle Training",
+    seoP1:"Utopia Muscle Training is a Berlin-based practice designing and facilitating <strong>futures workshops</strong> for teams, NGOs, schools, universities and public organisations. Since 2018 we have hosted collective intelligence sessions across Europe — in French, English and German — helping groups shift from climate anxiety to grounded, actionable hope.",
+    seoP2:"Our workshops combine <strong>foresight</strong>, <strong>solarpunk imagination</strong> and proven facilitation frameworks (Glorious 2030s, Draw me a future, New Narratives Collage). Each session leaves participants with a shared vision, a set of concrete next steps and a renewed sense of agency.",
+    whoTitle:"Who these workshops are for",
+    whoP:"Companies rethinking their purpose, NGOs designing new campaigns, universities preparing students for a changing world, municipalities co-building citizen visions, and any group ready to move beyond gloom and design its own desirable future.",
+    faq:"FAQ",
+    faqTitle:"Frequently asked questions", 
+    faqContent:[ 
+      { q:"How long is a workshop?", a:"Sessions run from 2 to 5 hours depending on the format and group size. Half-day and full-day intensives are available on request." }, 
+      { q:"Can you facilitate online?", a:"Yes. Every workshop has an online version using collaborative whiteboards (Miro, Mural) and structured breakouts for groups from 5 to 50 people." }, 
+      { q:"In which languages?", a:"Workshops are facilitated in English, French and German." }, 
+      { q:"How much does a workshop cost?", a:"Standard price range is €400 to €1500. Rates are adjusted for NGOs, schools and public bodies — get in touch to discuss your context." } 
+    ], 
     nextSteps:"Next steps",
     email:"send me an email to organise a workshop",
     download:"download my one-pager",
     podcast:"listen to my take on the Serious Game for Serious Change podcast",
     calendar:"check the next open workshops that I am (co)facilitating",
     impressum:"Impressum",
-    impressumResponsible:"Responsible for content:",
     impressumDisclaimer:"All content on this site is provided for informational purposes. Images and content © their respective owners.",
     rights:"© 2026 Utopia Muscle Training, all rights reserved · developed with love"
   },
@@ -461,11 +531,11 @@ const T = {
     hoverHint:"Für mehr Infos hovern →",
     trainedNote:"Ich bin ebenfalls ausgebildete Moderatorin weiterer Workshops rund um Nachhaltigkeit und sozialen Wandel wie Sexism Fresko, Solarpunk Futures, 2tonnes oder Ökofeminismus entdecken. Gerne moderiere ich einen davon für dich.",
     contextIntro:"Diese Workshops sind Methoden und Werkzeuge, die sich auf viele Kontexte anwenden lassen.",
-    value:[ 
-      { title:"Zukunft neu denken", body:"Immersive und kollektive Wege, die Zukunft deiner Organisation in einem Krisenumfeld <strong>neu zu denken</strong>." }, 
-      { title:"Impact steigern", body:"Neue konkrete Wege, deinen Impact über Labels, CO₂-Kompensation oder Recycling hinaus <strong>zu verbessern</strong>." }, 
-      { title:"Menschen verbinden", body:"Sinnvolle und relevante Wege, dich mit Kolleg:innen, Mitgliedern oder Partner:innen zu <strong>verbinden</strong>." }, 
-      { title:"Gruppen begeistern", body:"Hoffnungsvolle, kraftvolle Wege, Schüler:innen oder Gruppen für ihre Zukunft und kollektive Organisation zu <strong>begeistern</strong>." } 
+    value:[
+      { title:"Zukunft neu denken", body:"Immersive und kollektive Wege, die Zukunft deiner Organisation in einem Krisenumfeld <strong>neu zu denken</strong>." },
+      { title:"Impact steigern", body:"Neue konkrete Wege, deinen Impact über Labels, CO₂-Kompensation oder Recycling hinaus <strong>zu verbessern</strong>." },
+      { title:"Menschen verbinden", body:"Sinnvolle und relevante Wege, dich mit Kolleg:innen, Mitgliedern oder Partner:innen zu <strong>verbinden</strong>." },
+      { title:"Gruppen begeistern", body:"Hoffnungsvolle, kraftvolle Wege, Schüler:innen oder Gruppen für ihre Zukunft und kollektive Organisation zu <strong>begeistern</strong>." }
     ],
     intentions:"Absichten",
     intentionsList:[
@@ -478,6 +548,20 @@ const T = {
     formatIntro:"Wir passen unsere Workshops an die Bedürfnisse eures Kollektivs an, mit Fokus auf eure Themen wie Bürgerbeteiligung, mentale Gesundheit, Renaturierung, sozialer Wandel, Wohnen, kollektives Wohlbefinden, Landwirtschaft…",
     formatList:["Format: 2 – 5 Stunden","Teilnehmende: 5 – 50 Personen","Ort: online oder vor Ort","Preisrahmen: 400€ bis 1500€"],
     partnersTitle:"Wir haben zusammengearbeitet",
+    seo:"About",
+    seoTitle:"Über Utopia Muscle Training",
+    seoP1:"Utopia Muscle Training ist eine Berliner Praxis für <strong>Zukunftsworkshops</strong> für Teams, NGOs, Schulen, Universitäten und öffentliche Einrichtungen. Seit 2018 begleiten wir Sessions der kollektiven Intelligenz in ganz Europa — auf Französisch, Englisch und Deutsch — und helfen Gruppen, von Klimaangst zu geerdeter, handlungsfähiger Hoffnung zu gelangen.",
+    seoP2:"Unsere Workshops verbinden <strong>Zukunftsforschung</strong>, <strong>Solarpunk-Imagination</strong> und erprobte Moderationsformate (Glorreiche 2030er, Zeichne mir eine Zukunft, Collage neuer Narrative). Jede Session hinterlässt eine geteilte Vision, konkrete nächste Schritte und ein neues Gefühl von Handlungsfähigkeit.",
+    whoTitle:"Für wen diese Workshops sind",
+    whoP:"Unternehmen, die ihren Purpose überdenken, NGOs, die neue Kampagnen entwerfen, Universitäten, die Studierende auf eine sich wandelnde Welt vorbereiten, Kommunen, die Bürgervisionen ko-kreieren — und jede Gruppe, die bereit ist, ihre wünschenswerte Zukunft zu gestalten.",
+    faq:"FAQ",
+    faqTitle:"Häufige Fragen",
+    faqContent:[
+      { q:"Wie lange dauert ein Workshop?", a:"Sessions dauern je nach Format und Gruppengröße 2 bis 5 Stunden. Halb- und Ganztagesformate sind auf Anfrage möglich." },
+      { q:"Moderiert ihr auch online?", a:"Ja. Jeder Workshop existiert in einer Online-Version über kollaborative Whiteboards (Miro, Mural) und strukturierte Breakouts, für Gruppen von 5 bis 50 Personen." },
+      { q:"In welchen Sprachen?", a:"Workshops werden auf Englisch, Französisch und Deutsch moderiert." },
+      { q:"Was kostet ein Workshop?", a:"Standardpreisrahmen 400 € bis 1500 €. Für NGOs, Schulen und öffentliche Einrichtungen werden die Tarife angepasst — gerne besprechen wir euren Kontext." }
+    ],
     nextSteps:"Nächste Schritte",
     email:"schreib mir eine E-Mail, um einen Workshop zu organisieren",
     download:"lade mein One-Pager herunter",
@@ -485,7 +569,6 @@ const T = {
     calendar:"sieh dir die nächsten offenen Workshops an, die ich (mit-)moderiere",
     footerQuote:"<span style='color:var(--blue)'>Utopie</span> ist keine Flucht vor der Realität, sondern <span style='color:var(--blue)'>der Weg</span>, sie zu verändern.",
     impressum:"Impressum",
-    impressumResponsible:"Verantwortlich für den Inhalt:",
     impressumDisclaimer:"Alle Inhalte dieser Seite dienen Informationszwecken. Bilder und Inhalte © den jeweiligen Eigentümer:innen.",
     rights:"© 2026 Utopia Muscle Training, alle Rechte vorbehalten · mit Liebe entwickelt"
   },
@@ -499,11 +582,11 @@ const T = {
     hoverHint:"Survolez pour en lire plus →",
     trainedNote:"Je suis également formée à d'autres ateliers liés à la durabilité et au changement social comme Sexism Fresko, Solarpunk Futures, 2tonnes ou À la découverte de l'écoféminisme. Je serais ravie d'en animer un pour vous.",
     contextIntro:"Ces ateliers sont des méthodologies et outils applicables à de nombreux contextes.",
-    value:[ 
-      { title:"Repenser le futur", body:"Des façons immersives et collectives de <strong>repenser</strong> le futur de votre organisation dans cet environnement multi-crises." }, 
-      { title:"Améliorer l'impact", body:"De nouvelles façons concrètes d'<strong>améliorer</strong> votre impact au-delà des labels, de la compensation CO₂ ou du recyclage." }, 
-      { title:"Connecter les gens", body:"Des façons signifiantes et pertinentes de <strong>connecter</strong> vos collègues, membres ou partenaires." }, 
-      { title:"Engager les groupes", body:"Des façons pleines d'espoir et puissantes d'<strong>engager</strong> étudiant·es ou groupes à imaginer leurs futurs collectifs." } 
+    value:[
+      { title:"Repenser le futur", body:"Des façons immersives et collectives de <strong>repenser</strong> le futur de votre organisation dans cet environnement multi-crises." },
+      { title:"Améliorer l'impact", body:"De nouvelles façons concrètes d'<strong>améliorer</strong> votre impact au-delà des labels, de la compensation CO₂ ou du recyclage." },
+      { title:"Connecter les gens", body:"Des façons signifiantes et pertinentes de <strong>connecter</strong> vos collègues, membres ou partenaires." },
+      { title:"Engager les groupes", body:"Des façons pleines d'espoir et puissantes d'<strong>engager</strong> étudiant·es ou groupes à imaginer leurs futurs collectifs." }
     ],
     intentions:"Intentions",
     intentionsList:[
@@ -516,6 +599,20 @@ const T = {
     formatIntro:"Nous adaptons nos ateliers aux besoins de votre collectif, en nous concentrant sur les sujets qui comptent pour vous : participation citoyenne, santé mentale, restauration de la nature, changement social, logement, bien-être collectif, agriculture…",
     formatList:["Format : 2 – 5 heures","Participant·es : 5 – 50 personnes","Lieu : en ligne ou sur place","Tarif : 400€ à 1500€"],
     partnersTitle:"Nous avons travaillé ensemble",
+    seo:"À propos",
+    seoTitle:"À propos d'Utopia Muscle Training",
+    seoP1:"Utopia Muscle Training est une pratique basée à Berlin qui conçoit et anime des <strong>ateliers des futurs</strong> pour équipes, ONG, écoles, universités et organismes publics. Depuis 2018, nous animons des sessions d'intelligence collective à travers l'Europe — en français, anglais et allemand — pour aider les groupes à passer de l'éco-anxiété à un espoir ancré et actionnable.",
+    seoP2:"Nos ateliers combinent <strong>prospective</strong>, <strong>imagination solarpunk</strong> et cadres de facilitation éprouvés (Glorieuses années 2030, Dessine-moi un futur, Fresque des Nouveaux Récits). Chaque session laisse aux participant·es une vision partagée, des prochaines étapes concrètes et un sentiment renouvelé d'agentivité.",
+    whoTitle:"À qui s'adressent ces ateliers",
+    whoP:"Entreprises qui repensent leur raison d'être, ONG concevant de nouvelles campagnes, universités préparant leurs étudiant·es à un monde en mutation, collectivités co-construisant des visions citoyennes, et tout groupe prêt à concevoir son propre futur désirable.",
+    faq:"FAQ",
+    faqTitle:"Questions fréquentes",
+    faqContent:[
+      { q:"Combien de temps dure un atelier ?", a:"Les sessions durent de 2 à 5 heures selon le format et la taille du groupe. Formats demi-journée ou journée complète sur demande." },
+      { q:"Animez-vous en ligne ?", a:"Oui. Chaque atelier existe en version en ligne via tableaux collaboratifs (Miro, Mural) et sous-groupes structurés, pour 5 à 50 personnes." },
+      { q:"En quelles langues ?", a:"Les ateliers sont animés en français, anglais et allemand." },
+      { q:"Quel est le tarif ?", a:"Fourchette standard 400 € à 1500 €. Tarifs ajustés pour ONG, écoles et institutions publiques — parlons de votre contexte." }
+    ],
     nextSteps:"Prochaines étapes",
     email:"envoyez-moi un e-mail pour organiser un atelier",
     download:"téléchargez mon one-pager",
@@ -523,7 +620,6 @@ const T = {
     calendar:"consultez les prochains ateliers ouverts que je (co)anime",
     footerQuote:"L'<span style='color:var(--blue)'>utopie</span> n'est pas une façon de fuir la réalité, c'est <span style='color:var(--blue)'>la façon</span> de la changer.",
     impressum:"Mentions légales",
-    impressumResponsible:"Responsable du contenu :",
     impressumDisclaimer:"Tout le contenu de ce site est fourni à titre informatif. Images et contenu © à leurs propriétaires respectifs.",
     rights:"© 2026 Utopia Muscle Training, tous droits réservés · développé avec amour"
   }
@@ -596,16 +692,23 @@ function renderWorkshops(){
   });
 }
 
-function renderValue(){ 
-  const c = T[lang]; 
-  document.getElementById("value").innerHTML = c.value.map((g,i)=>` 
-    <div class="value-card" tabindex="0"> 
-      <div class="value-icon">${valueIcons[i]}</div> 
-      <h4>${g.title}</h4> 
-      <div class="value-overlay"><p>${g.body}</p></div> 
-    </div> 
-  `).join(""); 
+function renderValue(){
+  const c = T[lang];
+  document.getElementById("value").innerHTML = c.value.map((g,i)=>`
+    <div class="value-card" tabindex="0">
+      <div class="value-icon">${valueIcons[i]}</div>
+      <h4>${g.title}</h4>
+      <div class="value-overlay"><p>${g.body}</p></div>
+    </div>
+  `).join("");
 }
+
+function renderFaq(){ 
+  const c = T[lang]; 
+  document.getElementById("faqContent").innerHTML = c.faqContent.map(f=>` 
+    <details><summary>${f.q}</summary><p>${f.a}</p></details> 
+  `).join(""); 
+} 
 
 function apply(){
   const c = T[lang];
@@ -618,7 +721,6 @@ function apply(){
     const k = el.getAttribute("data-i18n-html");
     if (c[k] !== undefined) el.innerHTML = c[k];
   });
-  // intentions
   document.getElementById("intentions").innerHTML =
     c.intentionsList.map(li=>`<li>${li}</li>`).join("");
   document.getElementById("formatList").innerHTML =
@@ -627,6 +729,7 @@ function apply(){
     c.value.map(p=>`<p>${p}</p>`).join("");
   renderWorkshops();
   renderValue();
+  renderFaq();
 }
 
 document.querySelectorAll(".lang button").forEach(b=>{
@@ -643,6 +746,18 @@ document.getElementById("openImpressum").addEventListener("click",()=>modal.clas
 document.getElementById("closeImpressum").addEventListener("click",()=>modal.classList.remove("open"));
 modal.addEventListener("click",e=>{ if(e.target===modal) modal.classList.remove("open"); });
 document.addEventListener("keydown",e=>{ if(e.key==="Escape") modal.classList.remove("open"); });
+
+const seo = document.getElementById("seoModal");
+document.getElementById("openSeo").addEventListener("click",()=>seo.classList.add("open"));
+document.getElementById("closeSeo").addEventListener("click",()=>seo.classList.remove("open"));
+seo.addEventListener("click",e=>{ if(e.target===seo) seo.classList.remove("open"); });
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") seo.classList.remove("open"); });
+
+const faq = document.getElementById("faqModal");
+document.getElementById("openFaq").addEventListener("click",()=>faq.classList.add("open"));
+document.getElementById("closeFaq").addEventListener("click",()=>faq.classList.remove("open"));
+faq.addEventListener("click",e=>{ if(e.target===faq) faq.classList.remove("open"); });
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") faq.classList.remove("open"); });
 
 apply();
 </script>
