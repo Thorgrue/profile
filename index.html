@@ -54,10 +54,11 @@
   h1,h2,h3,h4{font-family:"Fredoka",sans-serif;margin:0}
   a{color:inherit}
   img{max-width:100%;display:block}
-  .container{max-width:1040px;margin:0 auto;padding:0 24px}
+  .container{max-width:1120px;margin:0 auto;padding:0 24px}
   .eyebrow{font-family:"Fredoka",sans-serif;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:1.35rem;color:var(--blue)}
   .eyebrow.green{color:var(--green)}
   .hand{font-family:"Caveat",cursive}
+  .visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 
   /* Language switcher */
   .lang{position:absolute;top:20px;right:24px;display:flex;gap:10px;font-size:22px;z-index:10}
@@ -65,22 +66,19 @@
   .lang button:hover{opacity:1}
   .lang button.active{opacity:1;transform:scale(1.15)}
 
-  /* Header */
-  header.hero{padding:64px 24px 24px;position:relative}
-  .logo{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;line-height:.9}
-  .logo .l1{color:var(--blue);font-size:clamp(40px,7vw,64px);font-weight:700;letter-spacing:-.02em}
-  .logo .l2{color:var(--ink);font-size:clamp(28px,4.5vw,40px);font-weight:600;margin-top:-4px}
-  .logo .l3{font-family:"Caveat",cursive;color:var(--ink);font-size:clamp(40px,7vw,64px);transform:rotate(-4deg);display:inline-block;margin-top:4px}
-
-  /* Mission — centered with Gaëlle card */
+  /* Mission & Gaelle's card */
   section.mission{padding:48px 24px 24px}
-  .mission-inner{max-width:720px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:20px}
-  .mission-inner p{margin:0;max-width:640px}
+  .mission-inner{
+    max-width:1080px;margin:0 auto;
+    display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center;
+  }
+  .mission-text{max-width:560px}
+  .mission-text p{margin:0 0 14px}
   .lead{font-size:1.125rem}
-  .quote{font-family:"Caveat",cursive;font-size:1.4rem;color:rgba(42,47,90,.7)}
+  .quote{font-family:"Caveat",cursive;font-size:1.4rem;color:rgba(42,47,90,.7);margin-top:8px}
   .card-gaelle{
     position:relative;background:var(--blue-soft);border-radius:var(--radius);
-    padding:64px 26px 26px;max-width:420px;margin-top:60px;text-align:center;
+    padding:64px 26px 26px;max-width:380px;margin:60px auto 0;text-align:center;
     box-shadow:0 15px 40px -25px rgba(30,40,90,.5);
   }
   .card-gaelle img{
@@ -90,6 +88,10 @@
   }
   .card-gaelle h3{font-size:1.15rem;color:var(--ink);font-weight:600}
   .card-gaelle p{font-size:.92rem;color:rgba(42,47,90,.85);margin:10px 0 0}
+  @media (max-width:860px){ 
+    .mission-inner{grid-template-columns:1fr;text-align:center;gap:24px} 
+    .mission-text{margin:0 auto} 
+  }
 
   /* Workshops */
   section.workshops{padding:40px 24px}
@@ -99,8 +101,38 @@
     box-shadow:var(--shadow);display:grid;grid-template-columns:2fr 3fr;min-height:300px;
   }
   .ws.green{outline-color:rgba(139,201,90,.3)}
-  .ws-img{position:relative;overflow:hidden}
-  .ws-img img{width:100%;height:100%;object-fit:cover}
+
+/* Carousel */
+  .ws-carousel{position:relative;overflow:hidden;background:#f2ecdc}
+  .ws-slides{position:relative;width:100%;height:100%;min-height:260px}
+  .ws-slide{
+    position:absolute;inset:0;opacity:0;transition:opacity .9s ease;
+  }
+  .ws-slide.active{opacity:1}
+  .ws-slide img{width:100%;height:100%;object-fit:cover}
+  .ws-credit{
+    position:absolute;left:10px;bottom:8px;
+    font-size:.68rem;color:#fff;background:rgba(0,0,0,.35);
+    padding:3px 8px;border-radius:6px;letter-spacing:.02em;
+    opacity:.85;
+  }
+  .ws-nav{
+    position:absolute;top:0;bottom:0;width:38%;display:flex;align-items:center;
+    background:none;border:0;cursor:pointer;color:#fff;padding:0 10px;
+    opacity:0;transition:opacity .25s ease;
+  }
+  .ws-nav.prev{left:0;justify-content:flex-start;background:linear-gradient(90deg,rgba(0,0,0,.25),rgba(0,0,0,0))}
+  .ws-nav.next{right:0;justify-content:flex-end;background:linear-gradient(270deg,rgba(0,0,0,.25),rgba(0,0,0,0))}
+  .ws-carousel:hover .ws-nav{opacity:1}
+  .ws-nav:focus-visible{opacity:1;outline:2px solid #fff;outline-offset:-4px}
+  .ws-nav svg{width:22px;height:22px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))}
+  .ws-dots{
+    position:absolute;bottom:8px;right:10px;display:flex;gap:5px;z-index:2;
+  }
+  .ws-dots span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.5);transition:all .25s}
+  .ws-dots span.active{background:#fff;transform:scale(1.3)}
+
+
   .ws-body{position:relative;padding:28px 32px;display:flex;flex-direction:column;justify-content:center;gap:12px}
   .ws-body h3{font-size:.95rem}
   .ws-body .preview{color:var(--muted);font-size:.92rem;margin:0}
@@ -116,7 +148,7 @@
   .ws-overlay p{margin:0;font-size:.95rem;line-height:1.55}
   .ws-overlay a{color:var(--blue);font-size:.8rem;text-decoration:underline;text-underline-offset:4px;align-self:flex-start;font-weight:500}
   .ws.green .ws-overlay a{color:var(--green)}
-  @media (max-width:640px){ .ws{grid-template-columns:1fr} .ws-img img{height:180px} }
+  @media (max-width:640px){ .ws{grid-template-columns:1fr} .ws-carousel{min-height:200px} .ws-slides{min-height:200px} }
 
   /* Facilitator note */
   section.note{padding:32px 24px}
@@ -190,15 +222,18 @@
 
 <section class="mission">
   <div class="mission-inner">
-    <h2 class="eyebrow" data-i18n="mission"></h2>
-    <p class="lead" data-i18n-html="missionLead"></p>
-    <p data-i18n-html="missionBody"></p>
-    <p class="quote" data-i18n="quote"></p>
-
-    <div class="card-gaelle">
-      <img src="images/gaelle.jpg" alt="Gaëlle Shearn" />
-      <h3 data-i18n="facilitatorName"></h3>
-      <p data-i18n="facilitatorBio"></p>
+    <div class="mission-text">
+      <h2 class="eyebrow" data-i18n="mission"></h2>
+      <p class="lead" data-i18n-html="missionLead"></p>
+      <p data-i18n-html="missionBody"></p>
+      <p class="quote" data-i18n="quote"></p>
+    </div>
+    <div>
+      <div class="card-gaelle">
+        <img src="images/gaelle.jpg" alt="Portrait of Gaëlle Shearn, workshop facilitator" width="112" height="112" />
+        <h3 data-i18n="facilitatorName"></h3>
+        <p data-i18n="facilitatorBio"></p>
+      </div>
     </div>
   </div>
 </section>
@@ -294,8 +329,13 @@
 <script>
 const workshops = [
   {
-    id:"glorious", accent:"blue", image:"images/ws_2030glorieuses.jpeg",
-    title:{ en:"Glorious '2030s", de:"Glorreiche 2030er", fr:"Glorieuses années 2030" },
+    id:"glorious", accent:"blue",
+    photos:[
+      { src:"images/ws_2030glorieuses.jpeg", credit:"Photo: Utopia Muscle Training archive" },
+      { src:"images/ws_drawme.jpg", credit:"Photo: Utopia Muscle Training archive" },
+      { src:"images/ws_2030glorieuses.jpeg", credit:"Photo: Utopia Muscle Training archive" }
+    ],
+    title:{ en:"Glorious '2030s", de:"Glorreiche 2030er", fr:"Les 2030 Glorieuses" },
     body:{
       en:"Travel to the Glorious '2030s through a guided utopian conversation that will give you the opportunity to draw with other travellers the outlines of a fairer, sustainable and joyful society. With your group and our cards deck, decide which concrete next steps will lead to this utopia!",
       de:"Reise in die glorreichen 2030er durch ein geführtes utopisches Gespräch, das dir die Möglichkeit gibt, gemeinsam mit anderen Reisenden die Umrisse einer gerechteren, nachhaltigen und freudvollen Gesellschaft zu zeichnen. Entscheidet mit unserem Kartendeck, welche konkreten nächsten Schritte zu dieser Utopie führen!",
@@ -304,7 +344,12 @@ const workshops = [
     link:{ label:"2030glorieuses.org", href:"https://www.2030glorieuses.org/site-public" }
   },
   {
-    id:"draw", accent:"green", image:"images/ws_drawme.jpg",
+    id:"draw", accent:"green",
+    photos:[
+      { src:"images/ws_drawme.jpg", credit:"Photo: Utopia Muscle Training archive" },
+      { src:"images/ws_drawme.jpg", credit:"Photo: Utopia Muscle Training archive" },
+      { src:"images/ws_2030glorieuses.jpeg", credit:"Photo: Utopia Muscle Training archive" }
+    ],
     title:{ en:"Draw me a future", de:"Zeichne mir eine Zukunft", fr:"Dessine-moi un futur" },
     body:{
       en:"Using a wall size allegory of a future urban-rural landscape, participants work in teams to elaborate the evolution of different sectors like mobility, education or agriculture. For a playful ending, they present their programs at a fictional citizen assembly!",
@@ -314,7 +359,12 @@ const workshops = [
     link:{ label:"renaissanceecologique.org", href:"https://renaissanceecologique.org/ateliers-et-formations" }
   },
   {
-    id:"collage", accent:"blue", image:"images/ws_nnc.jpg",
+    id:"collage", accent:"blue",
+    photos:[
+      { src:"images/ws_nnc.jpg", credit:"Photo: Utopia Muscle Training archive" },
+      { src:"images/ws_drawme.jpg", credit:"Photo: Utopia Muscle Training archive" },
+      { src:"images/ws_2030glorieuses.jpeg", credit:"Photo: Utopia Muscle Training archive" }
+    ],
     title:{ en:"New Narratives Collage", de:"Collage neuer Narrative", fr:"Fresque des Nouveaux Récits" },
     body:{
       en:"Through a collaborative card game, participants discover the impact of stories on our brains and behaviour. In the second part, they will collectively write a story that brings about a desirable future that is compatible with planetary boundaries.",
@@ -442,13 +492,36 @@ const T = {
 };
 
 let lang = "en";
+const carouselTimers = [];
 
 function renderWorkshops(){
   const c = T[lang];
   const root = document.getElementById("workshops");
-  root.innerHTML = workshops.map(w => `
+
+  // clear timers on re-render
+  while(carouselTimers.length) clearInterval(carouselTimers.pop());
+
+
+  root.innerHTML = workshops.map((w,wi) => `
     <article class="ws ${w.accent==='green'?'green':''}">
-      <div class="ws-img"><img src="${w.image}" alt="${w.title[lang]}" loading="lazy" /></div>
+      <div class="ws-carousel" data-carousel="${wi}">
+        <div class="ws-slides">
+          ${w.photos.map((p,i)=>`
+            <div class="ws-slide ${i===0?'active':''}" data-slide="${i}">
+              <img src="${p.src}" alt="${w.title[lang]} — ${p.credit}" loading="lazy" width="1024" height="768" />
+              <div class="ws-credit">${p.credit}</div>
+            </div>`).join("")}
+        </div>
+        <button class="ws-nav prev" data-dir="-1" aria-label="Previous photo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="ws-nav next" data-dir="1" aria-label="Next photo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div class="ws-dots" aria-hidden="true">
+          ${w.photos.map((_,i)=>`<span class="${i===0?'active':''}"></span>`).join("")}
+        </div>
+      </div>
       <div class="ws-body" tabindex="0">
         <h3 class="eyebrow ${w.accent==='green'?'green':''}">${w.title[lang]}</h3>
         <p class="preview">${w.body[lang].slice(0,120)}…</p>
@@ -461,6 +534,28 @@ function renderWorkshops(){
       </div>
     </article>
   `).join("");
+
+    // wire carousels
+    document.querySelectorAll(".ws-carousel").forEach(car=>{
+    const slides = car.querySelectorAll(".ws-slide");
+    const dots = car.querySelectorAll(".ws-dots span");
+    let idx = 0;
+    const go = (n)=>{
+      idx = (n + slides.length) % slides.length;
+      slides.forEach((s,i)=>s.classList.toggle("active", i===idx));
+      dots.forEach((d,i)=>d.classList.toggle("active", i===idx));
+    };
+    car.querySelectorAll(".ws-nav").forEach(btn=>{
+      btn.addEventListener("click",()=>{
+        go(idx + Number(btn.dataset.dir));
+        resetTimer();
+      });
+    });
+    let timer;
+    const start=()=>{ timer = setInterval(()=>go(idx+1), 5000); carouselTimers.push(timer); };
+    const resetTimer=()=>{ clearInterval(timer); start(); };
+    start();
+  });
 }
 
 function apply(){
