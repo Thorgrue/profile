@@ -51,9 +51,9 @@ section.mission{padding:48px 24px 24px}
     display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center;
 }
 .mission-text{max-width:560px; padding:50px 0 0 0}
-.mission-text p{margin:0 0 14px; font-size:1rem}
-.lead{font-size:1.2rem}
-.quote{font-family:"Caveat",cursive;font-size:1.4rem;color:rgba(42,47,90,.7);margin-top:8px}
+.mission-text p{margin:0 0 8px}
+.lead{font-size:1rem}
+.quote{font-family:"Caveat",cursive;font-size:1.8rem;line-height:0.9;color:rgba(42,47,90,.7);margin-top:8px}
 .card-gaelle{
     position:relative;background:var(--blue);border-radius:var(--radius);
     padding:64px 26px 26px;max-width:380px;margin:60px auto 0;text-align:center;
