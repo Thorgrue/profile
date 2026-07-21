@@ -4,7 +4,7 @@
     --blue:#94b9ff;
     --blue-soft:#c8dcf1;
     --green:#9abb50;
-    --card:#ffffff;
+    --card:#f9f7f5;
     --border:#e7e2d2;
     --muted:#8a8a95;
     --radius:1.25rem;
@@ -171,18 +171,18 @@ section.note{padding:0px 32px 24px 32px}
 }
 
 .value-overlay{
-    position:absolute;inset:0;background:rgba(200,220,241,.97);
+    position:absolute;inset:0;background:rgba(249,247,245,.77);
     padding:22px 20px;display:flex;align-items:center;
     font-size:.9rem;line-height:1.5;
     border-radius: 1.25rem;
     opacity:0;transform:translateY(6px);transition:all .3s ease;
 }
 .value-back{
-    background:rgba(213,235,187,.97);
+    background:rgba(249,247,245,.94);
     color:var(--ink);
     font-size:.92rem;line-height:1.5;
   }
-.value-card:nth-child(2n) .value-back{ background:rgba(200,220,241,.97); }
+.value-card:nth-child(2n) .value-back{ background:rgb(249,247,245,.94); }
 .value-back p{ margin:0; }
 .value-card:hover .value-overlay,.value-card:focus-within .value-overlay{opacity:1;transform:none}
 
