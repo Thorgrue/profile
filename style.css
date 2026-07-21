@@ -25,6 +25,7 @@ img{max-width:100%;display:block;height:auto}
 .container{max-width:1120px;margin:0 auto;padding:0 24px}
 .eyebrow{font-family:"Fredoka",sans-serif;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:1.35rem;color:var(--blue)}
 .eyebrow.green{color:var(--green)}
+.eyebrow.beige{color:var(--beige)}
 .hand{font-family:"Caveat",cursive}
 .visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 
@@ -117,11 +118,18 @@ box-shadow:var(--shadow);display:grid;grid-template-columns:2fr 3fr;min-height:2
     opacity:0;transform:translateY(6px);transition:all .3s ease;pointer-events:none;
 }
 .ws.green .ws-overlay{background:rgba(213,235,187,.96)}
-.ws-body:hover .ws-overlay,.ws-body:focus-within .ws-overlay{opacity:1;transform:none}
+.ws-body:hover .ws-overlay,.ws-body:focus-within .ws-overlay{opacity:1;transform:none;pointer-events:auto}
 .ws-overlay p{margin:0;font-size:.95rem;line-height:1.55}
-.ws-overlay a{color:var(--blue);font-size:.8rem;text-decoration:underline;text-underline-offset:4px;align-self:flex-start;font-weight:500}
+.ws-overlay a{color:var(--blue);font-size:.8rem;text-decoration:underline;text-underline-offset:4px;align-self:flex-start;font-weight:500;position:relative;z-index:2}
 .ws.green .ws-overlay a{color:var(--green)}
-@media (max-width:640px){ .ws{grid-template-columns:1fr} .ws-carousel{min-height:200px} .ws-slides{min-height:200px} }
+@media (max-width:640px){
+    .ws{grid-template-columns:1fr}
+    .ws-carousel{min-height:200px}
+    .ws-slides{min-height:200px}
+    .ws-overlay{padding:16px 18px;gap:8px;overflow-y:auto}
+    .ws-overlay h3{font-size:.8rem}
+    .ws-overlay p{font-size:.82rem;line-height:1.4}
+}
 
 /* Facilitator note */
 section.note{padding:0px 32px 24px 32px}
@@ -181,7 +189,7 @@ section.note{padding:0px 32px 24px 32px}
     background:rgba(249,247,245,.94);
     color:var(--ink);
     font-size:.92rem;line-height:1.5;
-  }
+}
 .value-card:nth-child(2n) .value-back{ background:rgb(249,247,245,.94); }
 .value-back p{ margin:0; }
 .value-card:hover .value-overlay,.value-card:focus-within .value-overlay{opacity:1;transform:none}
@@ -204,13 +212,20 @@ section.partners{padding:48px 24px}
 .partner{max-width:140px;border-radius:10px;align-self: center;}
 
 /* Next steps */
-section.next-steps{padding:48px 24px}
-.next-steps-inner{max-width:860px;margin:0 auto;background:var(--blue-soft);border-radius:1.5rem;padding:36px;box-shadow:0 10px 25px -10px rgba(0,0,0,.35)}
-.next-steps-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px}
+section.next-steps{padding:48px 48px}
+.next-steps-inner{max-width:800px;margin:0 auto;background:var(--blue);border-radius:1.5rem;box-shadow:0 10px 25px -10px rgba(0,0,0,.35);display:grid;grid-template-columns:1.2fr 0.5fr;gap:32px;align-items:center}
+.next-steps-body{min-width:0;padding: 0 0 0 40px}
+.next-steps-grid{display:flex;flex-direction:column;gap:8px;margin-top:22px}
 .next-steps-grid a{display:flex;gap:14px;align-items:flex-start;text-decoration:none;color:rgba(42,47,90,.9);transition:color .2s}
-.next-steps-grid a:hover{color:var(--blue)}
+.next-steps-grid a:hover{color:var(--beige)}
 .next-steps-grid svg{width:24px;height:24px;flex-shrink:0;color:var(--blue);margin-top:2px}
-@media (max-width:640px){ .next-steps-grid{grid-template-columns:1fr} }
+.next-steps-image img{width:100%;height:100%;max-width:240px;max-height:240px;object-fit:cover;border-radius:1.25rem;box-shadow:0 12px 30px -18px rgba(0,0,0,.4);justify-self: end;}
+@media (max-width:720px){ .next-steps-inner{grid-template-columns:1fr;padding:28px} .next-steps-image img{max-height:220px} }
+
+/* CTA button */
+.cta-wrap{text-align:center;margin:6px 0 4px}
+.cta-btn{display:inline-block;padding:12px 28px;background:var(--blue);color:#fff;border-radius:999px;text-decoration:none;font-family:"Fredoka",sans-serif;font-weight:600;letter-spacing:.03em;font-size:1rem;box-shadow:0 10px 24px -12px rgba(30,40,90,.55);transition:transform .2s ease,background .2s ease}
+.cta-btn:hover,.cta-btn:focus-visible{background:var(--ink);transform:translateY(-2px);outline:none}
 
 /* Footer */
 footer{padding:64px 24px 40px;text-align:center}
