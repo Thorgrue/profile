@@ -30,7 +30,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css" />
 
 <!-- JSON-LD structured data -->
@@ -110,7 +110,10 @@
   <div class="container">
     <div class="logo" style="margin-top:16px">
       <h1 class="visually-hidden">Utopia Muscle Training — Futures Workshops by Gaëlle Shearn</h1>
-      <div><img src="images/title.png" alt="Utopia Muscle Training — foresight workshops" /></div>
+      <div>
+        <img src="images/title line.png" alt="Utopia Muscle Training — foresight workshops" />
+        <img src="images/title quote.png" alt="Utopia Muscle Training — foresight workshops" />
+      </div>
     </div>
   </div>
 </header>
@@ -135,15 +138,21 @@
   </div>
 </section>
 
+<section class="note" aria-labelledby="valuesH">
+  <div class="note-inner">
+    <p class="cta-wrap"><a class="cta-btn" href="mailto:utopiamuscletraining@gmail.com" data-i18n="bookCta"></a></p>
+  </div>
+</section>
+
 <section class="workshops" aria-label="Workshops">
   <div class="workshops-list" id="workshops"></div>
 </section>
 
 <section class="note" aria-labelledby="valuesH">
   <div class="note-inner">
-    <p class="italic" data-i18n="trainedNote"></p>
+    <p data-i18n="trainedNote"></p>
     <p class="cta-wrap"><a class="cta-btn" href="mailto:utopiamuscletraining@gmail.com" data-i18n="bookCta"></a></p>
-    <p id="valuesH" data-i18n="contextIntro"></p>
+    <p id="valuesH" data-i18n-html="contextIntro"></p>
     <div class="value-grid" id="value"></div>
   </div>
 </section>
@@ -189,7 +198,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
           <span data-i18n="podcast"></span>
         </a>
-        <a href="#" target="_blank" rel="noopener">
+        <a href="one-pager.pdf" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           <span data-i18n="download"></span>
         </a>
@@ -210,7 +219,8 @@
 <footer>
   <div class="footer-inner">
     <div>
-      <img src="images/outro.png" alt="Utopia Muscle Training — thank you" />
+      <img src="images/outro quote.png" alt="Utopia Muscle Training — thank you" />
+      <img src="images/outro line.png" alt="Utopia Muscle Training — byeee" />
     </div>
     <nav class="footer-links" aria-label="Footer links">
       <button class="link-btn" id="openImpressum" data-i18n="impressum"></button>
@@ -259,10 +269,10 @@ const workshops = [
   {
     id:"glorious", accent:"blue",
     photos:[
-      { src:"images/ws_2030_1.jpeg", credit:"Photo: Utopia Muscle Training archive" },
-      { src:"images/ws_2030_2.jpg", credit:"Photo: Utopia Muscle Training archive" },
-      { src:"images/ws_2030_3.jpg", credit:"Photo: Utopia Muscle Training archive" },
-      { src:"images/ws_2030_4.png", credit:"Photo: Utopia Muscle Training archive" }
+      { src:"images/ws_2030_1.jpeg", credit:"Photo: 2030 Glorieuses - Spain" },
+      { src:"images/ws_2030_2.jpg", credit:"Photo: 2030 Glorieuses - France" },
+      { src:"images/ws_2030_3.jpg", credit:"Photo: Seeding for Future" },
+      { src:"images/ws_2030_4.png", credit:"Photo: Reclaim - Ecofeminist Alliance" }
     ],
     title:{ en:"Glorious '2030s", de:"Glorreiche 2030er", fr:"Les 2030 Glorieuses" },
     body:{
@@ -275,9 +285,9 @@ const workshops = [
   {
     id:"draw", accent:"green",
     photos:[
-      { src:"images/ws_dmaf_1.jpg", credit:"Photo: Utopia Muscle Training archive" },
-      { src:"images/ws_dmaf_2.jpg", credit:"Photo: Utopia Muscle Training archive" },
-      { src:"images/ws_dmaf_3.png", credit:"Photo: Utopia Muscle Training archive" }
+      { src:"images/ws_dmaf_1.jpg", credit:"Photo: Seeding for Future" },
+      { src:"images/ws_dmaf_2.jpg", credit:"Photo: Landwirbel" },
+      { src:"images/ws_dmaf_3.png", credit:"Photo: Gaëlle Shearn" }
     ],
     title:{ en:"Draw me a future", de:"Zeichne mir eine Zukunft", fr:"Dessine-moi un futur" },
     body:{
@@ -290,9 +300,9 @@ const workshops = [
   {
     id:"collage", accent:"blue",
     photos:[
-      { src:"images/ws_nnc_1.png", credit:"Photo: Utopia Muscle Training archive" },
-      { src:"images/ws_nnc_2.jpg", credit:"Photo: Utopia Muscle Training archive" },
-      { src:"images/ws_nnc_3.jpg", credit:"Photo: Utopia Muscle Training archive" }
+      { src:"images/ws_nnc_1.png", credit:"Photo: Seeding for Future" },
+      { src:"images/ws_nnc_2.jpg", credit:"Photo: © Maria Bayer 2025" },
+      { src:"images/ws_nnc_3.jpg", credit:"Photo: Seeding for Future" }
     ],
     title:{ en:"New Narratives Collage", de:"Collage neuer Narrative", fr:"Fresque des Nouveaux Récits" },
     body:{
@@ -344,22 +354,22 @@ const workshops = [
 const T = {
   en:{
     mission:"Mission",
-    missionLead:"Utopia Muscle Training offers immersive activities as workout for a too-long-forgotten yet incredible muscle: the <strong>Utopia muscle</strong>.",
-    missionBody:"The workshops aim to unleash the power of <strong>collective intelligence</strong> and visualisation to co-create sustainable and engaging <strong>visions of futures</strong> that are enjoyable and actionable. The different formats I offer to facilitate reclaim collective dreaming as a tool to cultivate <strong>agency</strong> and an <strong>optimist</strong> mindset. They are key to imagining futures of organisation and work.",
+    missionLead:"Utopia Muscle Training offers immersive activities as workout for a too-long-forgotten yet incredible muscle: the <strong>Utopia muscle</strong>, the muscle responsible for imagining alternative amazing realities.",
+    missionBody:"The workshops aim to unleash the power of <strong>collective intelligence</strong> and visualisation, to co-create sustainable and engaging <strong>visions of futures</strong>. The different formats I offer reclaim collective dreaming as a tool to cultivate <strong>agency</strong> and an <strong>optimist</strong> mindset. They are key to imagining futures (of organisation, work, society...), that are enjoyable and actionable.",
     quote:"\"The best way to predict the future is to design it.\" — Buckminster Fuller",
     facilitatorName:"Gaëlle Shearn",
     facilitatorBio:"Passionate about facilitation, convinced of the power of utopia as a proactive and transformative tool, I guide collaborative activities on desirable and sustainable futures. I have been leading and accompanying the growth of teams for the last 7 years, with a cooperative approach.",
     hoverHint:"Hover to read more →",
-    trainedNote:"I am a trained facilitator as well of other workshops connected to sustainability and social change such as Sexism Fresko, Solarpunk Futures, 2tonnes and workshops introducing ecofeminism. I would be delighted to facilitate one or the other for you.",
+    trainedNote:"I am a trained facilitator as well of other workshops connected to sustainability and social change such as Sexism Fresko, Solarpunk Futures, 2tonnes and workshops introducing ecofeminism. I would be delighted to facilitate one or the other for you, tailored to the needs of your industry or organisation.",
     bookCta:"Book a workshop with me",
-    contextIntro:"Those workshops are methodologies and tools that can be applied to several contexts.",
+    contextIntro:"The workshops combine foresight, the power of collective utopia and proven facilitation frameworks (Glorious 2030s, Draw me a future, New Narratives Collage). Each session leaves participants with a sense of connection, a set of concrete next steps and a renewed sense of agency. Those workshops are methodologies and tools fitting multiple contexts.<br>They are great if you are in one of the following cases: ",
     value:[
-      { title: "Rethink your organisation's future", body: "They are <em>great</em> if you are looking for immersive and collective ways to <strong>rethink</strong> your organisation's future in this multi-crisis ever-changing environment." },
-      { title: "Improve your impact from within", body: "They are <em>great</em> if you are looking for new and concrete ways to <strong>improve</strong> even more your impact, beyond labels, CO₂ compensation or recycling." },
-      { title: "Meaningful tool to connect", body: "They are <em>great</em> if you are looking for meaningful and relevant ways to <strong>connect</strong> with your colleagues, members or partners." },
-      { title: "Empower and engage", body: "They are <em>great</em> if you are looking for hopeful and powerful ways to <strong>engage</strong> students or groups in imagining their future and future collective organisation(s)." }
+      { title: "Rethink your organisation's future", body: "You are looking for immersive and collective ways to <strong>rethink</strong> your organisation's future and purpose in this multi-crisis ever-changing environment." },
+      { title: "Improve your impact from within", body: "You are looking for new and concrete ways to <strong>improve</strong> even more your impact, beyond labels, CO₂ compensation or recycling." },
+      { title: "Connect in a meaningful way", body: "You are looking for meaningful and relevant ways to <strong>connect</strong> with your colleagues, members or partners." },
+      { title: "Empower and engage", body: "You are looking for hopeful and powerful ways to <strong>engage</strong> students or groups in thinking about the future." }
     ],
-    intentions:"Intentions",
+    intentions:"Intents",
     intentionsList:[
       "strengthen cohesion and experience collective intelligence through a regenerative activity",
       "foster engagement with and understanding of complex issues through dialogue",
@@ -372,10 +382,10 @@ const T = {
     partnersTitle:"We've worked together",
     seo:"About",
     seoTitle:"About Utopia Muscle Training",
-    seoP1:"Utopia Muscle Training is a Berlin-based practice designing and facilitating <strong>futures workshops</strong> for teams, NGOs, schools, universities and public organisations. Since 2018 I have hosted collective intelligence sessions across Europe — in French, English and German — helping groups shift from climate anxiety to grounded, actionable hope.",
-    seoP2:"Our workshops combine <strong>foresight</strong>, <strong>solarpunk imagination</strong> and proven facilitation frameworks (Glorious 2030s, Draw me a future, New Narratives Collage). Each session leaves participants with a shared vision, a set of concrete next steps and a renewed sense of agency.",
+    seoP1:"Utopia Muscle Training is a Berlin-based practice designing and facilitating <strong>futures workshops</strong> for teams, NGOs, schools, universities and public organisations. Since 2018, I, Gaëlle Shearn, have hosted collective intelligence sessions across Europe — in French, English and German — helping groups shift from future anxiety to grounded, positive outlook on what will come.",
+    seoP2:"The workshops combine <strong>foresight</strong>, the power of <strong>collective utopia</strong> and proven facilitation frameworks (Glorious 2030s, Draw me a future, New Narratives Collage). Each session leaves participants with a sense of connection, a set of concrete next steps and a renewed sense of agency.",
     whoTitle:"Who these workshops are for",
-    whoP:"Companies rethinking their purpose, NGOs designing new campaigns, universities preparing students for a changing world, municipalities co-building citizen visions, and any group ready to move beyond gloom and design its own desirable future.",
+    whoP:"Companies rethinking their purpose, NGOs wanting to remember their vision, universities preparing students for a changing world, municipalities co-building citizen visions, and any group ready to move beyond gloom and design its own desirable futures.",
     faq:"FAQ",
     faqTitle:"Frequently asked questions",
     faqContent:[

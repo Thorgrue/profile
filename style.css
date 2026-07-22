@@ -26,7 +26,6 @@ img{max-width:100%;display:block;height:auto}
 .eyebrow{font-family:"Fredoka",sans-serif;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:1.35rem;color:var(--blue)}
 .eyebrow.green{color:var(--green)}
 .eyebrow.beige{color:var(--beige)}
-.hand{font-family:"Caveat",cursive}
 .visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 
 /* Language switcher */
@@ -39,8 +38,8 @@ img{max-width:100%;display:block;height:auto}
 .hero{padding-top:16px}
 .hero .logo img,
 footer .footer-inner img{
-    width:100%;
-    max-width:1000px;
+    width:20%;
+    max-width:140px;
     height:auto;
     margin:0 auto;
 }
@@ -52,9 +51,9 @@ section.mission{padding:48px 24px 24px}
     display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center;
 }
 .mission-text{max-width:560px; padding:50px 0 0 0}
-.mission-text p{margin:0 0 8px}
+.mission-text p{margin:0 0 8px;text-align: justify;}
 .lead{font-size:1rem}
-.quote{font-family:"Caveat",cursive;font-size:1.8rem;line-height:0.9;color:rgba(42,47,90,.7);margin-top:8px}
+.quote{font-family:"Fredoka";font-weight:500;font-size:1.15rem;line-height:1;color:var(--green);margin-top:8px}
 .card-gaelle{
     position:relative;background:var(--blue);border-radius:var(--radius);
     padding:64px 26px 26px;max-width:380px;margin:60px auto 0;text-align:center;
@@ -65,7 +64,7 @@ section.mission{padding:48px 24px 24px}
     width:112px;height:112px;border-radius:50%;object-fit:cover;
     border:4px solid var(--beige);box-shadow:0 10px 25px -10px rgba(0,0,0,.35);
 }
-.card-gaelle h3{font-size:1.15rem;color:var(--ink);font-weight:600}
+.card-gaelle h3{font-size:1.15rem;color:var(--ink);font-weight:600;letter-spacing: .14em}
 .card-gaelle p{font-size:.92rem;color:rgba(42,47,90,.85);margin:10px 0 0}
 @media (max-width:860px){
 .mission-inner{grid-template-columns:1fr;text-align:center;gap:24px}
@@ -108,7 +107,7 @@ box-shadow:var(--shadow);display:grid;grid-template-columns:2fr 3fr;min-height:2
 
 /* Workshop cards */
 .ws-body{position:relative;padding:28px 32px;display:flex;flex-direction:column;justify-content:center;gap:12px}
-.ws-body h3{font-size:.95rem}
+.ws-body h3{font-size:1.15rem}
 .ws-body .preview{color:var(--muted);font-size:.92rem;margin:0}
 .ws-body .hint{margin-top:auto;color:var(--blue);font-size:.75rem;font-weight:500}
 .ws.green .ws-body h3,.ws.green .ws-body .hint{color:var(--green)}
@@ -133,7 +132,7 @@ box-shadow:var(--shadow);display:grid;grid-template-columns:2fr 3fr;min-height:2
 
 /* Facilitator note */
 section.note{padding:0px 32px 24px 32px}
-.note-inner{max-width:980px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+.note-inner{max-width:980px;margin:0 auto;display:flex;flex-direction:column;gap:20px;text-align: justify;}
 .note-inner .italic{font-style:italic;color:rgba(42,47,90,.8)}
 
 /* Value cards */
@@ -154,7 +153,7 @@ section.note{padding:0px 32px 24px 32px}
 .value-face{
     position:absolute;inset:0;
     border-radius:1.25rem;
-    padding:26px 22px;
+    padding:26px 28px;
     display:flex;flex-direction:column;align-items:center;justify-content:center;
     text-align:center;gap:14px;
     backface-visibility:hidden;-webkit-backface-visibility:hidden;
@@ -240,7 +239,7 @@ footer{padding:64px 24px 40px;text-align:center}
 .modal.open{display:flex}
 .modal-box{background:#fff;border-radius:1.25rem;max-width:560px;width:100%;padding:36px 32px;position:relative;box-shadow:0 30px 80px -20px rgba(0,0,0,.4);max-height:90vh;overflow-y:auto}
 .modal-box h2{margin-bottom:16px;color:var(--ink)}
-.modal-box p{margin:6px 0;font-size:.95rem}
+.modal-box p{margin:6px 0;font-size:.95rem;text-align: justify;}
 .modal-box details{margin:10px 0;border-bottom:1px solid var(--border);padding-bottom:8px}
 .modal-box summary{cursor:pointer;font-weight:600;padding:6px 0}
 .modal-close{position:absolute;top:14px;right:16px;background:none;border:0;font-size:26px;cursor:pointer;color:var(--muted);line-height:1}
