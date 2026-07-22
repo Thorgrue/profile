@@ -305,9 +305,9 @@ const workshops = [
     id:"glorious", accent:"blue",
     photos:[
     { src:"images/ws_2030_1.jpeg", credit:"2030 Glorieuses - Spain", href:"https://www.2030glorieuses.org/site-public" },
-      { src:"images/ws_2030_2.jpg", credit:"2030 Glorieuses - France", href:"https://www.2030glorieuses.org/site-public" },
-      { src:"images/ws_2030_3.jpg", credit:"Seeding for Future", href:"https://seedingforfuture.wixsite.com/accueil" },
-      { src:"images/ws_2030_4.png", credit:"Reclaim - Ecofeminist Alliance", href:"https://www.reclaim-ev.org/" }
+    { src:"images/ws_2030_2.jpg", credit:"2030 Glorieuses - France", href:"https://www.2030glorieuses.org/site-public" },
+    { src:"images/ws_2030_3.jpg", credit:"Seeding for Future", href:"https://seedingforfuture.wixsite.com/accueil" },
+    { src:"images/ws_2030_4.png", credit:"Reclaim - Ecofeminist Alliance", href:"https://www.reclaim-ev.org/" }
     ],
     title:{ en:"Glorious '2030s", de:"Glorreiche 2030er", fr:"Les 2030 Glorieuses" },
     body:{
@@ -321,8 +321,8 @@ const workshops = [
     id:"draw", accent:"green",
     photos:[
     { src:"images/ws_dmaf_1.jpg", credit:"Seeding for Future", href:"https://seedingforfuture.wixsite.com/accueil" },
-      { src:"images/ws_dmaf_2.jpg", credit:"Landwirbel", href:"https://landwirbel.de" },
-      { src:"images/ws_dmaf_3.png", credit:"Gaëlle Shearn", href:"" }
+    { src:"images/ws_dmaf_2.jpg", credit:"Landwirbel", href:"https://landwirbel.de" },
+    { src:"images/ws_dmaf_3.png", credit:"Gaëlle Shearn", href:"" }
     ],
     title:{ en:"Draw me a future", de:"Zeichne mir eine Zukunft", fr:"Dessine-moi un futur" },
     body:{
@@ -336,8 +336,8 @@ const workshops = [
     id:"collage", accent:"blue",
     photos:[
     { src:"images/ws_nnc_1.png", credit:"Seeding for Future", href:"https://seedingforfuture.wixsite.com/accueil" },
-      { src:"images/ws_nnc_2.jpg", credit:"© Maria Bayer 2025", href:"https://mariabayer.com" },
-      { src:"images/ws_nnc_3.jpg", credit:"Seeding for Future", href:"https://seedingforfuture.wixsite.com/accueil" }
+    { src:"images/ws_nnc_2.jpg", credit:"© Maria Bayer 2025", href:"https://mariabayer.com" },
+    { src:"images/ws_nnc_3.jpg", credit:"Seeding for Future", href:"https://seedingforfuture.wixsite.com/accueil" }
     ],
     title:{ en:"New Narratives Collage", de:"Collage neuer Narrative", fr:"Fresque des Nouveaux Récits" },
     body:{
@@ -454,7 +454,7 @@ const T = {
       { quote:"Gaëlle hat einen Raum geschaffen, in dem unser Team mutig träumen konnte — und trotzdem mit konkreten Schritten hinausging.", author:"María, NGO-Leitung" },
       { quote:"Der energiereichste Workshop des Jahres. Alle gingen leichter und klarer nach Hause.", author:"Julien, Programmleitung" },
       { quote:"Eine seltene Mischung aus Klarheit, Freude und Sorgfalt.", author:"Anna, Dozentin" },
-      { quote:"Sie hat Klimafutures wieder möglich anfühlen lassen. Ein Geschenk.", author:"Tom, Nachhaltigkeitsmanager" }
+      { quote:"Dey hat Klimafutures wieder möglich anfühlen lassen. Ein Geschenk.", author:"Tom, Nachhaltigkeitsmanager" }
     ],
     seo:"About",
     seoTitle:"Über Utopia Muscle Training",
@@ -514,7 +514,7 @@ const T = {
       { quote:"Gaëlle a créé un espace où notre équipe a pu rêver grand — et repartir avec des étapes concrètes. Magique.", author:"María, directrice d'ONG" },
       { quote:"L'atelier le plus énergisant de l'année. Tout le monde est reparti plus léger et plus clair.", author:"Julien, chef de programme" },
       { quote:"Un mélange rare de rigueur, de joie et de soin.", author:"Anna, enseignante-chercheuse" },
-      { quote:"Elle a redonné du possible aux futurs climatiques. Un cadeau.", author:"Tom, responsable durabilité" }
+      { quote:"Iel a redonné du possible aux futurs climatiques. Un cadeau.", author:"Tom, responsable durabilité" }
     ],
     seo:"À propos",
     seoTitle:"À propos d'Utopia Muscle Training",
@@ -550,7 +550,6 @@ function renderWorkshops(){
 
   while(carouselTimers.length) clearInterval(carouselTimers.pop());
 
-
   root.innerHTML = workshops.map((w,wi) => `
     <article class="ws ${w.accent==='green'?'green':''}">
       <div class="ws-carousel" data-carousel="${wi}">
@@ -580,7 +579,7 @@ function renderWorkshops(){
         <div class="ws-overlay">
           <h3 class="eyebrow ${w.accent==='green'?'green':''}">${w.title[lang]}</h3>
           <p>${w.body[lang]}</p>
-          <a href="${w.link.href}" target="_blank">${w.link.label}</a>
+          <a href="${w.link.href}" target="_blank" rel="noopener">${w.link.label}</a>
         </div>
       </div>
     </article>
@@ -619,7 +618,8 @@ function renderValue(){
           <div class="value-icon">${valueIcons[i]}</div>
           <h4>${g.title}</h4>
         </div>
-      <div class="value-overlay value-back"><p>${g.body}</p></div>
+        <div class="value-overlay value-back"><p>${g.body}</p></div>
+      </div>
     </button>
   `).join("");
 }
@@ -702,8 +702,6 @@ function apply(){
     c.intentionsList.map(li=>`<li>${li}</li>`).join("");
   document.getElementById("formatList").innerHTML =
     c.formatList.map(li=>`<li>${li}</li>`).join("");
-  document.getElementById("value").innerHTML =
-    c.value.map(p=>`<p>${p}</p>`).join("");
   renderWorkshops();
   renderValue();
   renderTestimonials();
