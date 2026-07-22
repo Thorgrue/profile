@@ -81,7 +81,7 @@
         "@type": "WebSite",
         "url": "https://thorgrue.github.io/UtopiaMuscleTraining/",
         "name": "Utopia Muscle Training",
-        "inLanguage": ["en", "de", "fr"],
+        "inLanguage": ["en", "de", "fr"]
       },
       {
         "@type": "FAQPage",
@@ -299,15 +299,16 @@
 </div>
 
 <script>
+
 /* Workshops data */
 const workshops = [
   {
     id:"glorious", accent:"blue",
     photos:[
-    { src:"images/ws_2030_1.jpeg", credit:"2030 Glorieuses - Spain", href:"https://www.2030glorieuses.org/site-public" },
-    { src:"images/ws_2030_2.jpg", credit:"2030 Glorieuses - France", href:"https://www.2030glorieuses.org/site-public" },
-    { src:"images/ws_2030_3.jpg", credit:"Seeding for Future", href:"https://seedingforfuture.wixsite.com/accueil" },
-    { src:"images/ws_2030_4.png", credit:"Reclaim - Ecofeminist Alliance", href:"https://www.reclaim-ev.org/" }
+      { src:"images/ws_2030_1.jpeg", credit:"2030 Glorieuses - Spain", href:"https://www.2030glorieuses.org/site-public" },
+      { src:"images/ws_2030_2.jpg", credit:"2030 Glorieuses - France", href:"https://www.2030glorieuses.org/site-public" },
+      { src:"images/ws_2030_3.jpg", credit:"Seeding for Future", href:"https://seedingforfuture.wixsite.com/accueil" },
+      { src:"images/ws_2030_4.png", credit:"Reclaim - Ecofeminist Alliance", href:"https://www.reclaim-ev.org/" }
     ],
     title:{ en:"Glorious '2030s", de:"Glorreiche 2030er", fr:"Les 2030 Glorieuses" },
     body:{
@@ -320,9 +321,9 @@ const workshops = [
   {
     id:"draw", accent:"green",
     photos:[
-    { src:"images/ws_dmaf_1.jpg", credit:"Seeding for Future", href:"https://seedingforfuture.wixsite.com/accueil" },
-    { src:"images/ws_dmaf_2.jpg", credit:"Landwirbel", href:"https://landwirbel.de" },
-    { src:"images/ws_dmaf_3.png", credit:"Gaëlle Shearn", href:"" }
+      { src:"images/ws_dmaf_1.jpg", credit:"Seeding for Future", href:"https://seedingforfuture.wixsite.com/accueil" },
+      { src:"images/ws_dmaf_2.jpg", credit:"Landwirbel", href:"https://landwirbel.de" },
+      { src:"images/ws_dmaf_3.png", credit:"Gaëlle Shearn", href:"" }
     ],
     title:{ en:"Draw me a future", de:"Zeichne mir eine Zukunft", fr:"Dessine-moi un futur" },
     body:{
@@ -335,9 +336,9 @@ const workshops = [
   {
     id:"collage", accent:"blue",
     photos:[
-    { src:"images/ws_nnc_1.png", credit:"Seeding for Future", href:"https://seedingforfuture.wixsite.com/accueil" },
-    { src:"images/ws_nnc_2.jpg", credit:"© Maria Bayer 2025", href:"https://mariabayer.com" },
-    { src:"images/ws_nnc_3.jpg", credit:"Seeding for Future", href:"https://seedingforfuture.wixsite.com/accueil" }
+      { src:"images/ws_nnc_1.png", credit:"Seeding for Future", href:"https://seedingforfuture.wixsite.com/accueil" },
+      { src:"images/ws_nnc_2.jpg", credit:"© Maria Bayer 2025", href:"https://mariabayer.com" },
+      { src:"images/ws_nnc_3.jpg", credit:"Seeding for Future", href:"https://seedingforfuture.wixsite.com/accueil" }
     ],
     title:{ en:"New Narratives Collage", de:"Collage neuer Narrative", fr:"Fresque des Nouveaux Récits" },
     body:{
@@ -542,8 +543,9 @@ const T = {
 };
 
 let lang = "en";
-const carouselTimers = [];
 
+/* Workshops cards */
+const carouselTimers = [];
 function renderWorkshops(){
   const c = T[lang];
   const root = document.getElementById("workshopsList");
@@ -585,8 +587,8 @@ function renderWorkshops(){
     </article>
   `).join("");
 
-    // wire carousels
-    document.querySelectorAll(".ws-carousel").forEach(car=>{
+    // wire workshops carousels
+  document.querySelectorAll(".ws-carousel").forEach(car=>{
     const slides = car.querySelectorAll(".ws-slide");
     const dots = car.querySelectorAll(".ws-dots span");
     let idx = 0;
@@ -608,6 +610,7 @@ function renderWorkshops(){
   });
 }
 
+/* Value cards */
 function renderValue(){
   const c = T[lang];
   const root = document.getElementById("value");
@@ -624,6 +627,7 @@ function renderValue(){
   `).join("");
 }
 
+/* FAQ */
 function renderFaq(){
   const c = T[lang];
   document.getElementById("faqContent").innerHTML = c.faqContent.map(f=>`
@@ -631,6 +635,7 @@ function renderFaq(){
   `).join("");
 }
 
+/* Testimonials carousel */
 let testiTimer = null;
 function renderTestimonials(){
   const c = T[lang];
@@ -657,6 +662,7 @@ function renderTestimonials(){
   });
 }
 
+/* Gallery carousel (all workshop photos) */
 let galleryIdx = 0, galleryTimer = null;
 function renderGallery(){
   const slidesRoot = document.getElementById("gallerySlides");
