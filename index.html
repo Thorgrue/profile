@@ -22,7 +22,7 @@
 <meta property="og:title" content="Utopia Muscle Training — Workshops on Desirable Futures" />
 <meta property="og:description" content="Immersive workshops to train the utopia muscle: collective intelligence, visualisation and hope for sustainable, joyful, actionable futures." />
 <meta property="og:url" content="https://thorgrue.github.io/UtopiaMuscleTraining/" />
-<meta property="og:image" content="images/title" />
+<meta property="og:image" content="images/title quote.png" />
 <meta property="og:image:alt" content="Utopia Muscle Training" />
 <meta property="og:locale" content="en_GB" />
 <meta property="og:locale:alternate" content="de_DE" />
@@ -86,8 +86,8 @@
       {
         "@type": "FAQPage",
         "mainEntity": [
-          { "@type": "Question", "name": "How long is a workshop?", "acceptedAnswer": { "@type": "Answer", "text": "Sessions run from 2 to 5 hours depending on the format and group size. Half-day and full-day intensives are available on request." } },
-          { "@type": "Question", "name": "Can you facilitate online?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every workshop has an online version using collaborative whiteboards (Miro, Mural) and structured breakouts for groups from 5 to 50 people." } },
+          { "@type": "Question", "name": "How long is a workshop?", "acceptedAnswer": { "@type": "Answer", "text": "Sessions run from 2 to 5 hours depending on the format and group size." } },
+          { "@type": "Question", "name": "Can you facilitate online?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every workshop has an online version using collaborative whiteboards for groups from 5 to 50 people." } },
           { "@type": "Question", "name": "In which languages?", "acceptedAnswer": { "@type": "Answer", "text": "Workshops are facilitated in English, French and German." } },
           { "@type": "Question", "name": "How much does a workshop cost?", "acceptedAnswer": { "@type": "Answer", "text": "Standard price range is €400 to €1500. Rates are adjusted for NGOs, schools and public bodies." } }
         ]
@@ -110,11 +110,18 @@
   <div class="container">
     <div class="logo" style="margin-top:16px">
       <h1 class="visually-hidden">Utopia Muscle Training — Futures Workshops by Gaëlle Shearn</h1>
-      <div>
-        <img src="images/title line.png" alt="Utopia Muscle Training — foresight workshops" />
-        <img src="images/title quote.png" alt="Utopia Muscle Training — foresight workshops" />
+      <div class="hero-images">
+        <img src="images/title line.png" alt="" class="hero-line" />
+        <img src="images/title quote.png" alt="Utopia Muscle Training — foresight workshops" class="hero-quote" />
       </div>
     </div>
+    <nav class="anchors" aria-label="Page sections">
+      <a href="#workshops" data-i18n="navWorkshops"></a>
+      <a href="#audience" data-i18n="navAudience"></a>
+      <a href="#intentions-section" data-i18n="navIntents"></a>
+      <a href="#format-section" data-i18n="navFormat"></a>
+      <button type="button" class="anchor-btn" id="openGallery" data-i18n="navGallery"></button>
+    </nav>
   </div>
 </header>
 
@@ -138,17 +145,21 @@
   </div>
 </section>
 
-<section class="note" aria-labelledby="valuesH">
-  <div class="note-inner">
-    <p class="cta-wrap"><a class="cta-btn" href="mailto:utopiamuscletraining@gmail.com" data-i18n="bookCta"></a></p>
+<section class="note pre-workshops" aria-label="Book">
+  <div class="note-inner cta-lead">
+    <p class="cta-tag" data-i18n="ctaTag"></p>
+    <p class="cta-wrap">
+      <a class="cta-btn cta-btn" href="mailto:utopiamuscletraining@gmail.com" data-i18n="bookCta"></a>
+    </p>
+    <span class="cta-arrow" aria-hidden="true">↓</span>
   </div>
 </section>
 
-<section class="workshops" aria-label="Workshops">
-  <div class="workshops-list" id="workshops"></div>
+<section class="workshops" aria-label="Workshops" id="workshops">
+  <div class="workshops-list" id="workshopsList"></div>
 </section>
 
-<section class="note" aria-labelledby="valuesH">
+<section class="note" id="audience" aria-labelledby="valuesH">
   <div class="note-inner">
     <p data-i18n="trainedNote"></p>
     <p class="cta-wrap"><a class="cta-btn" href="mailto:utopiamuscletraining@gmail.com" data-i18n="bookCta"></a></p>
@@ -159,28 +170,14 @@
 
 <section class="intentions-format">
   <div class="intentions-format-grid">
-    <div>
+    <div id="intentions-section">
       <h2 class="eyebrow green" data-i18n="intentions"></h2>
       <ul id="intentions"></ul>
     </div>
-    <div>
+    <div id="format-section">
       <h2 class="eyebrow green" data-i18n="format"></h2>
       <p data-i18n="formatIntro"></p>
       <ul id="formatList"></ul>
-    </div>
-  </div>
-</section>
-
-<section class="partners" aria-labelledby="partnersH">
-  <div class="partners-inner">
-    <h2 class="eyebrow" id="partnersH" data-i18n="partnersTitle"></h2>
-    <div class="partners-list">
-      <div class="partner"><img src="images/logo_institutfrancais.png" alt="Institut Français logo" loading="lazy" /></div>
-      <div class="partner"><img src="images/logo_ysi.png" alt="YSI logo" loading="lazy" /></div>
-      <div class="partner"><img src="images/logo_bildungslab.png" alt="BildungsLab logo" loading="lazy" /></div>
-      <div class="partner"><img src="images/logo_zelena.png" alt="Zelena Akcija logo" loading="lazy" /></div>
-      <div class="partner"><img src="images/logo_reclaim.png" alt="Reclaim - Ecofeminist Alliance logo" loading="lazy" /></div>
-      <div class="partner"><img src="images/logo_eszenzia.png" alt="Eszenzia logo" loading="lazy" /></div>
     </div>
   </div>
 </section>
@@ -214,13 +211,39 @@
   </div>
 </section>
 
+<section class="partners" aria-labelledby="partnersH">
+  <div class="partners-inner">
+    <h2 class="eyebrow" id="partnersH" data-i18n="partnersTitle"></h2>
+    <div class="partners-list">
+      <div class="partner"><img src="images/logo_institutfrancais.png" alt="Institut Français logo" loading="lazy" /></div>
+      <div class="partner"><img src="images/logo_ysi.png" alt="YSI logo" loading="lazy" /></div>
+      <div class="partner"><img src="images/logo_bildungslab.png" alt="BildungsLab logo" loading="lazy" /></div>
+      <div class="partner"><img src="images/logo_zelena.png" alt="Zelena Akcija logo" loading="lazy" /></div>
+      <div class="partner"><img src="images/logo_reclaim.png" alt="Reclaim - Ecofeminist Alliance logo" loading="lazy" /></div>
+      <div class="partner"><img src="images/logo_eszenzia.png" alt="Eszenzia logo" loading="lazy" /></div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" aria-labelledby="testiH">
+  <div class="testimonials-inner">
+    <h2 class="eyebrow green" id="testiH" data-i18n="testimonialsTitle"></h2>
+    <div class="testi-carousel" id="testiCarousel">
+      <div class="testi-track" id="testiTrack"></div>
+      <button class="testi-nav prev" data-dir="-1" aria-label="Previous testimonial">‹</button>
+      <button class="testi-nav next" data-dir="1" aria-label="Next testimonial">›</button>
+      <div class="testi-dots" id="testiDots" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer>
   <div class="footer-inner">
-    <div>
-      <img src="images/outro quote.png" alt="Utopia Muscle Training — thank you" />
-      <img src="images/outro line.png" alt="Utopia Muscle Training — byeee" />
+    <div class="hero-images outro-images">
+      <img src="images/outro quote.png" alt="Utopia Muscle Training — thank you" class="hero-quote" />
+      <img src="images/outro line.png" alt="" class="hero-line" />
     </div>
     <nav class="footer-links" aria-label="Footer links">
       <button class="link-btn" id="openImpressum" data-i18n="impressum"></button>
@@ -243,7 +266,6 @@
   </div>
 </div>
 
-<!-- SEO-rich content block: about + FAQ -->
 <div class="modal" id="seoModal" role="dialog" aria-modal="true" aria-labelledby="seoTitle">
   <div class="modal-box">
     <button class="modal-close" id="closeSeo" aria-label="Close">×</button>
@@ -263,16 +285,29 @@
   </div>
 </div>
 
+<div class="modal" id="galleryModal" role="dialog" aria-modal="true" aria-labelledby="galleryTitle">
+  <div class="modal-box modal-box-wide">
+    <button class="modal-close" id="closeGallery" aria-label="Close">×</button>
+    <h2 id="galleryTitle" data-i18n="navGallery"></h2>
+    <div class="gallery-carousel">
+      <div class="gallery-slides" id="gallerySlides"></div>
+      <button class="gallery-nav prev" data-dir="-1" aria-label="Previous">‹</button>
+      <button class="gallery-nav next" data-dir="1" aria-label="Next">›</button>
+      <div class="gallery-dots" id="galleryDots" aria-hidden="true"></div>
+    </div>
+  </div>
+</div>
+
 <script>
 /* Workshops data */
 const workshops = [
   {
     id:"glorious", accent:"blue",
     photos:[
-      { src:"images/ws_2030_1.jpeg", credit:"Photo: 2030 Glorieuses - Spain" },
-      { src:"images/ws_2030_2.jpg", credit:"Photo: 2030 Glorieuses - France" },
-      { src:"images/ws_2030_3.jpg", credit:"Photo: Seeding for Future" },
-      { src:"images/ws_2030_4.png", credit:"Photo: Reclaim - Ecofeminist Alliance" }
+    { src:"images/ws_2030_1.jpeg", credit:"2030 Glorieuses - Spain", href:"https://www.2030glorieuses.org/site-public" },
+      { src:"images/ws_2030_2.jpg", credit:"2030 Glorieuses - France", href:"https://www.2030glorieuses.org/site-public" },
+      { src:"images/ws_2030_3.jpg", credit:"Seeding for Future", href:"https://seedingforfuture.wixsite.com/accueil" },
+      { src:"images/ws_2030_4.png", credit:"Reclaim - Ecofeminist Alliance", href:"https://www.reclaim-ev.org/" }
     ],
     title:{ en:"Glorious '2030s", de:"Glorreiche 2030er", fr:"Les 2030 Glorieuses" },
     body:{
@@ -285,9 +320,9 @@ const workshops = [
   {
     id:"draw", accent:"green",
     photos:[
-      { src:"images/ws_dmaf_1.jpg", credit:"Photo: Seeding for Future" },
-      { src:"images/ws_dmaf_2.jpg", credit:"Photo: Landwirbel" },
-      { src:"images/ws_dmaf_3.png", credit:"Photo: Gaëlle Shearn" }
+    { src:"images/ws_dmaf_1.jpg", credit:"Seeding for Future", href:"https://seedingforfuture.wixsite.com/accueil" },
+      { src:"images/ws_dmaf_2.jpg", credit:"Landwirbel", href:"https://landwirbel.de" },
+      { src:"images/ws_dmaf_3.png", credit:"Gaëlle Shearn", href:"" }
     ],
     title:{ en:"Draw me a future", de:"Zeichne mir eine Zukunft", fr:"Dessine-moi un futur" },
     body:{
@@ -300,9 +335,9 @@ const workshops = [
   {
     id:"collage", accent:"blue",
     photos:[
-      { src:"images/ws_nnc_1.png", credit:"Photo: Seeding for Future" },
-      { src:"images/ws_nnc_2.jpg", credit:"Photo: © Maria Bayer 2025" },
-      { src:"images/ws_nnc_3.jpg", credit:"Photo: Seeding for Future" }
+    { src:"images/ws_nnc_1.png", credit:"Seeding for Future", href:"https://seedingforfuture.wixsite.com/accueil" },
+      { src:"images/ws_nnc_2.jpg", credit:"© Maria Bayer 2025", href:"https://mariabayer.com" },
+      { src:"images/ws_nnc_3.jpg", credit:"Seeding for Future", href:"https://seedingforfuture.wixsite.com/accueil" }
     ],
     title:{ en:"New Narratives Collage", de:"Collage neuer Narrative", fr:"Fresque des Nouveaux Récits" },
     body:{
@@ -315,44 +350,17 @@ const workshops = [
 ];
 
 /* Values data */
-  const valueIcons = [
-/* Lightbulb */
-`<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <g fill="none" stroke="#2b2f6b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M32 6v6M14 14l4 4M50 14l-4 4M6 32h6M52 32h6" />
-    <path d="M22 34a10 10 0 1 1 20 0c0 4-2 6-4 9v4H26v-4c-2-3-4-5-4-9z" fill="#ffd94a"/>
-    <path d="M27 51h10" />
-    <path d="M28 55h8" />
-  </g>
-</svg>`,
-/* Target with arrow */
-`<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <g stroke="#2b2f6b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="30" cy="34" r="16" fill="#ffffff"/>
-    <circle cx="30" cy="34" r="10" fill="#e879a4"/>
-    <circle cx="30" cy="34" r="4"  fill="#ffffff"/>
-    <path d="M30 34 52 12" stroke="#e0a63a" stroke-width="3"/>
-    <path d="M45 12h10v10" fill="none"/>
-    <path d="M50 7l6 6-8 2z" fill="#e0a63a"/>
-  </g>
-</svg>`,
-/* Star */
-`<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M32 6l7.6 15.6L57 24l-12.6 12.2L47 54 32 45.6 17 54l2.6-17.8L7 24l17.4-2.4z"
-    fill="#ffd94a" stroke="#2b2f6b" stroke-width="2.4" stroke-linejoin="round"/>
-</svg>`,
-/* Mountain with flag in a circle */
-`<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <circle cx="32" cy="32" r="24" fill="#c8dcf1" stroke="#2b2f6b" stroke-width="2.4"/>
-  <path d="M12 44l12-16 6 8 6-10 16 18z" fill="#9abb50" stroke="#2b2f6b" stroke-width="2.2" stroke-linejoin="round"/>
-  <path d="M42 34V16" stroke="#2b2f6b" stroke-width="2.2" stroke-linecap="round"/>
-  <path d="M42 16h9l-3 4 3 4h-9z" fill="#e94b7b" stroke="#2b2f6b" stroke-width="2.2" stroke-linejoin="round"/>
-</svg>`
+const valueIcons = [
+  `<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="#2b2f6b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M32 6v6M14 14l4 4M50 14l-4 4M6 32h6M52 32h6" /><path d="M22 34a10 10 0 1 1 20 0c0 4-2 6-4 9v4H26v-4c-2-3-4-5-4-9z" fill="#ffd94a"/><path d="M27 51h10" /><path d="M28 55h8" /></g></svg>`,
+  `<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g stroke="#2b2f6b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="30" cy="34" r="16" fill="#ffffff"/><circle cx="30" cy="34" r="10" fill="#e879a4"/><circle cx="30" cy="34" r="4"  fill="#ffffff"/><path d="M30 34 52 12" stroke="#e0a63a" stroke-width="3"/><path d="M45 12h10v10" fill="none"/><path d="M50 7l6 6-8 2z" fill="#e0a63a"/></g></svg>`,
+  `<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M32 6l7.6 15.6L57 24l-12.6 12.2L47 54 32 45.6 17 54l2.6-17.8L7 24l17.4-2.4z" fill="#ffd94a" stroke="#2b2f6b" stroke-width="2.4" stroke-linejoin="round"/></svg>`,
+  `<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="32" cy="32" r="24" fill="#c8dcf1" stroke="#2b2f6b" stroke-width="2.4"/><path d="M12 44l12-16 6 8 6-10 16 18z" fill="#9abb50" stroke="#2b2f6b" stroke-width="2.2" stroke-linejoin="round"/><path d="M42 34V16" stroke="#2b2f6b" stroke-width="2.2" stroke-linecap="round"/><path d="M42 16h9l-3 4 3 4h-9z" fill="#e94b7b" stroke="#2b2f6b" stroke-width="2.2" stroke-linejoin="round"/></svg>`
 ];
 
 /* Translations data */
 const T = {
   en:{
+    navWorkshops:"Workshops", navAudience:"Audience", navIntents:"Intents", navFormat:"Format", navGallery:"Gallery",
     mission:"Mission",
     missionLead:"Utopia Muscle Training offers immersive activities as workout for a too-long-forgotten yet incredible muscle: the <strong>Utopia muscle</strong>, the muscle responsible for imagining alternative amazing realities.",
     missionBody:"The workshops aim to unleash the power of <strong>collective intelligence</strong> and visualisation, to co-create sustainable and engaging <strong>visions of futures</strong>. The different formats I offer reclaim collective dreaming as a tool to cultivate <strong>agency</strong> and an <strong>optimist</strong> mindset. They are key to imagining futures (of organisation, work, society...), that are enjoyable and actionable.",
@@ -360,9 +368,10 @@ const T = {
     facilitatorName:"Gaëlle Shearn",
     facilitatorBio:"Passionate about facilitation, convinced of the power of utopia as a proactive and transformative tool, I guide collaborative activities on desirable and sustainable futures. I have been leading and accompanying the growth of teams for the last 7 years, with a cooperative approach.",
     hoverHint:"Hover to read more →",
+    ctaTag:"Ready to train your utopia muscle?",
     trainedNote:"I am a trained facilitator as well of other workshops connected to sustainability and social change such as Sexism Fresko, Solarpunk Futures, 2tonnes and workshops introducing ecofeminism. I would be delighted to facilitate one or the other for you, tailored to the needs of your industry or organisation.",
     bookCta:"Book a workshop with me",
-    contextIntro:"The workshops combine foresight, the power of collective utopia and proven facilitation frameworks (Glorious 2030s, Draw me a future, New Narratives Collage). Each session leaves participants with a sense of connection, a set of concrete next steps and a renewed sense of agency. Those workshops are methodologies and tools fitting multiple contexts.<br>They are great if you are in one of the following cases: ",
+    contextIntro:"The workshops combine foresight, the power of collective utopia and proven facilitation frameworks. Each session leaves participants with a sense of connection, a set of concrete next steps and a renewed sense of agency. Those workshops are methodologies and tools fitting multiple contexts. They are great if you are in one of the following cases: ",
     value:[
       { title: "Rethink your organisation's future", body: "You are looking for immersive and collective ways to <strong>rethink</strong> your organisation's future and purpose in this multi-crisis ever-changing environment." },
       { title: "Improve your impact from within", body: "You are looking for new and concrete ways to <strong>improve</strong> even more your impact, beyond labels, CO₂ compensation or recycling." },
@@ -380,6 +389,13 @@ const T = {
     formatIntro:"I tailor the workshops to the needs of your collective, focusing on the topics that matter to you, such as citizen participation, mental health, nature restoration, social change, housing, collective wellbeing, agriculture…",
     formatList:["Format: 2 – 5 hours","Participants: 5 – 50 people","Place: online or onsite","Languages: English, German, French","Price range: 400€ to 1500€","Type of organisation: NGOs, companies, universities, public bodies etc"],
     partnersTitle:"We've worked together",
+    testimonialsTitle:"Kind words",
+    testimonials:[
+      { quote:"Gaëlle created a space where our team could dream boldly and still walk out with concrete next steps. Magic.", author:"María, NGO director" },
+      { quote:"The most energising workshop we've run all year. Everyone left lighter and clearer.", author:"Julien, program lead" },
+      { quote:"A rare mix of rigor, joy and care. Our students are still talking about it.", author:"Anna, university lecturer" },
+      { quote:"They made enjoyable futures feel possible again. That's a gift.", author:"Tom, sustainability manager" }
+    ],
     seo:"About",
     seoTitle:"About Utopia Muscle Training",
     seoP1:"Utopia Muscle Training is a Berlin-based practice designing and facilitating <strong>futures workshops</strong> for teams, NGOs, schools, universities and public organisations. Since 2018, I, Gaëlle Shearn, have hosted collective intelligence sessions across Europe — in French, English and German — helping groups shift from future anxiety to grounded, positive outlook on what will come.",
@@ -404,6 +420,7 @@ const T = {
     rights:"© 2026 Utopia Muscle Training, all rights reserved · developed with love"
   },
   de:{
+    navWorkshops:"Workshops", navAudience:"Zielgruppe", navIntents:"Absichten", navFormat:"Format", navGallery:"Galerie",
     mission:"Mission",
     missionLead:"Utopia Muscle Training bietet immersive Aktivitäten als Training für einen zu lange vergessenen, aber unglaublichen Muskel: den <strong>Utopie-Muskel</strong>.",
     missionBody:"Die Workshops entfesseln die Kraft der <strong>kollektiven Intelligenz</strong> und der Visualisierung, um gemeinsam nachhaltige und mitreißende <strong>Zukunftsvisionen</strong> zu entwickeln, die Freude machen und umsetzbar sind. Sie holen kollektives Träumen zurück als Werkzeug, um eine <strong>optimistische</strong> Haltung und <strong>Handlungsfähigkeit</strong> zu kultivieren – Schlüssel, um Zukünfte von Organisation und Arbeit zu denken.",
@@ -411,6 +428,7 @@ const T = {
     facilitatorName:"Gaëlle Shearn",
     facilitatorBio:"Leidenschaftlich für Moderation, überzeugt von der Kraft der Utopie als proaktives und transformatives Werkzeug, leite ich kollaborative Aktivitäten zu wünschenswerten und nachhaltigen Zukünften. Als Agile Coach und Moderatorin begleite ich seit 7 Jahren Teams in kooperativen Kontexten.",
     hoverHint:"Für mehr Infos hovern →",
+    ctaTag:"Bereit, deinen Utopie-Muskel zu trainieren?",
     trainedNote:"Ich bin ebenfalls ausgebildete Moderatorin weiterer Workshops rund um Nachhaltigkeit und sozialen Wandel wie Sexism Fresko, Solarpunk Futures, 2tonnes oder Ökofeminismus entdecken. Gerne moderiere ich einen davon für dich.",
     bookCta:"Workshop mit mir buchen",
     contextIntro:"Diese Workshops sind Methoden und Werkzeuge, die sich auf viele Kontexte anwenden lassen.",
@@ -431,6 +449,13 @@ const T = {
     formatIntro:"Wir passen unsere Workshops an die Bedürfnisse eures Kollektivs an, mit Fokus auf eure Themen wie Bürgerbeteiligung, mentale Gesundheit, Renaturierung, sozialer Wandel, Wohnen, kollektives Wohlbefinden, Landwirtschaft…",
     formatList:["Format: 2 – 5 Stunden","Teilnehmende: 5 – 50 Personen","Ort: online oder vor Ort","Preisrahmen: 400€ bis 1500€"],
     partnersTitle:"Wir haben zusammengearbeitet",
+    testimonialsTitle:"Stimmen",
+    testimonials:[
+      { quote:"Gaëlle hat einen Raum geschaffen, in dem unser Team mutig träumen konnte — und trotzdem mit konkreten Schritten hinausging.", author:"María, NGO-Leitung" },
+      { quote:"Der energiereichste Workshop des Jahres. Alle gingen leichter und klarer nach Hause.", author:"Julien, Programmleitung" },
+      { quote:"Eine seltene Mischung aus Klarheit, Freude und Sorgfalt.", author:"Anna, Dozentin" },
+      { quote:"Sie hat Klimafutures wieder möglich anfühlen lassen. Ein Geschenk.", author:"Tom, Nachhaltigkeitsmanager" }
+    ],
     seo:"About",
     seoTitle:"Über Utopia Muscle Training",
     seoP1:"Utopia Muscle Training ist eine Berliner Praxis für <strong>Zukunftsworkshops</strong> für Teams, NGOs, Schulen, Universitäten und öffentliche Einrichtungen. Seit 2018 begleiten wir Sessions der kollektiven Intelligenz in ganz Europa — auf Französisch, Englisch und Deutsch — und helfen Gruppen, von Klimaangst zu geerdeter, handlungsfähiger Hoffnung zu gelangen.",
@@ -455,6 +480,7 @@ const T = {
     rights:"© 2026 Utopia Muscle Training, alle Rechte vorbehalten · mit Liebe entwickelt"
   },
   fr:{
+    navWorkshops:"Ateliers", navAudience:"Public", navIntents:"Intentions", navFormat:"Format", navGallery:"Galerie",
     mission:"Mission",
     missionLead:"Utopia Muscle Training propose des activités immersives pour muscler un muscle trop longtemps oublié mais incroyable : le <strong>muscle de l'Utopie</strong>.",
     missionBody:"Les ateliers libèrent le pouvoir de l'<strong>intelligence collective</strong> et de la visualisation pour co-créer des <strong>visions de futurs</strong> durables, engageantes, joyeuses et actionnables. Ils revendiquent le rêve collectif comme outil pour cultiver un état d'esprit <strong>optimiste</strong> et de <strong>l'agentivité</strong>. Ce sont des clés pour imaginer les futurs de l'organisation et du travail.",
@@ -462,6 +488,7 @@ const T = {
     facilitatorName:"Gaëlle Shearn",
     facilitatorBio:"Passionnée de facilitation, convaincue du pouvoir de l'utopie comme outil proactif et transformateur, j'anime des activités collaboratives sur les futurs désirables et soutenables. Coach agile et facilitatrice, j'accompagne et fais grandir des équipes depuis 7 ans, en contextes coopératifs.",
     hoverHint:"Survolez pour en lire plus →",
+    ctaTag:"Prêt·e à entrainer ton muscle de l'utopie ?",
     trainedNote:"Je suis également formée à d'autres ateliers liés à la durabilité et au changement social comme Sexism Fresko, Solarpunk Futures, 2tonnes ou atelier de découverte de l'écoféminisme. Je serais ravie d'en animer un pour vous.",
     bookCta:"Réserver un atelier avec moi",
     contextIntro:"Ces ateliers sont des méthodologies et outils applicables à de nombreux contextes.",
@@ -482,6 +509,13 @@ const T = {
     formatIntro:"Nous adaptons nos ateliers aux besoins de votre collectif, en nous concentrant sur les sujets qui comptent pour vous : participation citoyenne, santé mentale, restauration de la nature, changement social, logement, bien-être collectif, agriculture…",
     formatList:["Format : 2 – 5 heures","Participant·es : 5 – 50 personnes","Lieu : en ligne ou sur place","Tarif : 400€ à 1500€"],
     partnersTitle:"Nous avons travaillé ensemble",
+    testimonialsTitle:"C'est elle·ux qui en parlent le mieux",
+    testimonials:[
+      { quote:"Gaëlle a créé un espace où notre équipe a pu rêver grand — et repartir avec des étapes concrètes. Magique.", author:"María, directrice d'ONG" },
+      { quote:"L'atelier le plus énergisant de l'année. Tout le monde est reparti plus léger et plus clair.", author:"Julien, chef de programme" },
+      { quote:"Un mélange rare de rigueur, de joie et de soin.", author:"Anna, enseignante-chercheuse" },
+      { quote:"Elle a redonné du possible aux futurs climatiques. Un cadeau.", author:"Tom, responsable durabilité" }
+    ],
     seo:"À propos",
     seoTitle:"À propos d'Utopia Muscle Training",
     seoP1:"Utopia Muscle Training est une pratique basée à Berlin qui conçoit et anime des <strong>ateliers des futurs</strong> pour équipes, ONG, écoles, universités et organismes publics. Depuis 2018, nous animons des sessions d'intelligence collective à travers l'Europe — en français, anglais et allemand — pour aider les groupes à passer de l'éco-anxiété à un espoir ancré et actionnable.",
@@ -512,9 +546,8 @@ const carouselTimers = [];
 
 function renderWorkshops(){
   const c = T[lang];
-  const root = document.getElementById("workshops");
+  const root = document.getElementById("workshopsList");
 
-  // clear timers on re-render
   while(carouselTimers.length) clearInterval(carouselTimers.pop());
 
 
@@ -525,7 +558,9 @@ function renderWorkshops(){
           ${w.photos.map((p,i)=>`
             <div class="ws-slide ${i===0?'active':''}" data-slide="${i}">
               <img src="${p.src}" alt="${w.title[lang]} — ${p.credit}" loading="lazy" width="1024" height="768" />
-              <div class="ws-credit">${p.credit}</div>
+              ${p.href
+                ? `<a class="ws-credit" href="${p.href}" target="_blank" rel="noopener">${p.credit} ↗</a>`
+                : `<div class="ws-credit">${p.credit}</div>`}
             </div>`).join("")}
         </div>
         <button class="ws-nav prev" data-dir="-1" aria-label="Previous photo">
@@ -578,7 +613,7 @@ function renderValue(){
   const c = T[lang];
   const root = document.getElementById("value");
   root.innerHTML = c.value.map((g,i)=>`
-    <button type="button" class="value-card" tabindex="0" aria-label="${g.title}"">
+    <button type="button" class="value-card" tabindex="0" aria-label="${g.title}">
       <div class="value-inner">
         <div class="value-face value-front">
           <div class="value-icon">${valueIcons[i]}</div>
@@ -594,7 +629,63 @@ function renderFaq(){
   document.getElementById("faqContent").innerHTML = c.faqContent.map(f=>`
     <details><summary>${f.q}</summary><p>${f.a}</p></details>
   `).join("");
-} 
+}
+
+let testiTimer = null;
+function renderTestimonials(){
+  const c = T[lang];
+  const track = document.getElementById("testiTrack");
+  const dots = document.getElementById("testiDots");
+  track.innerHTML = c.testimonials.map((t,i)=>`
+    <figure class="testi-slide ${i===0?'active':''}">
+      <blockquote>“${t.quote}”</blockquote>
+      <figcaption>— ${t.author}</figcaption>
+    </figure>`).join("");
+  dots.innerHTML = c.testimonials.map((_,i)=>`<span class="${i===0?'active':''}"></span>`).join("");
+  const slides = track.querySelectorAll(".testi-slide");
+  const dotEls = dots.querySelectorAll("span");
+  let idx = 0;
+  const go = n => {
+    idx = (n + slides.length) % slides.length;
+    slides.forEach((s,i)=>s.classList.toggle("active", i===idx));
+    dotEls.forEach((d,i)=>d.classList.toggle("active", i===idx));
+  };
+  clearInterval(testiTimer);
+  testiTimer = setInterval(()=>go(idx+1), 8000);
+  document.querySelectorAll(".testi-nav").forEach(btn=>{
+    btn.onclick = ()=>{ go(idx + Number(btn.dataset.dir)); clearInterval(testiTimer); testiTimer = setInterval(()=>go(idx+1), 8000); };
+  });
+}
+
+let galleryIdx = 0, galleryTimer = null;
+function renderGallery(){
+  const slidesRoot = document.getElementById("gallerySlides");
+  const dotsRoot = document.getElementById("galleryDots");
+  const all = workshops.flatMap(w => w.photos.map(p => ({...p, workshop:w.title[lang]})));
+  slidesRoot.innerHTML = all.map((p,i)=>`
+    <div class="gallery-slide ${i===0?'active':''}">
+      <img src="${p.src}" alt="${p.workshop} — ${p.credit}" loading="lazy" />
+      <div class="gallery-caption">
+        <span>${p.workshop}</span>
+        ${p.href
+          ? `<a href="${p.href}" target="_blank" rel="noopener">${p.credit} ↗</a>`
+          : `<span class="muted">${p.credit}</span>`}
+      </div>
+    </div>`).join("");
+  dotsRoot.innerHTML = all.map((_,i)=>`<span class="${i===0?'active':''}"></span>`).join("");
+  const slides = slidesRoot.querySelectorAll(".gallery-slide");
+  const dots = dotsRoot.querySelectorAll("span");
+  galleryIdx = 0;
+  const go = n => {
+    galleryIdx = (n + slides.length) % slides.length;
+    slides.forEach((s,i)=>s.classList.toggle("active", i===galleryIdx));
+    dots.forEach((d,i)=>d.classList.toggle("active", i===galleryIdx));
+  };
+  document.querySelectorAll(".gallery-nav").forEach(btn=>{
+    btn.onclick = ()=>go(galleryIdx + Number(btn.dataset.dir));
+  });
+  clearInterval(galleryTimer);
+}
 
 function apply(){
   const c = T[lang];
@@ -615,7 +706,9 @@ function apply(){
     c.value.map(p=>`<p>${p}</p>`).join("");
   renderWorkshops();
   renderValue();
+  renderTestimonials();
   renderFaq();
+  renderGallery();
 }
 
 document.querySelectorAll(".lang button").forEach(b=>{
@@ -626,7 +719,6 @@ document.querySelectorAll(".lang button").forEach(b=>{
   });
 });
 
-// wire Modals
 function wireModal(openId, modalId, closeId){
   const modal = document.getElementById(modalId);
   document.getElementById(openId).addEventListener("click",()=>modal.classList.add("open"));
@@ -637,6 +729,7 @@ function wireModal(openId, modalId, closeId){
 wireModal("openImpressum","impressumModal","closeImpressum");
 wireModal("openSeo","seoModal","closeSeo");
 wireModal("openFaq","faqModal","closeFaq");
+wireModal("openGallery","galleryModal","closeGallery");
 
 apply();
 </script>
