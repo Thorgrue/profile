@@ -36,18 +36,18 @@ img{max-width:100%;display:block;height:auto}
 .lang button.active{opacity:1;transform:scale(1.15)}
 
 /* Intro & outro banner images */
-.hero{padding-top:16px}
-.hero-images{
+.intro{padding-top:16px}
+.intro-images{
     display:flex;align-items:center;justify-content:center;
     gap:32px;flex-wrap:wrap;
 }
-.hero-images img{height:auto;object-fit:contain}
-.hero-line{width:38%;max-width:240px;min-width:200px}
-.hero-quote{width:38%;max-width:180px;min-width:200px}
+.intro-images img{height:auto;object-fit:contain}
+.intro-line{width:38%;max-width:240px;min-width:200px}
+.intro-quote{width:38%;max-width:180px;min-width:200px}
 .outro-images{margin-bottom:8px}
 @media (max-width:520px){
-    .hero-images{gap:14px}
-    .hero-line,.hero-quote{width:44%;min-width:110px}
+    .intro-images{gap:14px}
+    .intro-line,.intro-quote{width:44%;min-width:110px}
 }
 
 /* Anchor nav */
@@ -236,7 +236,7 @@ section.note{padding:0px 32px 24px 32px;scroll-margin-top:20px}
 @media (max-width:520px){ .value-grid{grid-template-columns:1fr} }
 
 /* Intentions & Format */
-section.intentions-format{padding:48px 24px;scroll-margin-top:20px}
+section.intentions-format{padding:48px 24px;scroll-margin-top:20px;text-align: justify;}
 .intentions-format-grid{max-width:980px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px}
 .intentions-format-grid h2{margin-bottom:14px}
 .intentions-format-grid ul{padding-left:20px;margin:0}
