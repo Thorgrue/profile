@@ -53,8 +53,8 @@
       "name": "Gaëlle Shearn",
       "jobTitle": "Facilitator & Agile Coach",
       "image": "images/gaelle.jpg",
-      "worksFor": { "@type": "Organization", "name": "Utopia Muscle Training" }
-      "knowsLanguage": ["en", "de", "fr"],
+      "worksFor": { "@type": "Organization", "name": "Utopia Muscle Training" },
+      "knowsLanguage": ["en", "de", "fr"]
     },
     {
       "@type": "Service",
@@ -76,22 +76,22 @@
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Draw me a future", "url": "https://renaissanceecologique.org/ateliers-et-formations" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Narratives Collage", "url": "https://www.fresquedesnouveauxrecits.org/en-new-narratives-collage" } }
         ]
-      },
-      {
-        "@type": "WebSite",
-        "url": "https://thorgrue.github.io/UtopiaMuscleTraining/",
-        "name": "Utopia Muscle Training",
-        "inLanguage": ["en", "de", "fr"]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          { "@type": "Question", "name": "How long is a workshop?", "acceptedAnswer": { "@type": "Answer", "text": "Sessions run from 2 to 5 hours depending on the format and group size." } },
-          { "@type": "Question", "name": "Can you facilitate online?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every workshop has an online version using collaborative whiteboards for groups from 5 to 50 people." } },
-          { "@type": "Question", "name": "In which languages?", "acceptedAnswer": { "@type": "Answer", "text": "Workshops are facilitated in English, French and German." } },
-          { "@type": "Question", "name": "How much does a workshop cost?", "acceptedAnswer": { "@type": "Answer", "text": "Standard price range is €400 to €1500. Rates are adjusted for NGOs, schools and public bodies." } }
-        ]
       }
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://thorgrue.github.io/UtopiaMuscleTraining/",
+      "name": "Utopia Muscle Training",
+      "inLanguage": ["en", "de", "fr"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How long is a workshop?", "acceptedAnswer": { "@type": "Answer", "text": "Sessions run from 2 to 5 hours depending on the format and group size." } },
+        { "@type": "Question", "name": "Can you facilitate online?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every workshop has an online version using collaborative whiteboards for groups from 5 to 50 people." } },
+        { "@type": "Question", "name": "In which languages?", "acceptedAnswer": { "@type": "Answer", "text": "Workshops are facilitated in English, French and German." } },
+        { "@type": "Question", "name": "How much does a workshop cost?", "acceptedAnswer": { "@type": "Answer", "text": "Standard price range is €400 to €1500. Rates are adjusted for NGOs, schools and public bodies." } }
+      ]
     }
   ]
 }
@@ -111,8 +111,8 @@
     <div class="logo" style="margin-top:16px">
       <h1 class="visually-hidden">Utopia Muscle Training — Futures Workshops by Gaëlle Shearn</h1>
       <div class="intro-images">
-        <img src="images/intro_line.png" alt="" class="intro-line" />
-        <img src="images/intro_logo.png" alt="Utopia Muscle Training — foresight workshops" class="intro-quote" />
+        <img src="images/intro_line.png" alt="" class="intro-line left" aria-hidden="true" />
+        <img src="images/intro_logo.png" alt="Utopia Muscle Training — foresight workshops" class="intro-center" />
       </div>
     </div>
     <nav class="anchors" aria-label="Page sections">
@@ -242,8 +242,9 @@
 <footer>
   <div class="footer-inner">
     <div class="intro-images outro-images">
-      <img src="images/outro_quote.png" alt="Utopia Muscle Training — thank you" class="intro-quote" />
-      <img src="images/outro_line.png" alt="" class="intro-line" />
+      <img src="" alt="" class="intro-line left" aria-hidden="true" />
+      <img src="images/outro_quote.png" alt="Utopia Muscle Training — thank you" class="intro-center" />
+      <img src="images/outro_line.png" alt="" class="intro-line right" aria-hidden="true" />
     </div>
     <nav class="footer-links" aria-label="Footer links">
       <button class="link-btn" id="openImpressum" data-i18n="impressum"></button>
@@ -313,8 +314,8 @@ const workshops = [
     title:{ en:"Glorious '2030s", de:"Glorreiche 2030er", fr:"Les 2030 Glorieuses" },
     body:{
       en:"Through a <strong>guided utopian conversation</strong>, participants collectively draw the outlines of a fairer, more sustainable and joyful society, for themselves and for the world at large. Thanks to our cards deck of initiatives, they decide which concrete <strong>next steps</strong> will lead to this utopia!",
-      de:"Reise in die glorreichen 2030er durch ein geführtes utopisches Gespräch, das dir die Möglichkeit gibt, gemeinsam mit anderen Reisenden die Umrisse einer gerechteren, nachhaltigen und freudvollen Gesellschaft zu zeichnen. Entscheidet mit unserem Kartendeck, welche konkreten nächsten Schritte zu dieser Utopie führen!",
-      fr:"Voyagez dans les Glorieuses années 2030 à travers une conversation utopique guidée qui vous donnera l'opportunité de dessiner avec d'autres voyageurs les contours d'une société plus juste, durable et joyeuse. Avec votre groupe et notre jeu de cartes, décidez des prochaines étapes concrètes vers cette utopie !"
+      de:"Durch ein <strong>geführtes utopisches Gespräch</strong> zeichnen die Teilnehmenden gemeinsam die Umrisse einer gerechteren, nachhaltigeren und freudvolleren Gesellschaft — für sich selbst und für die Welt. Mit unserem Kartendeck an Initiativen entscheiden sie, welche konkreten <strong>nächsten Schritte</strong> zu dieser Utopie führen!",
+      fr:"À travers une <strong>conversation utopique guidée</strong>, les participants dessinent collectivement les contours d'une société plus juste, plus durable et plus joyeuse, pour eux-mêmes et pour le monde. Grâce à notre jeu de cartes d'initiatives, ils décident des <strong>prochaines étapes concrètes</strong> menant à cette utopie !"
     },
     link:{ label:"2030glorieuses.org", href:"https://www.2030glorieuses.org/site-public" }
   },
@@ -328,8 +329,8 @@ const workshops = [
     title:{ en:"Draw me a future", de:"Zeichne mir eine Zukunft", fr:"Dessine-moi un futur" },
     body:{
       en:"Using a wall size poster depicting of an 'ideal' <strong>urban-rural landscape</strong>, participants work in teams to elaborate the transformation of different sectors like mobility, education or agriculture. For a playful ending, they present their programs at a fictional <strong>citizen assembly</strong>!",
-      de:"Anhand einer wandgroßen Allegorie einer zukünftigen städtisch-ländlichen Landschaft arbeiten die Teilnehmenden in Teams an der Entwicklung verschiedener Sektoren wie Mobilität, Bildung oder Landwirtschaft. Zum spielerischen Abschluss präsentieren sie ihre Programme in einer fiktiven Bürgerversammlung!",
-      fr:"À partir d'une allégorie murale d'un futur paysage urbain et rural, les participants travaillent en équipes pour élaborer l'évolution de différents secteurs comme la mobilité, l'éducation ou l'agriculture. Pour une fin ludique, ils présentent leurs programmes lors d'une assemblée citoyenne fictive !"
+      de:"Anhand eines wandgroßen Posters einer 'idealen' <strong>städtisch-ländlichen Landschaft</strong> arbeiten die Teilnehmenden in Teams an der Transformation verschiedener Sektoren wie Mobilität, Bildung oder Landwirtschaft. Zum spielerischen Abschluss präsentieren sie ihre Programme in einer fiktiven <strong>Bürgerversammlung</strong>!",
+      fr:"À partir d'un poster mural représentant un <strong>paysage urbain-rural</strong> idéal, les participants travaillent en équipes pour élaborer la transformation de différents secteurs comme la mobilité, l'éducation ou l'agriculture. Pour une fin ludique, ils présentent leurs programmes lors d'une <strong>assemblée citoyenne</strong> fictive !"
     },
     link:{ label:"renaissanceecologique.org", href:"https://renaissanceecologique.org/ateliers-et-formations" }
   },
@@ -343,8 +344,8 @@ const workshops = [
     title:{ en:"New Narratives Collage", de:"Collage neuer Narrative", fr:"Fresque des Nouveaux Récits" },
     body:{
       en:"Through a collaborative card game, participants discover the <strong>impact of narratives</strong> on our brains and behaviour. In a second part, they will <strong>collectively write</strong> a story that brings about a desirable future that is compatible with planetary boundaries.",
-      de:"Durch ein kollaboratives Kartenspiel entdecken die Teilnehmenden den Einfluss von Geschichten auf unser Gehirn und Verhalten. Im zweiten Teil schreiben sie gemeinsam eine Geschichte, die eine wünschenswerte Zukunft im Einklang mit den planetaren Grenzen entstehen lässt.",
-      fr:"À travers un jeu de cartes collaboratif, les participants découvrent l'impact des récits sur notre cerveau et nos comportements. Dans la seconde partie, ils écrivent collectivement une histoire qui fait advenir un futur désirable et compatible avec les limites planétaires."
+      de:"Durch ein kollaboratives Kartenspiel entdecken die Teilnehmenden den <strong>Einfluss von Narrativen</strong> auf unser Gehirn und unser Verhalten. Im zweiten Teil <strong>schreiben sie gemeinsam</strong> eine Geschichte, die eine wünschenswerte Zukunft im Einklang mit den planetaren Grenzen entstehen lässt.",
+      fr:"À travers un jeu de cartes collaboratif, les participants découvrent l'<strong>impact des récits</strong> sur notre cerveau et nos comportements. Dans une seconde partie, ils <strong>écrivent collectivement</strong> une histoire qui fait advenir un futur désirable compatible avec les limites planétaires."
     },
     link:{ label:"fresquedesnouveauxrecits.org", href:"https://www.fresquedesnouveauxrecits.org/en-new-narratives-collage" }
   }
@@ -374,10 +375,10 @@ const T = {
     bookCta:"Book a workshop with me",
     contextIntro:"The workshops combine foresight, the power of collective utopia and proven facilitation frameworks. Each session leaves participants with a sense of connection, a set of concrete next steps and a renewed sense of agency. Those workshops are methodologies and tools fitting multiple contexts. They are great if you are in one of the following cases: ",
     value:[
-      { title: "Rethink your organisation's future", body: "You are looking for immersive and collective ways to <strong>rethink</strong> your organisation's future and purpose in this multi-crisis ever-changing environment." },
-      { title: "Improve your impact from within", body: "You are looking for new and concrete ways to <strong>improve</strong> even more your impact, beyond labels, CO₂ compensation or recycling." },
-      { title: "Connect in a meaningful way", body: "You are looking for meaningful and relevant ways to <strong>connect</strong> with your colleagues, members or partners." },
-      { title: "Empower and engage", body: "You are looking for hopeful and powerful ways to <strong>engage</strong> students or groups in thinking about the future." }
+      { title:"Rethink your organisation's future", body:"You are looking for immersive and collective ways to <strong>rethink</strong> your organisation's future and purpose in this multi-crisis ever-changing environment." },
+      { title:"Improve your impact from within", body:"You are looking for new and concrete ways to <strong>improve</strong> even more your impact, beyond labels, CO₂ compensation or recycling." },
+      { title:"Connect in a meaningful way", body:"You are looking for meaningful and relevant ways to <strong>connect</strong> with your colleagues, members or partners." },
+      { title:"Empower and engage", body:"You are looking for hopeful and powerful ways to <strong>engage</strong> students or groups in thinking about the future." }
     ],
     intentions:"Intents",
     intentionsList:[
@@ -424,58 +425,59 @@ const T = {
   de:{
     navWorkshops:"Workshops", navAudience:"Zielgruppe", navIntents:"Absichten", navFormat:"Format", navGallery:"Galerie",
     mission:"Mission",
-    missionLead:"Utopia Muscle Training bietet immersive Aktivitäten als Training für einen zu lange vergessenen, aber unglaublichen Muskel: den <strong>Utopie-Muskel</strong>.",
-    missionBody:"Die Workshops entfesseln die Kraft der <strong>kollektiven Intelligenz</strong> und der Visualisierung, um gemeinsam nachhaltige und mitreißende <strong>Zukunftsvisionen</strong> zu entwickeln, die Freude machen und umsetzbar sind. Sie holen kollektives Träumen zurück als Werkzeug, um eine <strong>optimistische</strong> Haltung und <strong>Handlungsfähigkeit</strong> zu kultivieren – Schlüssel, um Zukünfte von Organisation und Arbeit zu denken.",
-    quote:"„Hoffnung ist nicht bloß ein Wunsch, sondern eine Absicht.\" — Steven Charlston",
+    missionLead:"Utopia Muscle Training bietet immersive Aktivitäten als Training für einen zu lange vergessenen, aber unglaublichen Muskel: den <strong>Utopie-Muskel</strong>, den Muskel, der für das Vorstellen alternativer, wunderbarer Realitäten zuständig ist.",
+    missionBody:"Die Workshops entfesseln die Kraft der <strong>kollektiven Intelligenz</strong> und der Visualisierung, um gemeinsam nachhaltige und mitreißende <strong>Zukunftsvisionen</strong> zu entwickeln. Die verschiedenen Formate, die ich anbiete, holen das kollektive Träumen zurück als Werkzeug, um <strong>Handlungsfähigkeit</strong> und eine <strong>optimistische</strong> Haltung zu kultivieren. Sie sind Schlüssel, um Zukünfte (von Organisation, Arbeit, Gesellschaft…) zu denken, die freudvoll und umsetzbar sind.",
+    quote:"„Der beste Weg, die Zukunft vorherzusagen, ist, sie zu gestalten.\" — Buckminster Fuller",
     facilitatorName:"Gaëlle Shearn",
-    facilitatorBio:"Leidenschaftlich für Moderation, überzeugt von der Kraft der Utopie als proaktives und transformatives Werkzeug, leite ich kollaborative Aktivitäten zu wünschenswerten und nachhaltigen Zukünften. Als Agile Coach und Moderatorin begleite ich seit 7 Jahren Teams in kooperativen Kontexten.",
+    facilitatorBio:"Leidenschaftlich für Moderation, überzeugt von der Kraft der Utopie als proaktives und transformatives Werkzeug, leite ich kollaborative Aktivitäten zu wünschenswerten und nachhaltigen Zukünften. Seit 7 Jahren begleite ich Teams in ihrem Wachstum, mit einem kooperativen Ansatz.",
     hoverHint:"Für mehr Infos hovern →",
     ctaTag:"Bereit, deinen Utopie-Muskel zu trainieren?",
-    trainedNote:"Ich bin ebenfalls ausgebildete Moderatorin weiterer Workshops rund um Nachhaltigkeit und sozialen Wandel wie Sexism Fresko, Solarpunk Futures, 2tonnes oder Ökofeminismus entdecken. Gerne moderiere ich einen davon für dich.",
+    trainedNote:"Ich bin ebenfalls ausgebildete Moderatorin weiterer Workshops rund um <strong>Nachhaltigkeit und sozialen Wandel</strong> wie Sexism Fresko, Solarpunk Futures, 2tonnes oder Workshops zur Einführung in den Ökofeminismus. Gerne moderiere ich einen davon für dich — zugeschnitten auf die Bedürfnisse deiner Branche oder Organisation.",
     bookCta:"Workshop mit mir buchen",
-    contextIntro:"Diese Workshops sind Methoden und Werkzeuge, die sich auf viele Kontexte anwenden lassen.",
+    contextIntro:"Die Workshops verbinden Zukunftsforschung, die Kraft der kollektiven Utopie und erprobte Moderationsformate. Jede Session hinterlässt bei den Teilnehmenden ein Gefühl von Verbundenheit, konkrete nächste Schritte und ein neues Gefühl von Handlungsfähigkeit. Diese Workshops sind Methoden und Werkzeuge, die zu vielen Kontexten passen. Sie eignen sich, wenn du dich in einem der folgenden Fälle wiederfindest:",
     value:[
-      { title:"Zukunft neu denken", body:"Immersive und kollektive Wege, die Zukunft deiner Organisation in einem Krisenumfeld <strong>neu zu denken</strong>." },
-      { title:"Impact steigern", body:"Neue konkrete Wege, deinen Impact über Labels, CO₂-Kompensation oder Recycling hinaus <strong>zu verbessern</strong>." },
-      { title:"Menschen verbinden", body:"Sinnvolle und relevante Wege, dich mit Kolleg:innen, Mitgliedern oder Partner:innen zu <strong>verbinden</strong>." },
-      { title:"Gruppen begeistern", body:"Hoffnungsvolle, kraftvolle Wege, Schüler:innen oder Gruppen für ihre Zukunft und kollektive Organisation zu <strong>begeistern</strong>." }
+      { title:"Zukunft eurer Organisation neu denken", body:"Ihr sucht immersive und kollektive Wege, die Zukunft und den Sinn eurer Organisation in dieser sich ständig wandelnden Multi-Krisen-Welt <strong>neu zu denken</strong>." },
+      { title:"Impact von innen heraus steigern", body:"Ihr sucht neue und konkrete Wege, euren Impact über Labels, CO₂-Kompensation oder Recycling hinaus <strong>zu verbessern</strong>." },
+      { title:"Menschen sinnvoll verbinden", body:"Ihr sucht bedeutungsvolle und relevante Wege, euch mit Kolleg:innen, Mitgliedern oder Partner:innen zu <strong>verbinden</strong>." },
+      { title:"Begeistern und aktivieren", body:"Ihr sucht hoffnungsvolle und kraftvolle Wege, Schüler:innen oder Gruppen zum Nachdenken über die Zukunft <strong>zu begeistern</strong>." }
     ],
     intentions:"Absichten",
     intentionsList:[
-      "Zusammenhalt stärken und kollektive Intelligenz durch eine regenerative Aktivität erleben",
-      "Engagement für und Verständnis komplexer Themen durch Dialog fördern",
+      "den <strong>Zusammenhalt</strong> stärken und kollektive Intelligenz durch eine regenerative Aktivität erleben",
+      "Engagement für und Verständnis komplexer Themen durch <strong>Dialog</strong> fördern",
       "individuelle Aspirationen als Beiträge zu kollektiven Projekten (neu) denken",
-      "kollektive und individuelle Handlungsfähigkeit stärken und die Überzeugung, dass wünschenswerte Zukünfte möglich und erreichbar sind"
+      "kollektive und individuelle Handlungsfähigkeit stärken und die Überzeugung, dass wünschenswerte Zukünfte möglich und <strong>in Reichweite</strong> sind",
+      "kollaborative Praktiken und <strong>Zukunftsforschung</strong> erleben, um tiefe Wünsche für ein gemeinsames Leben und die eigene Rolle in der Gesellschaft neu zu entdecken"
     ],
     format:"Format",
-    formatIntro:"Wir passen unsere Workshops an die Bedürfnisse eures Kollektivs an, mit Fokus auf eure Themen wie Bürgerbeteiligung, mentale Gesundheit, Renaturierung, sozialer Wandel, Wohnen, kollektives Wohlbefinden, Landwirtschaft…",
-    formatList:["Format: 2 – 5 Stunden","Teilnehmende: 5 – 50 Personen","Ort: online oder vor Ort","Preisrahmen: 400€ bis 1500€"],
+    formatIntro:"Ich passe die Workshops an die <strong>Bedürfnisse eures Kollektivs</strong> an — mit Fokus auf eure Themen: Bürgerbeteiligung, mentale Gesundheit, Renaturierung, sozialer Wandel, Wohnen, kollektives Wohlbefinden, Landwirtschaft…",
+    formatList:["Format: 2 – 5 Stunden","Teilnehmende: 5 – 50 Personen","Ort: online oder vor Ort","Sprachen: Englisch, Deutsch, Französisch","Preisrahmen: 400€ bis 1500€","Art der Organisation: NGOs, Unternehmen, Universitäten, Schulen, öffentliche Einrichtungen und Organisationen usw."],
     partnersTitle:"Wir haben zusammengearbeitet",
     testimonialsTitle:"Stimmen",
     testimonials:[
-      { quote:"Gaëlle hat einen Raum geschaffen, in dem unser Team mutig träumen konnte — und trotzdem mit konkreten Schritten hinausging.", author:"María, NGO-Leitung" },
+      { quote:"Gaëlle hat einen Raum geschaffen, in dem unser Team mutig träumen konnte — und trotzdem mit konkreten Schritten hinausging. Magisch.", author:"María, NGO-Leitung" },
       { quote:"Der energiereichste Workshop des Jahres. Alle gingen leichter und klarer nach Hause.", author:"Julien, Programmleitung" },
-      { quote:"Eine seltene Mischung aus Klarheit, Freude und Sorgfalt.", author:"Anna, Dozentin" },
-      { quote:"Dey hat Klimafutures wieder möglich anfühlen lassen. Ein Geschenk.", author:"Tom, Nachhaltigkeitsmanager" }
+      { quote:"Eine seltene Mischung aus Klarheit, Freude und Sorgfalt. Unsere Studierenden sprechen immer noch davon.", author:"Anna, Dozentin" },
+      { quote:"Dey hat freudvolle Zukünfte wieder möglich anfühlen lassen. Ein Geschenk.", author:"Tom, Nachhaltigkeitsmanager" }
     ],
     seo:"About",
     seoTitle:"Über Utopia Muscle Training",
-    seoP1:"Utopia Muscle Training ist eine Berliner Praxis für <strong>Zukunftsworkshops</strong> für Teams, NGOs, Schulen, Universitäten und öffentliche Einrichtungen. Seit 2018 begleiten wir Sessions der kollektiven Intelligenz in ganz Europa — auf Französisch, Englisch und Deutsch — und helfen Gruppen, von Klimaangst zu geerdeter, handlungsfähiger Hoffnung zu gelangen.",
-    seoP2:"Unsere Workshops verbinden <strong>Zukunftsforschung</strong>, <strong>Solarpunk-Imagination</strong> und erprobte Moderationsformate (Glorreiche 2030er, Zeichne mir eine Zukunft, Collage neuer Narrative). Jede Session hinterlässt eine geteilte Vision, konkrete nächste Schritte und ein neues Gefühl von Handlungsfähigkeit.",
+    seoP1:"Utopia Muscle Training ist eine in Berlin ansässige Praxis, die <strong>Zukunftsworkshops</strong> für Teams, NGOs, Schulen, Universitäten und öffentliche Einrichtungen konzipiert und moderiert. Seit 2018 begleite ich, Gaëlle Shearn, Sessions der kollektiven Intelligenz in ganz Europa — auf Französisch, Englisch und Deutsch — und helfe Gruppen, von Zukunftsangst zu einer geerdeten, positiven Sicht auf das Kommende zu gelangen.",
+    seoP2:"Die Workshops verbinden <strong>Zukunftsforschung</strong>, die Kraft der <strong>kollektiven Utopie</strong> und erprobte Moderationsformate (Glorreiche 2030er, Zeichne mir eine Zukunft, Collage neuer Narrative). Jede Session hinterlässt ein Gefühl von Verbundenheit, konkrete nächste Schritte und ein neues Gefühl von Handlungsfähigkeit.",
     whoTitle:"Für wen diese Workshops sind",
-    whoP:"Unternehmen, die ihren Purpose überdenken, NGOs, die neue Kampagnen entwerfen, Universitäten, die Studierende auf eine sich wandelnde Welt vorbereiten, Kommunen, die Bürgervisionen ko-kreieren — und jede Gruppe, die bereit ist, ihre wünschenswerte Zukunft zu gestalten.",
+    whoP:"Unternehmen, die ihren Purpose überdenken, NGOs, die sich an ihre Vision erinnern wollen, Universitäten, die Studierende auf eine sich wandelnde Welt vorbereiten, Kommunen, die Bürgervisionen ko-kreieren, und jede Gruppe, die bereit ist, die Düsternis zu verlassen und ihre eigenen wünschenswerten Zukünfte zu gestalten.",
     faq:"FAQ",
     faqTitle:"Häufige Fragen",
     faqContent:[
       { q:"Wie lange dauert ein Workshop?", a:"Sessions dauern je nach Format und Gruppengröße 2 bis 5 Stunden. Halb- und Ganztagesformate sind auf Anfrage möglich." },
-      { q:"Moderiert ihr auch online?", a:"Ja. Jeder Workshop existiert in einer Online-Version über kollaborative Whiteboards (Miro, Mural) und strukturierte Breakouts, für Gruppen von 5 bis 50 Personen." },
+      { q:"Moderierst du auch online?", a:"Ja. Jeder Workshop existiert in einer Online-Version über kollaborative Whiteboards (Miro, Mural) und strukturierte Breakouts, für Gruppen von 5 bis 50 Personen." },
       { q:"In welchen Sprachen?", a:"Workshops werden auf Englisch, Französisch und Deutsch moderiert." },
       { q:"Was kostet ein Workshop?", a:"Standardpreisrahmen 400 € bis 1500 €. Für NGOs, Schulen und öffentliche Einrichtungen werden die Tarife angepasst — gerne besprechen wir euren Kontext." }
     ],
     nextSteps:"Nächste Schritte",
     email:"schreib mir eine E-Mail, um einen Workshop zu organisieren",
     download:"lade mein One-Pager herunter",
-    podcast:"höre meinen Beitrag im Podcast Serious Game for Serious Change",
+    podcast:"höre meinen Beitrag zur Utopie im „Serious Game Podcast\"",
     calendar:"sieh dir die nächsten offenen Workshops an, die ich (mit-)moderiere",
     impressum:"Impressum",
     impressumDisclaimer:"Alle Inhalte dieser Seite dienen Informationszwecken. Bilder und Inhalte © den jeweiligen Eigentümer:innen.",
@@ -484,46 +486,47 @@ const T = {
   fr:{
     navWorkshops:"Ateliers", navAudience:"Public", navIntents:"Intentions", navFormat:"Format", navGallery:"Galerie",
     mission:"Mission",
-    missionLead:"Utopia Muscle Training propose des activités immersives pour muscler un muscle trop longtemps oublié mais incroyable : le <strong>muscle de l'Utopie</strong>.",
-    missionBody:"Les ateliers libèrent le pouvoir de l'<strong>intelligence collective</strong> et de la visualisation pour co-créer des <strong>visions de futurs</strong> durables, engageantes, joyeuses et actionnables. Ils revendiquent le rêve collectif comme outil pour cultiver un état d'esprit <strong>optimiste</strong> et de <strong>l'agentivité</strong>. Ce sont des clés pour imaginer les futurs de l'organisation et du travail.",
-    quote:"« L'espoir n'est pas un simple souhait, c'est une intention. » — Steven Charlston",
+    missionLead:"Utopia Muscle Training propose des activités immersives pour muscler un muscle trop longtemps oublié mais incroyable : le <strong>muscle de l'Utopie</strong>, le muscle responsable de l'imagination d'alternatives merveilleuses.",
+    missionBody:"Les ateliers visent à libérer le pouvoir de l'<strong>intelligence collective</strong> et de la visualisation, pour co-créer des <strong>visions de futurs</strong> durables et engageantes. Les différents formats que je propose revendiquent le rêve collectif comme outil pour cultiver <strong>l'agentivité</strong> et un état d'esprit <strong>optimiste</strong>. Ce sont des clés pour imaginer des futurs (de l'organisation, du travail, de la société…) joyeux et actionnables.",
+    quote:"« La meilleure façon de prédire le futur, c'est de le créer. » — Buckminster Fuller",
     facilitatorName:"Gaëlle Shearn",
-    facilitatorBio:"Passionnée de facilitation, convaincue du pouvoir de l'utopie comme outil proactif et transformateur, j'anime des activités collaboratives sur les futurs désirables et soutenables. Coach agile et facilitatrice, j'accompagne et fais grandir des équipes depuis 7 ans, en contextes coopératifs.",
+    facilitatorBio:"Passionnée par la facilitation, convaincu·e par pouvoir de l'utopie comme outil proactif et transformateur, j'anime des activités collaboratives sur les futurs désirables et soutenables. J'accompagne et fais grandir des équipes depuis 7 ans, avec une approche coopérative.",
     hoverHint:"Survolez pour en lire plus →",
-    ctaTag:"Prêt·e à entrainer ton muscle de l'utopie ?",
-    trainedNote:"Je suis également formée à d'autres ateliers liés à la durabilité et au changement social comme Sexism Fresko, Solarpunk Futures, 2tonnes ou atelier de découverte de l'écoféminisme. Je serais ravie d'en animer un pour vous.",
+    ctaTag:"Prêt·e à entraîner ton muscle de l'utopie ?",
+    trainedNote:"Je suis également formée à d'autres ateliers liés à l'<strong>écologie et au changement social</strong> comme Sexism Fresko, Solarpunk Futures, 2tonnes ou des ateliers d'introduction à l'écoféminisme. Je serais ravi·e d'en animer un pour vous — sur mesure selon les besoins de votre secteur ou organisation.",
     bookCta:"Réserver un atelier avec moi",
-    contextIntro:"Ces ateliers sont des méthodologies et outils applicables à de nombreux contextes.",
+    contextIntro:"Les ateliers combinent prospective, pouvoir de l'utopie collective et cadres de facilitation éprouvés. Chaque session laisse aux participant·es un sentiment de connexion, des prochaines étapes concrètes et une agentivité renouvelée. Ces ateliers sont des méthodologies et outils applicables à de nombreux contextes. Ils sont parfaits si vous vous reconnaissez dans l'un des cas suivants :",
     value:[
-      { title:"Repenser le futur", body:"Des façons immersives et collectives de <strong>repenser</strong> le futur de votre organisation dans cet environnement multi-crises." },
-      { title:"Améliorer l'impact", body:"De nouvelles façons concrètes d'<strong>améliorer</strong> votre impact au-delà des labels, de la compensation CO₂ ou du recyclage." },
-      { title:"Connecter les gens", body:"Des façons signifiantes et pertinentes de <strong>connecter</strong> vos collègues, membres ou partenaires." },
-      { title:"Engager les groupes", body:"Des façons pleines d'espoir et puissantes d'<strong>engager</strong> étudiant·es ou groupes à imaginer leurs futurs collectifs." }
+      { title:"Repenser le futur de votre organisation", body:"Vous cherchez des façons immersives et collectives de <strong>repenser</strong> le futur et la raison d'être de votre organisation dans cet environnement multi-crises en constante évolution." },
+      { title:"Améliorer votre impact de l'intérieur", body:"Vous cherchez de nouvelles façons concrètes d'<strong>améliorer</strong> encore plus votre impact, au-delà des labels, de la compensation CO₂ ou du recyclage." },
+      { title:"Connecter de façon signifiante", body:"Vous cherchez des façons signifiantes et pertinentes de <strong>connecter</strong> vos collègues, membres ou partenaires." },
+      { title:"Inspirer et engager", body:"Vous cherchez des façons pleines d'espoir et puissantes d'<strong>engager</strong> étudiant·es ou groupes à imaginer le futur." }
     ],
     intentions:"Intentions",
     intentionsList:[
-      "renforcer la cohésion et vivre l'intelligence collective à travers une activité régénérative",
-      "favoriser l'engagement et la compréhension d'enjeux complexes par le dialogue",
+      "renforcer la <strong>cohésion</strong> et vivre l'intelligence collective à travers une activité régénérative",
+      "favoriser l'engagement et la compréhension d'enjeux complexes par le <strong>dialogue</strong>",
       "(ré)imaginer les aspirations individuelles comme contributions à des projets collectifs",
-      "renforcer l'agentivité collective et individuelle et la conviction que des futurs désirables sont possibles et à portée"
+      "renforcer l'agentivité collective et individuelle et la conviction que des futurs désirables sont possibles et <strong>à portée de main</strong>",
+      "expérimenter des pratiques collaboratives et la <strong>prospective</strong> pour renouer avec des désirs profonds de vie collective et de rôle dans la société"
     ],
     format:"Format",
-    formatIntro:"Nous adaptons nos ateliers aux besoins de votre collectif, en nous concentrant sur les sujets qui comptent pour vous : participation citoyenne, santé mentale, restauration de la nature, changement social, logement, bien-être collectif, agriculture…",
-    formatList:["Format : 2 – 5 heures","Participant·es : 5 – 50 personnes","Lieu : en ligne ou sur place","Tarif : 400€ à 1500€"],
+    formatIntro:"J'adapte les ateliers aux <strong>besoins de votre collectif</strong>, en me concentrant sur les sujets qui comptent pour vous : participation citoyenne, santé mentale, restauration de la nature, changement social, logement, bien-être collectif, agriculture…",
+    formatList:["Format : 2 – 5 heures","Participant·es : 5 – 50 personnes","Lieu : en ligne ou sur place","Langues : anglais, allemand, français","Tarif : 400€ à 1500€","Type d'organisation : ONG, entreprises, universités, écoles, organismes et institutions publiques, etc."],
     partnersTitle:"Nous avons travaillé ensemble",
     testimonialsTitle:"C'est elle·ux qui en parlent le mieux",
     testimonials:[
       { quote:"Gaëlle a créé un espace où notre équipe a pu rêver grand — et repartir avec des étapes concrètes. Magique.", author:"María, directrice d'ONG" },
       { quote:"L'atelier le plus énergisant de l'année. Tout le monde est reparti plus léger et plus clair.", author:"Julien, chef de programme" },
-      { quote:"Un mélange rare de rigueur, de joie et de soin.", author:"Anna, enseignante-chercheuse" },
-      { quote:"Iel a redonné du possible aux futurs climatiques. Un cadeau.", author:"Tom, responsable durabilité" }
+      { quote:"Un mélange rare de rigueur, de joie et de soin. Nos étudiant·es en parlent encore.", author:"Anna, enseignante-chercheuse" },
+      { quote:"Iel a rendu les futurs joyeux à nouveau possibles. Un cadeau.", author:"Tom, responsable durabilité" }
     ],
     seo:"À propos",
     seoTitle:"À propos d'Utopia Muscle Training",
-    seoP1:"Utopia Muscle Training est une pratique basée à Berlin qui conçoit et anime des <strong>ateliers des futurs</strong> pour équipes, ONG, écoles, universités et organismes publics. Depuis 2018, nous animons des sessions d'intelligence collective à travers l'Europe — en français, anglais et allemand — pour aider les groupes à passer de l'éco-anxiété à un espoir ancré et actionnable.",
-    seoP2:"Nos ateliers combinent <strong>prospective</strong>, <strong>imagination solarpunk</strong> et cadres de facilitation éprouvés (Glorieuses années 2030, Dessine-moi un futur, Fresque des Nouveaux Récits). Chaque session laisse aux participant·es une vision partagée, des prochaines étapes concrètes et un sentiment renouvelé d'agentivité.",
+    seoP1:"Utopia Muscle Training est une pratique basée à Berlin qui conçoit et anime des <strong>ateliers des futurs</strong> pour équipes, ONG, écoles, universités et organismes publics. Depuis 2018, j'anime, Gaëlle Shearn, des sessions d'intelligence collective à travers l'Europe — en français, anglais et allemand — pour aider les groupes à passer de l'anxiété face au futur à un regard ancré et positif sur ce qui vient.",
+    seoP2:"Les ateliers combinent <strong>prospective</strong>, pouvoir de l'<strong>utopie collective</strong> et cadres de facilitation éprouvés (Les 2030 Glorieuses, Dessine-moi un futur, Fresque des Nouveaux Récits). Chaque session laisse aux participant·es un sentiment de connexion, des prochaines étapes concrètes et une agentivité renouvelée.",
     whoTitle:"À qui s'adressent ces ateliers",
-    whoP:"Entreprises qui repensent leur raison d'être, ONG concevant de nouvelles campagnes, universités préparant leurs étudiant·es à un monde en mutation, collectivités co-construisant des visions citoyennes, et tout groupe prêt à concevoir son propre futur désirable.",
+    whoP:"Entreprises qui repensent leur raison d'être, ONG qui veulent se reconnecter à leur vision, universités préparant leurs étudiant·es à un monde en mutation, collectivités co-construisant des visions citoyennes, et tout groupe prêt à dépasser la morosité pour concevoir ses propres futurs désirables.",
     faq:"FAQ",
     faqTitle:"Questions fréquentes",
     faqContent:[
@@ -533,9 +536,9 @@ const T = {
       { q:"Quel est le tarif ?", a:"Fourchette standard 400 € à 1500 €. Tarifs ajustés pour ONG, écoles et institutions publiques — parlons de votre contexte." }
     ],
     nextSteps:"Prochaines étapes",
-    email:"envoyez-moi un e-mail pour organiser un atelier",
+    email:"contactez-moi par e-mail pour organiser un atelier",
     download:"téléchargez mon one-pager",
-    podcast:"écoutez mon intervention dans le podcast Serious Game for Serious Change",
+    podcast:"écoutez moi parler d'utopie dans le « Serious Game Podcast »",
     calendar:"consultez les prochains ateliers ouverts que je (co)anime",
     impressum:"Mentions légales",
     impressumDisclaimer:"Tout le contenu de ce site est fourni à titre informatif. Images et contenu © à leurs propriétaires respectifs.",
@@ -577,7 +580,7 @@ function renderWorkshops(){
       </div>
       <div class="ws-body" tabindex="0">
         <h3 class="eyebrow ${w.accent==='green'?'green':''}">${w.title[lang]}</h3>
-        <p class="preview">${w.body[lang].slice(0,120)}…</p>
+        <p class="preview">${w.body[lang].replace(/<[^>]+>/g,'').slice(0,120)}…</p>
         <span class="hint">${c.hoverHint}</span>
         <div class="ws-overlay">
           <h3 class="eyebrow ${w.accent==='green'?'green':''}">${w.title[lang]}</h3>
