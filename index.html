@@ -73,7 +73,7 @@
         "@type": "OfferCatalog",
         "name": "Workshops",
         "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Glorious 2030s", "url": "https://www.2030glorieuses.org/site-public" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Glorious 2030s", "url": "https://www.2030glorieuses.org/world" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Draw me a future", "url": "https://renaissanceecologique.org/ateliers-et-formations" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Narratives Collage", "url": "https://www.fresquedesnouveauxrecits.org/en-new-narratives-collage" } }
         ]
@@ -101,16 +101,19 @@
 
 <body>
 
+  <!-- A11Y: skip link, visually hidden until it receives keyboard focus -->
+<a class="skip-link" href="#workshops" data-i18n="skipLink"></a>
+
 <div class="lang" role="group" aria-label="Language">
-  <button data-lang="en" class="active" aria-label="English">🇬🇧</button>
-  <button data-lang="de" aria-label="Deutsch">🇩🇪</button>
-  <button data-lang="fr" aria-label="Français">🇫🇷</button>
+  <button type="button" data-lang="en" class="active" lang="en" aria-pressed="true" aria-label="English">🇬🇧</button>
+  <button type="button" data-lang="de" lang="de" aria-pressed="false" aria-label="Deutsch">🇩🇪</button>
+  <button type="button" data-lang="fr" lang="fr" aria-pressed="false" aria-label="Français">🇫🇷</button>
 </div>
 
 <header class="intro">
   <div class="container">
     <div class="logo" style="margin-top:16px">
-      <h1 class="visually-hidden">Utopia Muscle Training — Futures Workshops by Gaëlle Shearn</h1>
+      <h1 class="visually-hidden">Utopia Muscle Training — Futures Workshops by Gaëlle Shearn, Future Envisioning Facilitator</h1>
       <div class="intro-images">
         <img src="images/intro_line.png" alt="" class="intro-line left" aria-hidden="true" />
         <img src="images/intro_logo.png" alt="Utopia Muscle Training — foresight workshops" class="intro-center" />
@@ -140,6 +143,7 @@
       <div class="card-gaelle">
         <img src="images/gaelle.jpg" alt="Portrait of Gaëlle Shearn, workshop facilitator based in Berlin" width="112" height="112" />
         <h3 data-i18n="facilitatorName"></h3>
+        <p class="role" data-i18n="facilitatorRole"></p>
         <p data-i18n="facilitatorBio"></p>
       </div>
     </div>
@@ -207,7 +211,7 @@
       </div>
     </div>
     <div class="next-steps-image">
-      <img src="images/collaboration.png" alt="Sharing food together at a Utopia Muscle Training workshop" loading="lazy" />
+      <img src="images/collaboration.png" alt="Three hands cutting cakes together to make a Venn Diagram shaped cake with 7 different combinaisons of taste and glase" loading="lazy" />
     </div>
   </div>
 </section>
@@ -279,7 +283,7 @@
   </div>
 </div>
 
-<div class="modal" id="faqModal" role="dialog" aria-modal="true" aria-labelledby="faqTitle">
+<div class="modal" id="faqModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="faqTitle">
   <div class="modal-box">
     <button class="modal-close" id="closeFaq" aria-label="Close">×</button>
     <h2 id="faqTitle" data-i18n="faqTitle"></h2>
@@ -287,7 +291,7 @@
   </div>
 </div>
 
-<div class="modal" id="galleryModal" role="dialog" aria-modal="true" aria-labelledby="galleryTitle">
+<div class="modal" id="galleryModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="galleryTitle">
   <div class="modal-box modal-box-wide">
     <button class="modal-close" id="closeGallery" aria-label="Close">×</button>
     <h2 id="galleryTitle" data-i18n="navGallery"></h2>
@@ -307,8 +311,8 @@ const workshops = [
   {
     id:"glorious", accent:"blue",
     photos:[
-      { src:"images/ws_2030_1.jpeg", credit:"2030 Glorieuses - Spain", href:"https://www.2030glorieuses.org/site-public" },
-      { src:"images/ws_2030_2.jpg", credit:"2030 Glorieuses - France", href:"https://www.2030glorieuses.org/site-public" },
+      { src:"images/ws_2030_1.jpeg", credit:"2030 Glorieuses - Spain", href:"https://www.2030glorieuses.org/world" },
+      { src:"images/ws_2030_2.jpg", credit:"2030 Glorieuses - France", href:"https://www.2030glorieuses.org/world" },
       { src:"images/ws_2030_3.jpg", credit:"Seeding for Future", href:"https://seedingforfuture.wixsite.com/accueil" },
       { src:"images/ws_2030_4.png", credit:"Reclaim - Ecofeminist Alliance", href:"https://www.reclaim-ev.org/" }
     ],
@@ -318,7 +322,7 @@ const workshops = [
       de:"Durch ein <strong>geführtes utopisches Gespräch</strong> zeichnen die Teilnehmenden gemeinsam die Umrisse einer gerechteren, nachhaltigeren und freudvolleren Gesellschaft — für sich selbst und für die Welt. Mit unserem Kartendeck an Initiativen entscheiden sie, welche konkreten <strong>nächsten Schritte</strong> zu dieser Utopie führen!",
       fr:"À travers une <strong>conversation utopique guidée</strong>, les participant·es dessinent collectivement les contours d'une société plus juste, plus durable et plus joyeuse, pour leur vie et pour le monde. Grâce à notre jeu de cartes d'initiatives, ils et elles décident des <strong>prochaines étapes concrètes</strong> menant à leur utopie !"
     },
-    link:{ label:"2030glorieuses.org", href:"https://www.2030glorieuses.org/site-public" }
+    link:{ label:"2030glorieuses.org", href:"https://www.2030glorieuses.org/world" }
   },
   {
     id:"draw", accent:"green",
@@ -368,13 +372,16 @@ const T = {
     missionLead:"Utopia Muscle Training offers immersive activities as workout for a too-long-forgotten yet incredible muscle: the <strong>Utopia muscle</strong>, responsible for imagining alternative amazing realities.",
     missionBody:"The workshops aim to unleash the power of <strong>collective intelligence</strong> and visualisation, to co-create sustainable and engaging <strong>visions of futures</strong>. The different formats I offer reclaim collective dreaming as a tool to cultivate <strong>agency</strong> and an <strong>optimist</strong> mindset. They are key to imagining futures (of organisation, work, society...), that are enjoyable and actionable.",
     quote:"\"The best way to predict the future is to design it.\" — Buckminster Fuller",
+    skipLink:"Skip to the workshops",
     facilitatorName:"Gaëlle Shearn",
+    facilitatorRole:"Future envisioning facilitator",
     facilitatorBio:"Passionate about facilitation, convinced of the power of utopia as a proactive and transformative tool, I guide collaborative activities on desirable and sustainable futures. I have been leading and accompanying the growth of teams for the last 7 years, with a cooperative approach.",
     hoverHint:"Hover to read more →",
     ctaTag:"Ready to train your utopia muscle?",
     trainedNote:"I am as well a trained facilitator of other workshops connected to <strong>sustainability and social change</strong> such as Sexism Fresko, Solarpunk Futures, 2tonnes and workshops introducing ecofeminism. I would be delighted to facilitate one or the other for you, tailored to the needs of your industry or organisation.",
     bookCta:"Book a workshop with me",
     contextIntro:"The workshops combine foresight, the power of collective utopia and proven facilitation frameworks. Each session leaves participants with a sense of connection, a set of concrete next steps and a renewed sense of agency. Those workshops are methodologies and tools fitting multiple contexts. They are great if you are in one of the following cases: you want to... ",
+    valueMore:"Read more →",
     value:[
       { title:"Rethink your organisation's future", body:"You are looking for immersive and collective ways to <strong>rethink</strong> your organisation's future and purpose in this multi-crisis ever-changing environment." },
       { title:"Improve your impact from within", body:"You are looking for new and concrete ways to <strong>improve</strong> even more your impact, beyond labels, CO₂ compensation or recycling." },
@@ -429,13 +436,16 @@ const T = {
     missionLead:"Utopia Muscle Training bietet immersive Aktivitäten als Training für einen zu lange vergessenen, aber unglaublichen Muskel: den <strong>Utopie-Muskel</strong>, den Muskel, der für das Vorstellen alternativer, wunderbarer Realitäten zuständig ist.",
     missionBody:"Die Workshops entfesseln die Kraft der <strong>kollektiven Intelligenz</strong> und der Visualisierung, um gemeinsam nachhaltige und mitreißende <strong>Zukunftsvisionen</strong> zu entwickeln. Die verschiedenen Formate, die ich anbiete, holen das kollektive Träumen zurück als Werkzeug, um <strong>Handlungsfähigkeit</strong> und eine <strong>optimistische</strong> Haltung zu kultivieren. Sie sind Schlüssel, um Zukünfte (von Organisation, Arbeit, Gesellschaft…) zu denken, die freudvoll und umsetzbar sind.",
     quote:"„Der beste Weg, die Zukunft vorherzusagen, ist, sie zu gestalten.\" — Buckminster Fuller",
+    skipLink:"Zu den Workshops springen",
     facilitatorName:"Gaëlle Shearn",
+    facilitatorRole:"Future Envisioning Facilitator (Zukunftsmoderation)",
     facilitatorBio:"Leidenschaftlich für Moderation, überzeugt von der Kraft der Utopie als proaktives und transformatives Werkzeug, leite ich kollaborative Aktivitäten zu wünschenswerten und nachhaltigen Zukünften. Seit 7 Jahren begleite ich Teams in ihrem Wachstum, mit einem kooperativen Ansatz.",
     hoverHint:"Für mehr Infos hovern →",
     ctaTag:"Bereit, deinen Utopie-Muskel zu trainieren?",
     trainedNote:"Ich bin ebenfalls ausgebildete Moderatorin weiterer Workshops rund um <strong>Nachhaltigkeit und sozialen Wandel</strong> wie Sexism Fresko, Solarpunk Futures, 2tonnes oder Workshops zur Einführung in den Ökofeminismus. Gerne moderiere ich einen davon für dich — zugeschnitten auf die Bedürfnisse deiner Branche oder Organisation.",
     bookCta:"Workshop mit mir buchen",
     contextIntro:"Die Workshops verbinden Zukunftsforschung, die Kraft der kollektiven Utopie und erprobte Moderationsformate. Jede Session hinterlässt bei den Teilnehmenden ein Gefühl von Verbundenheit, konkrete nächste Schritte und ein neues Gefühl von Handlungsfähigkeit. Diese Workshops sind Methoden und Werkzeuge, die zu vielen Kontexten passen. Sie eignen sich, wenn du dich in einem der folgenden Fälle wiederfindest:",
+    valueMore:"Mehr lesen →",
     value:[
       { title:"Zukunft eurer Organisation neu denken", body:"Ihr sucht immersive und kollektive Wege, die Zukunft und den Sinn eurer Organisation in dieser sich ständig wandelnden Multi-Krisen-Welt <strong>neu zu denken</strong>." },
       { title:"Impact von innen heraus steigern", body:"Ihr sucht neue und konkrete Wege, euren Impact über Labels, CO₂-Kompensation oder Recycling hinaus <strong>zu verbessern</strong>." },
@@ -490,13 +500,16 @@ const T = {
     missionLead:"Utopia Muscle Training propose des activités immersives pour renforcer un muscle oublié depuis trop longtemps mais incroyable : le <strong>muscle de l'Utopie</strong>, responsable de l'imagination d'alternatives motivantes.",
     missionBody:"Les ateliers visent à libérer le pouvoir de l'<strong>intelligence collective</strong> et de la visualisation, pour co-créer des <strong>visions de futurs</strong> durables et engageantes. Les différents formats que je propose mobilisent le rêve collectif comme outil pour cultiver <strong>l'agentivité</strong> et une vision du futur <strong>optimiste</strong>. Ce sont des clés de voûte pour imaginer des futurs (de l'organisation, du travail, de la société…) joyeux et actionnables.",
     quote:"« La meilleure façon de prédire le futur, c'est de le créer. » — Buckminster Fuller",
+    skipLink:"Aller aux ateliers",
     facilitatorName:"Gaëlle Shearn",
     facilitatorBio:"Passionnée par la facilitation, convaincu·e par pouvoir de l'utopie comme outil proactif et transformateur, j'anime des activités collaboratives sur les futurs désirables et soutenables. J'accompagne et fais grandir des équipes depuis 7 ans, avec une approche coopérative.",
+    facilitatorRole:"Facilitatrice en envisionnement des futurs",
     hoverHint:"Survolez pour en savoir plus →",
     ctaTag:"Prêt·e à entraîner ton muscle de l'utopie ?",
     trainedNote:"Je suis également formé·e à d'autres ateliers liés à l'<strong>écologie et aux changements sociétaux</strong> comme la Fresque du Sexisme, Solarpunk Futures, 2tonnes ou des ateliers d'introduction à l'écoféminisme. Je serais ravi·e d'animer l'un ou l'autre pour vous, en les adaptant aux besoins de votre secteur ou organisation.",
     bookCta:"Réserver un atelier avec moi",
     contextIntro:"Les ateliers combinent prospective, pouvoir de l'utopie collective et cadres de facilitation testés et approuvés. Chaque atelier permet aux participant·es de repartir avec un sentiment de connexion avec d'autres, des prochaines étapes concrètes pour leur vie et un boost de confiance en leur agentivité. Ces ateliers sont des méthodologies et outils qui s'adapent à de nombreux contextes. Ils sont parfaits si vous êtes dans l'un des cas suivants : vous voulez...",
+    valueMore:"En savoir plus →",
     value:[
       { title:"Repenser le futur de votre organisation", body:"Vous cherchez des façons immersives et collectives de <strong>repenser</strong> le futur et la raison d'être de votre organisation dans cet environnement multi-crises et en constante évolution." },
       { title:"Améliorer votre impact en profondeur", body:"Vous cherchez de nouvelles façons concrètes d'<strong>améliorer</strong> encore plus votre impact, au-delà des labels, de la compensation CO₂ ou du recyclage." },
@@ -549,6 +562,9 @@ const T = {
 
 let lang = "en";
 
+/* A11Y: respect the OS "reduce motion" setting — no auto-rotating carousels. */
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 /* Workshops cards */
 const carouselTimers = [];
 function renderWorkshops(){
@@ -565,7 +581,9 @@ function renderWorkshops(){
             <div class="ws-slide ${i===0?'active':''}" data-slide="${i}">
               <img src="${p.src}" alt="${w.title[lang]} — ${p.credit}" loading="lazy" width="1024" height="768" />
               ${p.href
-                ? `<a class="ws-credit" href="${p.href}" target="_blank" rel="noopener">${p.credit} ↗</a>`
+                ? `<a class="ws-credit" href="${p.href}" target="_blank" rel="noopener"
+                     aria-label="Photo source: ${p.credit} (opens in a new tab)"
+                     title="Photo source: ${p.credit}"><span>${p.credit}</span> <span aria-hidden="true">↗</span></a>`
                 : `<div class="ws-credit">${p.credit}</div>`}
             </div>`).join("")}
         </div>
@@ -603,7 +621,7 @@ function renderWorkshops(){
       dots.forEach((d,i)=>d.classList.toggle("active", i===idx));
     };
     let timer;
-    const start=()=>{ timer = setInterval(()=>go(idx+1), 12000); carouselTimers.push(timer); };
+    const start=()=>{ if(reduceMotion) return; timer = setInterval(()=>go(idx+1), 12000); carouselTimers.push(timer); };
     const resetTimer=()=>{ clearInterval(timer); start(); };
     car.querySelectorAll(".ws-nav").forEach(btn=>{
       btn.addEventListener("click",()=>{
@@ -620,16 +638,29 @@ function renderValue(){
   const c = T[lang];
   const root = document.getElementById("value");
   root.innerHTML = c.value.map((g,i)=>`
-    <button type="button" class="value-card" tabindex="0" aria-label="${g.title}">
+    <button type="button" class="value-card" aria-expanded="false">
       <div class="value-inner">
         <div class="value-face value-front">
           <div class="value-icon">${valueIcons[i]}</div>
           <h4>${g.title}</h4>
+          <span class="value-hint">${c.valueMore}</span>
         </div>
         <div class="value-overlay value-back"><p>${g.body}</p></div>
       </div>
     </button>
   `).join("");
+
+  /* A11Y: hover reveals the text on desktop, clicking or pressing Enter/Space opens the card and updates aria-expanded so screen readers announce the state. */
+  root.querySelectorAll(".value-card").forEach(card=>{
+    card.addEventListener("click",()=>{
+      const open = !card.classList.contains("is-open");
+      root.querySelectorAll(".value-card").forEach(o=>{
+        o.classList.remove("is-open"); o.setAttribute("aria-expanded","false");
+      });
+      card.classList.toggle("is-open", open);
+      card.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  });
 }
 
 /* FAQ */
@@ -661,9 +692,9 @@ function renderTestimonials(){
     dotEls.forEach((d,i)=>d.classList.toggle("active", i===idx));
   };
   clearInterval(testiTimer);
-  testiTimer = setInterval(()=>go(idx+1), 8000);
+  if(!reduceMotion) testiTimer = setInterval(()=>go(idx+1), 8000);
   document.querySelectorAll(".testi-nav").forEach(btn=>{
-    btn.onclick = ()=>{ go(idx + Number(btn.dataset.dir)); clearInterval(testiTimer); testiTimer = setInterval(()=>go(idx+1), 8000); };
+    btn.onclick = ()=>{ go(idx + Number(btn.dataset.dir)); clearInterval(testiTimer); if(!reduceMotion) testiTimer = setInterval(()=>go(idx+1), 8000); };
   });
 }
 
@@ -723,17 +754,45 @@ function apply(){
 document.querySelectorAll(".lang button").forEach(b=>{
   b.addEventListener("click",()=>{
     lang = b.getAttribute("data-lang");
-    document.querySelectorAll(".lang button").forEach(x=>x.classList.toggle("active", x===b));
+    document.querySelectorAll(".lang button").forEach(x=>{
+      x.classList.toggle("active", x===b);
+      x.setAttribute("aria-pressed", x===b ? "true" : "false");
+    });
     apply();
   });
 });
 
+/* A11Y: modals move focus to the close button on open, restore it to the trigger on close. */
 function wireModal(openId, modalId, closeId){
   const modal = document.getElementById(modalId);
-  document.getElementById(openId).addEventListener("click",()=>modal.classList.add("open"));
-  document.getElementById(closeId).addEventListener("click",()=>modal.classList.remove("open"));
-  modal.addEventListener("click",e=>{ if(e.target===modal) modal.classList.remove("open"); });
-  document.addEventListener("keydown",e=>{ if(e.key==="Escape") modal.classList.remove("open"); });
+  const trigger = document.getElementById(openId);
+  const closeBtn = document.getElementById(closeId);
+  const SEL = 'a[href],button,select,textarea,input,details,summary,[tabindex]:not([tabindex="-1"])';
+
+  const open = ()=>{
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden","false");
+    closeBtn.focus();
+  };
+  const close = ()=>{
+    if(!modal.classList.contains("open")) return;
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden","true");
+    if(trigger) trigger.focus();
+  };
+
+  trigger.addEventListener("click", open);
+  closeBtn.addEventListener("click", close);
+  modal.addEventListener("click", e=>{ if(e.target===modal) close(); });
+  modal.addEventListener("keydown", e=>{
+    if(e.key !== "Tab") return;
+    const items = [...modal.querySelectorAll(SEL)].filter(el=>el.offsetParent !== null);
+    if(!items.length) return;
+    const first = items[0], last = items[items.length-1];
+    if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  });
+  document.addEventListener("keydown", e=>{ if(e.key==="Escape") close(); });
 }
 wireModal("openImpressum","impressumModal","closeImpressum");
 wireModal("openSeo","seoModal","closeSeo");
